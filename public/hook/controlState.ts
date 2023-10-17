@@ -1,4 +1,4 @@
-import { IProductType, IProducts } from '../../src/pages/state'
+import { IProductType, IProducts } from '../state'
 
 export const replaceItemAtIndex = (arr:any, index:number, newValue:any) => {
     return [...arr.slice(0,index), newValue, ...arr.slice(index+1)];

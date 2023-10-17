@@ -2,7 +2,7 @@
 import styles from '@/styles/Home.module.css'
 import { useRouter } from 'next/router'
 import { useRecoilState } from 'recoil';
-import { productState } from '../state';
+import { productState } from '../../../public/state';
 
 export default function NextLayout({children}:any){
     const router = useRouter();
