@@ -3,7 +3,7 @@ import { useRecoilState, useSetRecoilState, } from 'recoil'
 import { IIngredient, IProductType, IProducts, productState } from '../state'
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { changeIngredientAttributeAtProducts } from '../hook/controlState'
+import { changeIngredientAttributeAtProducts } from '../../../public/hook/controlState'
 
 
   
