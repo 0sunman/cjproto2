@@ -130,7 +130,7 @@ table {
 .default_icon{ display: flex; justify-content: center; align-items: center; }
 
 button{color:black}
-.Ingredients{ display: flex; position: fixed; top:40%; width: 100%; height: 100%; background-color: #fff; max-width: 390px; display: none; z-index: 20;}
+.Ingredients{ display: flex; position: fixed; top:40%; width: 100%; height: 100%; background-color: #fff; max-width: 390px; display: none; z-index: 20; flex-direction: column;}
 .Ingredients ul {display: flex; flex-direction: column; width: 100%;  justify-content: top;}
 .Ingredients ul > li {display: inline-flex; width: 100%; height: 50px; justify-content: center; align-items: center;}
 .Ingredients ul > li input,.Ingredients ul > li button{width: 35px; height: 90%; text-align: center;border: 0;}
@@ -154,3 +154,12 @@ html{
   background-color: #c8c8c8;
 }
 body{background-color: #fff; margin:0 auto}
+.mini-cart-scroll{
+  height: calc(45%);
+  overflow: hidden;
+  overflow-y: scroll;
+
+}
+.mini-cart-scroll ul{padding-bottom:62px;}
+.dimmed{position: fixed; top:0;left:0;z-index: 19; background-color: rgba(0,0,0,.6); width: 100%; height: 100%;display: none;}
+.dimmed.on{display: block}

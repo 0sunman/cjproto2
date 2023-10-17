@@ -91,13 +91,19 @@ export default function Product(){
             </ul>
             {/* <img src="/images/contents.webp" style={{marginTop:'50px'}}/> */}
         </div>
+        <div className={`dimmed ${products.option ? "on" : ""}`}></div>
         <div className={`Ingredients ${products.option ? "on" : ""}`} >
+                    <div className='header'>
                     <ul>
-                    <li className='header'>
-                        <span className="material-symbols-outlined" onClick={()=>{setProducts({...products,option:false})}}>
+                    <li style={{justifyContent:"end"}}>
+                        <span className="material-symbols-outlined" onClick={()=>{setProducts({...products,option:false})}} style={{paddingRight:"15px"}}>
                          close
                         </span>
                     </li>
+                        </ul>
+                    </div>
+                    <div className='mini-cart-scroll'>
+                        <ul>
                         {product.ingredients.map((ingredient:IIngredient,index:number) => {
                             return <li>
                                 <div>
@@ -113,6 +119,7 @@ export default function Product(){
                         
                     </ul>
                 </div>
+            </div>
     </div>}
     </>)
 }
