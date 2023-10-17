@@ -18,7 +18,7 @@ export default function NextLayout({children}:any){
             </span>
           </div>
           <div className='default_icon'>
-            <span className="material-symbols-outlined">
+            <span className="material-symbols-outlined" onClick={(()=>{ alert("미개발 영역입니다.")})}>
             shopping_cart
             </span>
           </div>
@@ -31,7 +31,11 @@ export default function NextLayout({children}:any){
         
         <div className={`${styles.Footer2} buy`}>
             <button onClick={()=>{setProducts({...products,option:true})}} style={{display:`${products.option ? "none" : "block"}`}}>구매하기</button>
-            <button onClick={()=>{setProducts({...products,option:true})}} style={{display:`${products.option ? "block" : "none"}`}}>
+            <button onClick={()=>{
+              setProducts({...products,option:false})
+              alert("결제모듈 미탑재 (미개발)")
+              location.href="/"
+            }} style={{display:`${products.option ? "block" : "none"}`}}>
               [total_price] 원 구매하기
             </button>
         </div>
