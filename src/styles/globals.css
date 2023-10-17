@@ -129,7 +129,7 @@ table {
 
 .default_icon{ display: flex; justify-content: center; align-items: center; }
 
-
+button{color:black}
 .Ingredients{ display: flex; position: fixed; top:40%; width: 100%; height: 100%; background-color: #fff; max-width: 390px; display: none; z-index: 20;}
 .Ingredients ul {display: flex; flex-direction: column; width: 100%;  justify-content: top;}
 .Ingredients ul > li {display: inline-flex; width: 100%; height: 50px; justify-content: center; align-items: center;}
