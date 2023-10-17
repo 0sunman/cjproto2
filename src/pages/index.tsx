@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useRecoilState } from 'recoil'
-import { IIngredient, IProductType, productState } from '../../public/state'
+import { IIngredient, IProductType, productState } from '../state'
 import { Swiper, SwiperSlide,  } from 'swiper/react'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
