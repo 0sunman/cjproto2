@@ -2,10 +2,19 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { useRecoilState } from 'recoil'
+import { IIngredient, IProductType, productState } from './state'
+import { Swiper, SwiperSlide,  } from 'swiper/react'
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [products2,setProducts] = useRecoilState(productState);
+  
   return (
     <>
       <Head>
@@ -14,99 +23,93 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <main className={`${styles.Wrapper}`}>
+        <div>
+          <div className='big_banner'>
+            <div><span className="highlight1">72H</span> TIME<br/>SALE</div>
+            <div>
+              여유 있게 쇼핑하기 좋은 주말에는 <br/>
+              특가 상품들을 확인해보세요. <br/>
+              <span className='highlight2'>최대 90% 할인</span><br/>
+            </div>
           </div>
         </div>
+        <div className='sub_banner'>
+          <div className='image'>
+            <Link href={`/product/1`}>  
+              <div style={{background:'url(/images/donkastu2.jpg) 50% 50%', width:"100%", height:"200px"}}>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
+            </div>
+            </Link>
+          </div>
+          <div className='button'>
+            <Link href={`/product/1`}>  
+            <button className="shopcart">
+              <span className="material-symbols-outlined">
+                shopping_cart
+              </span><span>담기</span>
+            </button>
+            </Link>
+          </div>
+          <div className='description'>
+            <Link href={`/product/1`}>  
+            <div className='title'>{products2.list[0].name}</div>
+            <div className='price'>
+              <div>{products2.list[0].price}원</div>
+              <div>
+                <span>{products2.list[0].saleRate*100}%</span>&nbsp;
+                <span>{products2.list[0].price * (1 - products2.list[0].saleRate)}원</span>
+              </div>
+            </div>
+            </Link>
+          </div>
         </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="Slide">
+          <Swiper
+          spaceBetween={0}
+          slidesPerView={2.5}
+          autoplay={{ delay: 2000 }}
+          modules={[Autoplay]}
           >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
+          {products2.list?.map((product:IProductType, idx:number)=>{
+            if(idx === 0){
+              return (<></>)
+            }else
+            return (
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
+            <SwiperSlide>
+            <div className="product">
+            <Link href={`/product/`+(idx+1)}>  
+              <div className='image'>
+                <img src={product.imgUrl}/>
+              </div>
+            </Link>
+              <div className='button'>
+              <Link href={`/product/`+(idx+1)}>  
+                  <button>
+                    <span className="material-symbols-outlined">
+                      shopping_cart
+                    </span><span>담기</span>
+                  </button>
+              </Link>
+              </div>
+              <div className='description'>
+              <Link href={`/product/`+(idx+1)}>  
+              <div className='title'>{product.name}</div>
+                <div className='price'>
+                  <div>{product.price}원</div>
+                  <div>
+                    <span>{product.saleRate*100}%</span>&nbsp;
+                    <span>{product.price * (1 - product.saleRate)}원</span>
+                  </div>
+                </div>
+              </Link>
+              </div>
+            </div>
+            </SwiperSlide>
+          )
+          })}
+          </Swiper>
         </div>
       </main>
     </>
