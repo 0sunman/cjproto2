@@ -1,6 +1,5 @@
 import { atom, selector } from "recoil";
 import { userState } from "./user";
-import { IRecipeComment } from "./comment";
 import { productListState } from "./product";
 
 export interface IRecipeState{
@@ -13,7 +12,6 @@ export interface IRecipe{
     description:string;
     imgUrl:string;
     step:IRecipeStep[],
-    comment?:IRecipeComment[],
     productId:number
 }
 
@@ -47,6 +45,7 @@ export const getRecipeWithProductId = selector({
     }
 })
 
+
 export const recipeState = atom<IRecipeState>({
     key:"recipeAtom",
     default:{
@@ -54,7 +53,7 @@ export const recipeState = atom<IRecipeState>({
         {
             id:1,
             productId:1,
-            name:"CJ제일제당_레시피명_1",
+            name:"TRYEAT_레시피명_1",
             description:"",
             imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
             step:[{
@@ -82,19 +81,12 @@ export const recipeState = atom<IRecipeState>({
                 recipeId:1,
                 imgUrl:"https://www.cj.co.kr/images/cjrecipe/0000002318/c4/c4_0000010729.jpg",
                 description:"다진 마늘, 청양고추, 홍고추, 소금을 넣어 한소끔 끓여낸다."
-            },],
-            comment:[{
-                id:1,
-                recipeId:1,
-                imgUrl:["https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299"],
-                userId:"홍길동",
-                description:"겁나 맛있어용 하하하"
-            }]
+            },]
         },
         {
             id:2,
             productId:2,
-            name:"CJ제일제당_레시피명_2",
+            name:"TRYEAT_레시피명_2",
             description:"",
             imgUrl:"https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
             step:[{
@@ -118,7 +110,7 @@ export const recipeState = atom<IRecipeState>({
         {
             id:3,
             productId:3,
-            name:"CJ제일제당_레시피명_3",
+            name:"TRYEAT_레시피명_3",
             description:"",
             imgUrl:"https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",
             step:[{
@@ -141,7 +133,7 @@ export const recipeState = atom<IRecipeState>({
         {
             id:4,
             productId:4,
-            name:"CJ제일제당_레시피명_4",
+            name:"TRYEAT_레시피명_4",
             description:"",
             imgUrl:"https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
             step:[{
@@ -179,9 +171,9 @@ export const recipeState = atom<IRecipeState>({
         {
             id:5,
             productId:5,
-            name:"CJ제일제당_레시피명_5",
-            description:"https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg",
-            imgUrl:"",
+            name:"TRYEAT_레시피명_5",
+            description:"",
+            imgUrl:"https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg",
             step:[{
                 id:1,
                 recipeId:5,

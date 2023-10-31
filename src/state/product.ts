@@ -157,7 +157,7 @@ export const productListState = atom<IProductType[]>({
 
     ],
     recipeId:1,
-    taggingProduct:[1,2,3,4]
+    taggingProduct:[1,2,3,4,5]
 
   },
 
@@ -282,7 +282,8 @@ export const productListState = atom<IProductType[]>({
 
 
   ],
-  recipeId:2
+  recipeId:2,
+  taggingProduct:[1,2,3,4,5]
   },
 
 
@@ -357,7 +358,8 @@ export const productListState = atom<IProductType[]>({
 
   ],
   
-  recipeId:3
+  recipeId:3,
+  taggingProduct:[1,2,3,4,5]
 
   },
 
@@ -445,7 +447,8 @@ export const productListState = atom<IProductType[]>({
 
   ],
   
-  recipeId:4
+  recipeId:4,
+  taggingProduct:[1,2,3,4,5]
 
 
   },
@@ -534,7 +537,8 @@ export const productListState = atom<IProductType[]>({
 
   ],
   
-  recipeId:5
+  recipeId:5,
+  taggingProduct:[1,2,3,4,5]
 
   },
 
@@ -575,7 +579,8 @@ export const productListState = atom<IProductType[]>({
     }
 
   ],
-  recipeId:-1
+  recipeId:-1,
+  taggingProduct:[1,2,3,4,5]
 
   },
 

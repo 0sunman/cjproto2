@@ -33,12 +33,17 @@ export default function BaseLayout({children}:any){
           </div>
           <div className='default_icon'>
             <span className="material-symbols-outlined" onClick={(()=>{ alert("미개발 영역입니다.")})}>
-            menu
+            search
+            </span>
+          </div>
+          <div className='default_icon'>
+            <span className="material-symbols-outlined" onClick={(()=>{ router.push("/recipe")})}>
+            dining
             </span>
           </div>
           <div className='default_icon'>
             <span className="material-symbols-outlined" onClick={(()=>{ alert("미개발 영역입니다.")})}>
-            search
+            menu
             </span>
           </div>
           <div className='default_icon'>
