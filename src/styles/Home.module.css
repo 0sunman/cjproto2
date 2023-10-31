@@ -3,28 +3,29 @@
 }
 .Header{
   width: 100%;
-  height: 39px;
-  line-height: 39px;
+  height: 44px;
+  line-height: 44px;
   background-color: black;
   display: flex;
   color:white;
   position: fixed;
   top:0;
-  max-width: 390px;
+  max-width: 720px;
   z-index: 20;
 }
 .Header + main{
-  padding-top:39px;
+  padding-top:44px;
 }
 .Header div:first-child{margin-left: 10px; margin-right: auto;}
-.Header div:last-child{margin-right: 10px;}
+.Header div.title{margin:0 auto;text-align: center;}
+.Header div:last-child{margin-right: 10px; margin-left: auto;}
 .Wrapper .image img{width:100%;}
 .Footer{
   z-index: 20;
   width: 100%;
-  max-width: 390px;
-  height: 39px;
-  line-height: 39px;
+  max-width: 720px;
+  height: 44px;
+  line-height: 44px;
   background-color: #e8e8e8;
   display: flex;
   position: fixed;
@@ -35,7 +36,7 @@
 .Footer2{
   z-index: 20;
   width: 100%;
-  max-width: 390px;
+  max-width: 720px;
   height: 60px;
   line-height: 60px;
   background-color: white;

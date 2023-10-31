@@ -1,61 +1,31 @@
-
-import { useRecoilState, useSetRecoilState, } from 'recoil'
-import { IIngredient, IProductType, IProducts, productState } from '../../state'
+import { useProducts } from '@/hook/productHook';
 import { useRouter } from 'next/router';
+import { useRecoilValue } from 'recoil';
 import { useEffect } from 'react';
-import { changeIngredientAttributeAtProducts } from '../../hook/controlState'
-
-
-  
-
-  
-
+import { getRecipeWithProductId } from '@/state/recipe';
+import { useRecipe } from '@/hook/recipeHook';
+import { useCurrentUser } from '@/hook/userHook';
+import useUtilHook from '@/hook/utilHook';
 
 export default function Product(){
     const router = useRouter();
-    const id = router.query.id;
-    const ingredient = router.query.ingredient;
-    const currentId = Number(id) - 1;
-    const currentIngredientId = ingredient !== undefined ? Number(ingredient) - 1 : -1;
-    const [products, setProducts] = useRecoilState(productState);
-    const product = products.list.filter((data:any)=>{
+    const id = Number(router.query.id);
+    const {products, setProducts} = useProducts();
+    const {currentUser, setCurrentUser, setProductId, setRecipeId, setIngredientId} = useCurrentUser();
+    const {printPrice}=useUtilHook();
+    //index
+    
+    const currentRecipe = useRecoilValue(getRecipeWithProductId)
+
+        
+    const product = products.filter((data:any)=>{
         return data.id === Number(id)
     })[0];
-    const getIngredient = (index:number) =>{
-        return products.list[currentId].ingredients[index]
-    }
-    const plusIngredient = (index:number) =>{
-        setProducts(changeIngredientAttributeAtProducts(
-            products,
-            currentId,
-            index,
-            "amount",
-            products.list[currentId].ingredients[index].amount + 1
-        ));
-    }
-    const minusIngredient = (index:number) =>{
-        if(products.list[currentId].ingredients[index].amount - 1 < 0) return;
-        setProducts(changeIngredientAttributeAtProducts(
-            products,
-            currentId,
-            index,
-            "amount",
-            products.list[currentId].ingredients[index].amount - 1
-        ));
-    }
-    useEffect(()=>{
-    },[])
-    useEffect(()=>{
-        console.log(products);
-        console.log(test)
-    },[products])
+    
 
-    const test = product?.ingredients?.reduce((a:any,v:any,i:any)=>{
-        if(v.amount > 0){
-            a.push(v)
-        }
-        return a;
-    },[]);
+    useEffect(()=>{
+        setCurrentUser({...currentUser, productId:id})
+    },[])
 
     return(<>
     {product && <div className="Product">
@@ -64,9 +34,7 @@ export default function Product(){
             <p>{product.name}</p>
             <p>
                 <span>{product.saleRate * 100}%</span>
-                <span>{product.price * (1 - product.saleRate) +(currentIngredientId !== -1 ? (getIngredient(currentIngredientId).price * getIngredient(currentIngredientId).amount) : 0)}원</span> 
-                
-
+                <span>{printPrice(product.price * (1 - product.saleRate))}원</span> 
             </p>
             <p className="product-description">
                 {product.description}
@@ -76,7 +44,7 @@ export default function Product(){
             </p>
             <hr></hr>
             <ul className="recipe">
-            {product.recipe && product.recipe.map((recipeData,idx)=>{
+            {currentRecipe && currentRecipe.step.map((recipeData,idx)=>{
                 return (
                     <li>
                         <div>
@@ -91,35 +59,7 @@ export default function Product(){
             </ul>
             {/* <img src="/images/contents.webp" style={{marginTop:'50px'}}/> */}
         </div>
-        <div className={`dimmed ${products.option ? "on" : ""}`}></div>
-        <div className={`Ingredients ${products.option ? "on" : ""}`} >
-                    <div className='header'>
-                    <ul>
-                    <li style={{justifyContent:"end"}}>
-                        <span className="material-symbols-outlined" onClick={()=>{setProducts({...products,option:false})}} style={{paddingRight:"15px"}}>
-                         close
-                        </span>
-                    </li>
-                        </ul>
-                    </div>
-                    <div className='mini-cart-scroll'>
-                        <ul>
-                        {product.ingredients.map((ingredient:IIngredient,index:number) => {
-                            return <li>
-                                <div>
-                                {ingredient.name} 
-                                </div>
-                                <div>
-                                    <button onClick={() => minusIngredient(index)}>-</button>
-                                    <input type="text" value={ingredient.amount}/>
-                                    <button onClick={() => plusIngredient(index)}>+</button>
-                                </div>
-                                </li>
-                        })}
-                        
-                    </ul>
-                </div>
-            </div>
+        
     </div>}
     </>)
 }

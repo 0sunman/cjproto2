@@ -1,14 +1,28 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import {RecoilRoot} from 'recoil'
+import {RecoilRoot, useRecoilTransactionObserver_UNSTABLE} from 'recoil'
 import BaseLayout from "./layout/base"
 import NextLayout from './layout/next'
 import { useRouter } from 'next/router'
+import { userState } from '@/state/user'
+
+function DebugObserver() {
+  useRecoilTransactionObserver_UNSTABLE(({snapshot}) => {
+    console.log(snapshot.getLoadable(userState))
+    // window.myDebugState = {
+    //   a: snapshot.getLoadable(atomA).contents,
+    //   b: snapshot.getLoadable(atomB).contents,
+    // };
+  });
+  return null;
+}
+
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const {pathname} = router;
 return (<RecoilRoot>
+   <DebugObserver />
   {(pathname === "/") ? 
   
   <BaseLayout>

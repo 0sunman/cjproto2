@@ -3,17 +3,31 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useRecoilState } from 'recoil'
-import { IIngredient, IProductType, productState } from '../state'
 import { Swiper, SwiperSlide,  } from 'swiper/react'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useProducts } from '@/hook/productHook'
+import { useCurrentUser } from '@/hook/userHook'
+import { IProductType } from '@/state/product'
+import { useMiniCart } from '@/hook/miniCartHook'
+import useUtilHook from '@/hook/utilHook'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const [products2,setProducts] = useRecoilState(productState);
+
+  const router = useRouter();
+  const {products} = useProducts();
+  const {currentUser, setCurrentUser} = useCurrentUser();
+  const {addProductCartDirect} = useMiniCart();
+  const {printPrice}=useUtilHook();
+  const changeProduct = (productId:number) => {
+    setCurrentUser({...currentUser, productId:productId,})
+    router.push(`/product/${productId}`);
+  }
   
   return (
     <>
@@ -36,32 +50,32 @@ export default function Home() {
         </div>
         <div className='sub_banner'>
           <div className='image'>
-            <Link href={`/product/1`}>  
+            <a onClick={() => changeProduct(1)}>  
               <div style={{background:'url(/images/donkastu2.jpg) 50% 50%', width:"100%", height:"200px"}}>
 
             </div>
-            </Link>
+            </a>
           </div>
           <div className='button'>
-            <Link href={`/product/1`}>  
+            <a onClick={() => addProductCartDirect(1)}>  
             <button className="shopcart">
               <span className="material-symbols-outlined">
                 shopping_cart
               </span><span>담기</span>
             </button>
-            </Link>
+            </a>
           </div>
           <div className='description'>
-            <Link href={`/product/1`}>  
-            <div className='title'>{products2.list[0].name}</div>
+            <a onClick={() => changeProduct(1)}>  
+            <div className='title'>{products[0].name}</div>
             <div className='price'>
-              <div>{products2.list[0].price}원</div>
+              <div>{printPrice(products[0].price)}원</div>
               <div>
-                <span>{products2.list[0].saleRate*100}%</span>&nbsp;
-                <span>{products2.list[0].price * (1 - products2.list[0].saleRate)}원</span>
+                <span>{products[0].saleRate*100}%</span>&nbsp;
+                <span>{printPrice(products[0].price * (1 - products[0].saleRate))}원</span>
               </div>
             </div>
-            </Link>
+            </a>
           </div>
         </div>
         <div className="Slide">
@@ -71,7 +85,7 @@ export default function Home() {
           autoplay={{ delay: 2000 }}
           modules={[Autoplay]}
           >
-          {products2.list?.map((product:IProductType, idx:number)=>{
+          {products.map((product:IProductType, idx:number)=>{
             if(idx === 0){
               return (<></>)
             }else
@@ -79,31 +93,32 @@ export default function Home() {
 
             <SwiperSlide>
             <div className="product">
-            <Link href={`/product/`+(idx+1)}>  
+            <a onClick={() => changeProduct(product.id)}>  
               <div className='image'>
                 <img src={product.imgUrl}/>
               </div>
-            </Link>
+            </a>
               <div className='button'>
-              <Link href={`/product/`+(idx+1)}>  
+              <a onClick={() => addProductCartDirect(product.id)}>  
                   <button>
                     <span className="material-symbols-outlined">
                       shopping_cart
-                    </span><span>담기</span>
+                    </span>
+                    <span>담기</span>
                   </button>
-              </Link>
+              </a>
               </div>
               <div className='description'>
-              <Link href={`/product/`+(idx+1)}>  
+              <a onClick={() => changeProduct(product.id)}>  
               <div className='title'>{product.name}</div>
                 <div className='price'>
-                  <div>{product.price}원</div>
+                  <div>{printPrice(product.price)}원</div>
                   <div>
                     <span>{product.saleRate*100}%</span>&nbsp;
-                    <span>{product.price * (1 - product.saleRate)}원</span>
+                    <span>{printPrice(product.price * (1 - product.saleRate))}원</span>
                   </div>
                 </div>
-              </Link>
+              </a>
               </div>
             </div>
             </SwiperSlide>
@@ -111,6 +126,7 @@ export default function Home() {
           })}
           </Swiper>
         </div>
+        
       </main>
     </>
   )

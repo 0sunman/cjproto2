@@ -1,20 +1,25 @@
-
+import { MiniCart } from '@/component/minicart'
+import Toast from '@/component/toast';
+import { useCart } from '@/hook/cartHook';
+import { useProducts } from '@/hook/productHook'
 import styles from '@/styles/Home.module.css'
-
+import { useRouter } from 'next/router'
 
 export default function BaseLayout({children}:any){
+  const router = useRouter();
+  const {cart} = useCart();
     return(<>
         <div className={`${styles.Header}`}>
             <div>
-                <span>EAZY</span>
+                <span>TRYEAT</span>
             </div>
-            <div className='default_icon'>
-              <span className="material-symbols-outlined" onClick={(()=>{ alert("미개발 영역입니다.")})}>
+            <div className='default_icon cart-icon'>
+              <span className="material-symbols-outlined"  onClick={(()=>{ router.push("/cart")})}>
                 shopping_cart
               </span>
-            </div>
-            <div>
-                
+              <span>
+                {cart.productList?.length}
+              </span>
             </div>
         </div>
 
@@ -42,5 +47,7 @@ export default function BaseLayout({children}:any){
             </span>
           </div>
         </div>
+        <MiniCart></MiniCart>
+        <Toast key={1}></Toast>
     </>)
 }
