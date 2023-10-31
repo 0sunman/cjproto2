@@ -27,7 +27,7 @@ const CommentHeader = styled.div`display:flex; flex-direction:row; justify-conte
 const UserImage = styled.img`margin-left:5px; width:50px; height:50px; border-radius:50%;`;
 const TextArea = styled.div`margin-left:10px;`;
 const UserName = styled.span`font-weight:bold; padding-right:10px;`;
-const CommentText = styled.span``;
+const CommentText = styled.span`line-height:22px;`;
 const CommentContent = styled.div`padding: 10px`;
 const CommentImageArea = styled.div`
 img{width:100%;}
