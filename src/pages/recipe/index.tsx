@@ -33,9 +33,9 @@ const RecipeTagImages = styled.div``
 const RecipeTagImage = styled.img``
 
 const RecipeComment = styled.div``
-const RecipeCommentHeart = styled.div`font-size:18px; font-weight:bold; padding:5px 10px; padding-bottom:10px;`
-const RecipeComments = styled.div`font-size:18px; color:#a8a8a8; padding:0px 10px; padding-bottom:10px;`
-const RecipeDate = styled.div`font-size:13px; color:#a8a8a8; padding:0px 10px; padding-bottom:40px;`
+const RecipeCommentHeart = styled.div`font-size:16px; font-weight:bold; padding:5px 10px; padding-bottom:10px;`
+const RecipeComments = styled.div`font-size:16px; color:#a8a8a8; padding:0px 10px; padding-bottom:10px;`
+const RecipeDate = styled.div`font-size:11px; color:#a8a8a8; padding:0px 10px; padding-bottom:40px;`
 
 const RecipeButtons = styled.div`
     display:flex;
