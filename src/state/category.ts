@@ -15,7 +15,7 @@ export const CATEGORY_NAME:any = {
     "SAUCE":"10040000",
 }
 export const categoryState = atom<ICategory[]>({
-    key:"userListState",
+    key:"categoryState",
     default:[{
         id:"10000000",
         name:"전체",

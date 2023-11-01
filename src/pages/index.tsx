@@ -10,6 +10,7 @@ import { useProducts } from '@/hook/productHook'
 import { useCurrentUser } from '@/hook/userHook'
 import { IProductType } from '@/state/product'
 import { useMiniCart } from '@/hook/miniCartHook'
+import { css } from '@emotion/react'
 import useUtilHook from '@/hook/utilHook'
 import { useEffect } from 'react'
 import { useRecipeLayout } from '@/component/recipe'
@@ -33,8 +34,11 @@ const CategorySection = styled.div`display:flex;width:100%;overflow:hidden;overf
 background-color: #f8f8f8;
 margin: 30px 0px;
 margin-top:0px;
+
 `
-const CategoryElement = styled.div`margin:0px 10px;`
+const CategoryElement = styled.div`margin:0px 10px;
+>div:nth-child(1){width:75px; height:75px; border-radius:100%;background-size:cover}
+`
 const CategoryCircle = styled.div`width:75px; height:75px; border-radius:100%;background-size:cover `
 const CategoryText = styled.div`text-align:center;margin:10px 0px;font-size:12px;`
 const LongButton = styled.div`display:flex; align-items:center;
@@ -127,7 +131,7 @@ export default function Home() {
       return <CategoryElement onClick={()=>{
         router.push(`/category/${categoryElement.engName}`)
       }}>
-              <CategoryCircle style={{backgroundImage:`url(${categoryElement.imgUrl})`}}></CategoryCircle>
+              <div style={{backgroundImage:`url(${categoryElement.imgUrl})`}}></div>
               <CategoryText>{categoryElement.name}</CategoryText>
             </CategoryElement>
     })}

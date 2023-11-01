@@ -16,7 +16,7 @@ export default function Recipe(){
     const getProduct = getProductWithProductId;
     return (<RecipeWrapper>
         <ul>
-            {recipe.recipes.map((innerRecipe:IRecipe)=>(<li>
+            {recipe.recipes.map((innerRecipe:IRecipe, idx:number)=>(<li key={idx}>
                 <Header>
                     <img src={innerRecipe.companyImageURL}/>
                     <span>{innerRecipe.name}</span>
@@ -34,9 +34,9 @@ export default function Recipe(){
                         <span>#태그상품</span>
                     </RecipeTagTitle>
                     <RecipeTagImages>
-                    {getProduct(innerRecipe.productId).taggingProduct?.map((productId:number)=>{
+                    {getProduct(innerRecipe.productId).taggingProduct?.map((productId:number, idx:number)=>{
                         const product = getProduct(productId);
-                        return (<RecipeTagImage src={product.imgUrl} onClick={()=>{
+                        return (<RecipeTagImage key={idx} src={product.imgUrl} onClick={()=>{
                             router.push(`/product/${productId}`);
                         }}/>)
                     })}

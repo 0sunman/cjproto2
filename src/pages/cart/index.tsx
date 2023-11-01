@@ -57,7 +57,7 @@ export default function Cart(){
     return <>
     <div className="cart">
         <ul className="cartList">
-            {cartProductList?.map(product=><li>
+            {cartProductList?.map((product:ICartProductType, idx:number)=><li key={idx}>
                 <div>
                     <div className="text">
                             <input type="checkbox" checked={product.isCheck} onClick={()=>{
@@ -91,7 +91,7 @@ export default function Cart(){
                                             return previousValue;
                                         },0) * (1 - product.saleRate))} 원</span>
                                     </li>
-                                    {product.ingredients?.map((ingredient)=>(<li className="detail">
+                                    {product.ingredients?.map((ingredient:IIngredient, idx:number)=>(<li key={idx} className="detail">
                                         <span>{ingredient.name}</span>
                                         <span className="price">{printPrice(ingredient.price)} 원</span>
                                         <div className="amount">

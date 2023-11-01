@@ -87,7 +87,7 @@ export function MiniCart(){
                 <div className='mini-cart-scroll'>
                     <ul>
                         {currentIngredients?.map((ingredient:IIngredient,index:number) => {
-                            return <li>
+                            return <li key={index}>
                                 <div>
                                 {ingredient.name} 
                                 </div>

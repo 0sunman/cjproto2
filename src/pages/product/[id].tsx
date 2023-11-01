@@ -20,7 +20,7 @@ export default function Product(){
     const currentRecipe = useRecoilValue(getRecipeWithProductId)
 
         
-    const product = products.filter((data:any)=>{
+    const product = products.filter((data:any, idx:number)=>{
         return data.id === Number(id)
     })[0];
     
@@ -52,7 +52,7 @@ export default function Product(){
             <ul className="recipe">
             {currentRecipe && currentRecipe.step.map((recipeData,idx)=>{
                 return (
-                    <li>
+                    <li key={idx}>
                         <div>
                             <img src={recipeData.imgUrl}/>
                             <span>{idx+1}</span>

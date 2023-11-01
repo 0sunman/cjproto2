@@ -67,13 +67,13 @@ export default function Category(){
 
     return (<CategoryWrapper>
         <CategoryTabs>
-            {category.map((category:ICategory)=>{
-                return <CategoryTab className={category.engName === router.query.id ? "active":""} onClick={()=>{ router.push(`/category/${category.engName}`)}}>{category.name}</CategoryTab>
+            {category.map((category:ICategory, idx:number)=>{
+                return <CategoryTab key={idx} className={category.engName === router.query.id ? "active":""} onClick={()=>{ router.push(`/category/${category.engName}`)}}>{category.name}</CategoryTab>
             })}
         </CategoryTabs>
         <CategoryItemList>
-                {products.map((product:IProductType)=>{
-                    return (typeof CategoryId === "string" && (CategoryId === "ALL" || product.category === CATEGORY_NAME[CategoryId]) && <ProductItem>
+                {products.map((product:IProductType, idx:number)=>{
+                    return (typeof CategoryId === "string" && (CategoryId === "ALL" || product.category === CATEGORY_NAME[CategoryId]) && <ProductItem key={idx}>
                         <img src={product.imgUrl} onClick={()=>{changeProduct(product.id)}}/>
                         <button onClick={()=>{addProductCartDirect(product.id)}}><span className="material-symbols-outlined">
                 shopping_cart
