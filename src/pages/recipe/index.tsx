@@ -59,7 +59,9 @@ export default function Recipe(){
                     </span>
                 </Header>
                 <div>
-                    <RecipeMainImage src={innerRecipe.imgUrl}/>
+                    <RecipeMainImage src={innerRecipe.imgUrl} onClick={()=>{
+                            router.push(`/product/${innerRecipe.productId}`);
+                    }}/>
                 </div>
                 <RecipeTag>
                     <RecipeTagTitle>
@@ -68,7 +70,9 @@ export default function Recipe(){
                     <RecipeTagImages>
                     {getProduct(innerRecipe.productId).taggingProduct?.map((productId:number)=>{
                         const product = getProduct(productId);
-                        return (<RecipeTagImage src={product.imgUrl}/>)
+                        return (<RecipeTagImage src={product.imgUrl} onClick={()=>{
+                            router.push(`/product/${productId}`);
+                        }}/>)
                     })}
                     </RecipeTagImages>
                 </RecipeTag>
@@ -76,7 +80,7 @@ export default function Recipe(){
                     <span className="material-symbols-outlined">
                         favorite
                     </span>
-                    <span className="material-symbols-outlined">
+                    <span className="material-symbols-outlined" onClick={()=>{router.push(`/comment/${innerRecipe.productId}`)}}>
                         mode_comment
                     </span>
                     <span className="material-symbols-outlined">
