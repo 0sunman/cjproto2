@@ -23,7 +23,7 @@ const RecipeMainImage = styled.img`
     width:100%;
 `
 const RecipeTag = styled.div`
-    display:flex; justify-content:center; align-items:center; width:100%; padding:10px 0px; margin-bottom:5px;
+    display:flex; justify-content:start; align-items:center; width:100%; padding:10px 0px; margin-bottom:5px;
     > div:nth-child(1) { width: 20%; padding-left:10px; text-align:center;}
     > div:nth-child(2) { width: 80%; text-align:right; padding-right:10px}
     > div:nth-child(2) > img { width:45px; height:45px; margin-right:5px;}
@@ -52,7 +52,7 @@ export default function Recipe(){
         <ul>
             {recipe.recipes.map((innerRecipe:IRecipe)=>(<li>
                 <Header>
-                    <img src={innerRecipe.imgUrl}/>
+                    <img src={innerRecipe.companyImageURL}/>
                     <span>{innerRecipe.name}</span>
                     <span className="material-symbols-outlined">
                         more_horiz
