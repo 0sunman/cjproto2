@@ -23,7 +23,7 @@ const CommentColumnSlider = styled.div`
 width:100%;
 overflow:hidden;
 `;
-const CommentHeader = styled.div`display:flex; flex-direction:row; justify-content:left; align-items:center;margin:10px 0px;`;
+const CommentHeader = styled.div`display:flex; flex-direction:row; justify-content:center; align-items:center;margin:0px 0px;`;
 const UserImage = styled.img`margin-left:5px; width:50px; height:50px; border-radius:50%;`;
 const TextArea = styled.div`margin-left:10px;`;
 const UserName = styled.span`font-weight:bold; padding-right:10px;`;

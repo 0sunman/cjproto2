@@ -13,9 +13,6 @@
   max-width: 720px;
   z-index: 20;
 }
-.Header + main{
-  padding-top:44px;
-}
 .Header div:first-child{margin-left: 10px; margin-right: auto;}
 .Header div.title{margin:0 auto;text-align: center;}
 .Header div:last-child{margin-right: 10px; margin-left: auto;}

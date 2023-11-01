@@ -12,7 +12,7 @@ export const getMiniCartButtonShow = selector({
     get:({get})=>{
         const {isButtonShow}  = get(minicartState);
         const {url} = get(userState);
-        if(url.indexOf("/product") > -1 || isButtonShow === true){
+        if(/* url.indexOf("/product") > -1 ||*/ isButtonShow === true){
             return true;
         }else{
             return false;

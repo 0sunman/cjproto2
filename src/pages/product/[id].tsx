@@ -6,12 +6,14 @@ import { getRecipeWithProductId } from '@/state/recipe';
 import { useRecipe } from '@/hook/recipeHook';
 import { useCurrentUser } from '@/hook/userHook';
 import useUtilHook from '@/hook/utilHook';
+import { useMiniCart } from "@/hook/miniCartHook"
 
 export default function Product(){
     const router = useRouter();
     const id = Number(router.query.id);
     const {products, setProducts} = useProducts();
     const {currentUser, setCurrentUser, setProductId, setRecipeId, setIngredientId} = useCurrentUser();
+    const {miniCart, setMiniCart} = useMiniCart();
     const {printPrice}=useUtilHook();
     //index
     
@@ -24,7 +26,11 @@ export default function Product(){
     
 
     useEffect(()=>{
-        setCurrentUser({...currentUser, productId:id})
+        setCurrentUser({...currentUser, productId:id});
+        setMiniCart({...miniCart, isButtonShow:true})
+        return () => {
+            setMiniCart({...miniCart, isButtonShow:false})
+        }
     },[])
 
     return(<>

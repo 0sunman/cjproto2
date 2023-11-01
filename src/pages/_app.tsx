@@ -5,10 +5,12 @@ import BaseLayout from "./layout/base"
 import NextLayout from './layout/next'
 import { useRouter } from 'next/router'
 import { userState } from '@/state/user'
+import { minicartState } from '@/state/minicart'
 
 function DebugObserver() {
   useRecoilTransactionObserver_UNSTABLE(({snapshot}) => {
     console.log(snapshot.getLoadable(userState))
+    console.log(snapshot.getLoadable(minicartState))
     // window.myDebugState = {
     //   a: snapshot.getLoadable(atomA).contents,
     //   b: snapshot.getLoadable(atomB).contents,

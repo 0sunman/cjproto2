@@ -50,5 +50,5 @@ export const useCart = () => {
             })
         }
     }
-    return {cart,useCart,addProductToCart,removeProduct,modifyProduct, replaceProduct}
+    return {cart,setCart,addProductToCart,removeProduct,modifyProduct, replaceProduct}
 }

@@ -1,6 +1,6 @@
 import { atom, selector } from "recoil";
 import { userState } from "./user";
-import { CAREGORY_NAME } from "./category";
+import { CATEGORY_NAME } from "./category";
 
 export interface IIngredient{
     id:number,
@@ -84,7 +84,7 @@ export const productListState = atom<IProductType[]>({
   default:[{
       
     id:1,
-    category:CAREGORY_NAME["RECIPE"],
+    category:CATEGORY_NAME["RECIPE"],
     name:"비비고 육개장 야채 세트",
 
     imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -168,7 +168,7 @@ export const productListState = atom<IProductType[]>({
   {
     id:2,
     name:"비비고 얼큰 육개장 버섯 전골 세트",
-    category:CAREGORY_NAME["RECIPE"],
+    category:CATEGORY_NAME["RECIPE"],
     imgUrl:"https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
     price:9200,
     saleRate:0.1,        
@@ -297,7 +297,7 @@ export const productListState = atom<IProductType[]>({
 
     id:3,
     name:"육개장 순두부 찌개 세트",
-    category:CAREGORY_NAME["RECIPE"],
+    category:CATEGORY_NAME["RECIPE"],
     imgUrl:"https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",
     price:7700,
     saleRate:0.1,
@@ -378,7 +378,7 @@ export const productListState = atom<IProductType[]>({
     id:4,
 
     name:"육개장 칼국수&부추 겉절이 세트",
-    category:CAREGORY_NAME["RECIPE"],
+    category:CATEGORY_NAME["RECIPE"],
 
     imgUrl:"https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
 
@@ -469,7 +469,7 @@ export const productListState = atom<IProductType[]>({
     id:5,
 
     name:"된장 누룽지죽 세트",
-    category:CAREGORY_NAME["RECIPE"],
+    category:CATEGORY_NAME["RECIPE"],
 
     imgUrl:"https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg",
 
@@ -553,7 +553,7 @@ export const productListState = atom<IProductType[]>({
   {
     id:6,
     name:"못생긴 느타리버섯 30g",
-    category:CAREGORY_NAME["VEGETABLE"],
+    category:CATEGORY_NAME["VEGETABLE"],
     imgUrl:"https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
     price:9200,
     saleRate:0.1,        

@@ -1,14 +1,18 @@
 import { useCart } from "@/hook/cartHook";
+import { useMiniCart } from "@/hook/miniCartHook";
 import { useRecipe } from "@/hook/recipeHook";
 import useUtilHook from "@/hook/utilHook";
 import { ICartProductType } from "@/state/cart";
 import { IIngredient, IProductType } from "@/state/product";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Cart(){
+    const router = useRouter();
     const {cart, removeProduct} = useCart();
     const [cartProductList, setCartProductList] = useState(cart.productList);
     const {printPrice}=useUtilHook();
+    const {miniCart, setMiniCart, addProductCartDirect} = useMiniCart();
     const setIngredientAmount = (product:IProductType, ingredient:IIngredient, delta:number) => {
         if(cartProductList){
             setCartProductList(cartProductList.map(innerProduct=>{

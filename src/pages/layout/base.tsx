@@ -42,7 +42,7 @@ export default function BaseLayout({children}:any){
             </span>
           </div>
           <div className='default_icon'>
-            <span className="material-symbols-outlined" onClick={(()=>{ alert("미개발 영역입니다.")})}>
+            <span className="material-symbols-outlined" onClick={(()=>{ router.push("/category/ALL")})}>
             menu
             </span>
           </div>

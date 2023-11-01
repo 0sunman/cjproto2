@@ -3,8 +3,7 @@ import { useRouter } from "next/router";
 import styled from '@emotion/styled'
 
 
-const CategoryWrapper = styled.div`margin-top:44px;display:flex; flex-direction:column; width:100%;
-`;
+const CategoryWrapper = styled.div`margin-top:44px;display:flex; flex-direction:column; width:100%;`;
 export default function CategoryList(){
     const router = useRouter()
     const {getProductWithProductId} = useProducts();

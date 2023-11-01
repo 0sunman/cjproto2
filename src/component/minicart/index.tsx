@@ -28,11 +28,9 @@ export function MiniCart(){
 
     useEffect(()=>{
         setCurrentUrl();
-        setMiniCart({...miniCart})
-        return () => {
-            setMiniCart({...miniCart, isMenuShow:false, isButtonShow:false});
-        }
+        // setMiniCart({...miniCart})
     },[])
+
 
     const [currentIngredients, setCurrentIngredients] = useState(currentProduct?.ingredients);
     const [sum, setSum] = useState(0);
@@ -108,7 +106,11 @@ export function MiniCart(){
             <div className={` ${styles.Footer2} buy`} style={{display: isShowButton ? "flex" : "none"}}>
                 <button onClick={()=>{setMiniCartMenu(true)}} style={{display:`${isShowMiniCart ? "none" : "block"}`}}>구매하기</button>
                 <button onClick={()=>{
-                            setMiniCart({...miniCart, isMenuShow:false, isButtonShow:false});
+                            if(router.route.indexOf("/product")>-1){
+                                setMiniCart({...miniCart, isMenuShow:false, isButtonShow:true});
+                            }else{
+                                setMiniCart({...miniCart, isMenuShow:false, isButtonShow:false});
+                            }
                             if(currentProduct){
                                 addProductToCart({...currentProduct, ingredients:currentIngredients})
                                 openToast("장바구니에 담겼습니다!");

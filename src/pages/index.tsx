@@ -3,10 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useRecoilState } from 'recoil'
-import { Swiper, SwiperSlide,  } from 'swiper/react'
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/autoplay';
+import { Autoplay, Pagination } from 'swiper/modules';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useProducts } from '@/hook/productHook'
@@ -14,21 +11,57 @@ import { useCurrentUser } from '@/hook/userHook'
 import { IProductType } from '@/state/product'
 import { useMiniCart } from '@/hook/miniCartHook'
 import useUtilHook from '@/hook/utilHook'
+import { useEffect } from 'react'
+import { useRecipeLayout } from '@/component/recipe'
+import { useRecipe } from '@/hook/recipeHook'
+import { IRecipe } from '@/state/recipe'
+import styled from '@emotion/styled'
+
+import { Swiper, SwiperSlide,  } from 'swiper/react'
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Navigation } from "swiper/modules"
+import { useCategory } from '@/hook/categoryHook'
+import { CATEGORY_NAME, ICategory } from '@/state/category'
 
 const inter = Inter({ subsets: ['latin'] })
-
+const MainRecipe = styled.div`height:500px;overflow:hidden;width:100%;background-position-x:50%;background-position-y:50%;background-size:cover`
+const TextHero = styled.h2`font-size:32px; font-weight:bold; padding-bottom:10px; padding-left:10px;`
+const CategorySection = styled.div`display:flex;width:100%;overflow:hidden;overflow-x:scroll;padding:20px 0px;
+background-color: #f8f8f8;
+margin: 30px 0px;
+margin-top:0px;
+`
+const CategoryElement = styled.div`margin:0px 10px;`
+const CategoryCircle = styled.div`width:75px; height:75px; border-radius:100%;background-size:cover `
+const CategoryText = styled.div`text-align:center;margin:10px 0px;font-size:12px;`
+const LongButton = styled.div`display:flex; align-items:center;
+width:100%;height:55px; background-color:#f8f8f8; border-top:1px solid #efefef;border-bottom:1px solid #efefef;
+>span:nth-child(1){margin-right:auto;padding-left:20px;font-size:14px}
+>span:nth-child(2){margin-left:auto;padding-right:10px;}
+`
 export default function Home() {
 
+  const {RecipeWrapper, Header,RecipeMainImage, RecipeTag,RecipeTagTitle,RecipeTagImages,RecipeTagImage, RecipeComment,RecipeCommentHeart,RecipeComments,RecipeDate,RecipeButtons} = useRecipeLayout();
   const router = useRouter();
   const {products} = useProducts();
+  const {category,setCategory} = useCategory();
   const {currentUser, setCurrentUser} = useCurrentUser();
-  const {addProductCartDirect} = useMiniCart();
+  const {miniCart, setMiniCart, addProductCartDirect} = useMiniCart();
   const {printPrice}=useUtilHook();
   const changeProduct = (productId:number) => {
     setCurrentUser({...currentUser, productId:productId,})
     router.push(`/product/${productId}`);
   }
+  useEffect(()=>{
+    setMiniCart({...miniCart, isButtonShow:false})
+  },[]);
   
+  const {recipe} = useRecipe();
+  const {getProductWithProductId} = useProducts();
+  const getProduct = getProductWithProductId;
   return (
     <>
       <Head>
@@ -38,46 +71,69 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.Wrapper}`}>
-        <div>
-          <div className='big_banner'>
-            <div><span className="highlight1">72H</span> TIME<br/>SALE</div>
-            <div>
-              여유 있게 쇼핑하기 좋은 주말에는 <br/>
-              특가 상품들을 확인해보세요. <br/>
-              <span className='highlight2'>최대 90% 할인</span><br/>
-            </div>
-          </div>
-        </div>
-        <div className='sub_banner'>
-          <div className='image'>
-            <a onClick={() => changeProduct(1)}>  
-              <div style={{background:'url(/images/donkastu2.jpg) 50% 50%', width:"100%", height:"200px"}}>
+      <RecipeWrapper style={{marginBottom:"0px"}}>
+                    <Swiper
+                      spaceBetween={0}
+                      slidesPerView={1}
+                      autoplay={{ delay: 3000 }}
+                      navigation={true}
+                      pagination={{
+                        type: 'progressbar',
+                      }}
+                      modules={[Pagination,Navigation]}
+                      >
+            {recipe.recipes.map((innerRecipe:IRecipe)=>
+            (
+                        <SwiperSlide style={{background:"white"}}>
+                          <Header style={{paddingTop:"5px", position:"absolute", top:"10px",color:"white"}}>
+                              <img src={innerRecipe.companyImageURL}  style={{width:"40px", height:"40px"}}/>
+                              <span>{innerRecipe.name}</span>
+                              <span>
+                                  
+                              </span>
+                          </Header>
+                          <MainRecipe>
+                              <MainRecipe style={{backgroundImage:`url(${innerRecipe.imgUrl})`}} onClick={()=>{
+                                      router.push(`/product/${innerRecipe.productId}`);
+                              }}/>
+                          </MainRecipe>
+                          <RecipeTag style={{marginBottom:"0px"}}>
+                              <RecipeTagTitle>
+                                  <span>#태그상품</span>
+                              </RecipeTagTitle>
+                              <RecipeTagImages>
+                              {getProduct(innerRecipe.productId).taggingProduct?.map((productId:number)=>{
+                                  const product = getProduct(productId);
+                                  return (<RecipeTagImage src={product.imgUrl} onClick={()=>{
+                                      router.push(`/product/${productId}`);
+                                  }}/>)
+                              })}
+                              </RecipeTagImages>
+                          </RecipeTag>
+                          <LongButton onClick={()=>{ addProductCartDirect(innerRecipe.productId)}}>
+                            <span>장바구니 바로담기</span>
+                            <span className="material-symbols-outlined">
+                              chevron_right
+                            </span>
+                          </LongButton>
+                        </SwiperSlide>
+            
+                ))}
+                </Swiper>
+    </RecipeWrapper>
+        <TextHero style={{marginTop:"40px",marginBottom:"10px"}}>카테고리</TextHero>
+  <CategorySection>
+    {category.map((categoryElement:ICategory)=>{
+      return <CategoryElement onClick={()=>{
+        router.push(`/category/${categoryElement.engName}`)
+      }}>
+              <CategoryCircle style={{backgroundImage:`url(${categoryElement.imgUrl})`}}></CategoryCircle>
+              <CategoryText>{categoryElement.name}</CategoryText>
+            </CategoryElement>
+    })}
 
-            </div>
-            </a>
-          </div>
-          <div className='button'>
-            <a onClick={() => addProductCartDirect(1)}>  
-            <button className="shopcart">
-              <span className="material-symbols-outlined">
-                shopping_cart
-              </span><span>담기</span>
-            </button>
-            </a>
-          </div>
-          <div className='description'>
-            <a onClick={() => changeProduct(1)}>  
-            <div className='title'>{products[0].name}</div>
-            <div className='price'>
-              <div>{printPrice(products[0].price)}원</div>
-              <div>
-                <span>{products[0].saleRate*100}%</span>&nbsp;
-                <span>{printPrice(products[0].price * (1 - products[0].saleRate))}원</span>
-              </div>
-            </div>
-            </a>
-          </div>
-        </div>
+  </CategorySection>
+        <TextHero>오늘의 특가</TextHero>
         <div className="Slide">
           <Swiper
           spaceBetween={0}
