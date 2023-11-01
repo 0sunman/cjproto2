@@ -8,8 +8,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta name="viewport" content="width=device-width"></meta>
-        <meta name="viewport" content="initial-scale=1"></meta>
-        <meta name="viewport" content="maximum-scale=1"></meta>
       </Head>
       <body>
         <Main />
