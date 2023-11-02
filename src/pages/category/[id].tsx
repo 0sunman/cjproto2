@@ -17,22 +17,10 @@ const CategoryTabs = styled.div` background-color:#f8f8f8; overflow-x: scroll;
 overflow-y: hidden;
 white-space: nowrap;`;
 const CategoryTab = styled.div`display:inline-flex;width:22%;justify-content:center;align-items:center;height:44px; font-size:12px;
-&.active{ font-weight:bold; font-size:14px;}
-&.active:nth-child(1){color:rgb(0, 149, 246);}
-&.active:nth-child(2){color:rgb(246, 149, 0);}
-&.active:nth-child(3){color:rgb(149, 0, 246);}
-&.active:nth-child(4){color:rgb(0, 200, 149);}
-&.active:nth-child(5){color:rgb(246, 0, 149);}
-&.active:nth-child(6){color:rgb(246, 149, 246);}
-&.active:nth-child(7){color:rgb(0, 149, 246);}
-&.active:nth-child(8){color:rgb(246, 149, 0);}
-&.active:nth-child(9){color:rgb(149, 0, 246);}
-&.active:nth-child(10){color:rgb(0, 200, 149);}
-&.active:nth-child(11){color:rgb(246, 0, 149);}
-&.active:nth-child(12){color:rgb(246, 149, 246);}
+&.active{ font-weight:bold; font-size:14px; color:var(--TRYEAT-Orange)}
 `;
 const CategoryItemList = styled.div`display:flex;flex-direction:row;flex-wrap:wrap;overflow:hidden;`
-const ProductItem = styled.div`display:inline-flex;width:33.33%;justify-content:center; align-items:center;flex-direction:column;
+const ProductItem = styled.div`display:inline-flex;width:50%;justify-content:center; align-items:center;flex-direction:column;
  margin-bottom:20px;
 
  > img{width:calc(100% - 2px); height:calc(100% - 2px)}

@@ -9,6 +9,7 @@ import Toast from '@/component/toast';
 import { useCart } from '@/hook/cartHook';
 import { useCurrentUser } from '@/hook/userHook';
 import { useProducts } from '@/hook/productHook';
+import Footer from '@/component/Footer';
 
 export default function NextLayout({children}:any){
     const router = useRouter();
@@ -27,7 +28,7 @@ export default function NextLayout({children}:any){
     return (<>
         <div className={`${styles.Header}`}>
           
-          <div className='default_icon'>
+          <div className='default_icon back_icon'>
             <span className="material-symbols-outlined" onClick={()=>{
                   router.back();
                 }}>
@@ -40,7 +41,8 @@ export default function NextLayout({children}:any){
               router.route.indexOf("/recipe") > -1 ? "레시피" :
               router.route.indexOf("/product") > -1 ? currentProduct.filter((ele:IProductType)=>ele.id === currentUser.productId ? true : false)[0].name:
               router.route.indexOf("/category") > -1 ? "카테고리" :
-              router.route.indexOf("/comment") > -1 ? "리뷰보기" : ""
+              router.route.indexOf("/comment") > -1 ? "리뷰보기" :
+              router.route.indexOf("/search") > -1 ? "검색" : ""
             }
             
           </div>
@@ -55,7 +57,7 @@ export default function NextLayout({children}:any){
         </div>
 
         {children}
-
+        {!(router.route.indexOf("product") > -1 || router.route.indexOf("cart") > -1 ) && <Footer/>}
         <MiniCart></MiniCart>
         <Toast key={1}></Toast>
 

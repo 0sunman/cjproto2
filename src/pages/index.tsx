@@ -45,6 +45,7 @@ const LongButton = styled.div`display:flex; align-items:center;
 width:100%;height:55px; background-color:#f8f8f8; border-top:1px solid #efefef;border-bottom:1px solid #efefef;
 >span:nth-child(1){margin-right:auto;padding-left:20px;font-size:14px}
 >span:nth-child(2){margin-left:auto;padding-right:10px;}
+&:active{color:white;background:var(--TRYEAT-Orange)}
 `
 export default function Home() {
 
@@ -101,6 +102,12 @@ export default function Home() {
                                       router.push(`/product/${innerRecipe.productId}`);
                               }}/>
                           </MainRecipe>
+                          <LongButton onClick={()=>{ addProductCartDirect(innerRecipe.productId)}}>
+                            <span>장바구니 바로담기</span>
+                            <span className="material-symbols-outlined">
+                              chevron_right
+                            </span>
+                          </LongButton>
                           <RecipeTag style={{marginBottom:"0px"}}>
                               <RecipeTagTitle>
                                   <span>#태그상품</span>
@@ -114,12 +121,6 @@ export default function Home() {
                               })}
                               </RecipeTagImages>
                           </RecipeTag>
-                          <LongButton onClick={()=>{ addProductCartDirect(innerRecipe.productId)}}>
-                            <span>장바구니 바로담기</span>
-                            <span className="material-symbols-outlined">
-                              chevron_right
-                            </span>
-                          </LongButton>
                         </SwiperSlide>
             
                 ))}

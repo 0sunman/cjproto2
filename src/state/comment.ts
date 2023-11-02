@@ -19,11 +19,11 @@ export const commentState = atom<IComment[]>({
     texts:"맛있는 육개장을 먹는 순간 행복을 느껴요.",
     createAt:"2021-04-19 00:00:00",
     imgUrl:[
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
+        "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
         "https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg",
-      "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
+        "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
+        "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg",
+        "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
   ],
     recipeId:1
   },{
