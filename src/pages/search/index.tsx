@@ -35,7 +35,7 @@ export default function Search(){
     const [query, setQuery]= useState("");
     const [isCover,setCover] = useState(false)
     const [keyword,setKeyword] = useState("")
-    const {products} = useProducts();
+    const {products,changeProduct} = useProducts();
     const inputBox = useRef<HTMLInputElement>(null);
     
     useEffect(()=>{
@@ -74,7 +74,7 @@ export default function Search(){
             <SearchResult1>
                 {products.map((product:IProductType)=>{
                     if(keyword === ""){
-                        return (<ResultElement style={{backgroundImage:`url(${product.imgUrl})`}}></ResultElement>)
+                        return (<ResultElement style={{backgroundImage:`url(${product.imgUrl})`}} onClick={()=>{ changeProduct(product.id) }}></ResultElement>)
                     }
                     if(typeof keyword === "string" && product.name.indexOf(keyword) > -1){
                         return (<ResultElement style={{backgroundImage:`url(${product.imgUrl})`}}></ResultElement>)
