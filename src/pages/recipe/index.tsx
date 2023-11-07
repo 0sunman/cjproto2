@@ -9,14 +9,16 @@ import { useRouter } from "next/router";
 
 
 export default function Recipe(){
-    const {RecipeWrapper, Header,RecipeMainImage, RecipeTag,RecipeTagTitle,RecipeTagImages,RecipeTagImage, RecipeComment,RecipeCommentHeart,RecipeComments,RecipeDate,RecipeButtons} = useRecipeLayout();
+    const {RecipeWrapper, Header,RecipeMainImage,RecipeTagVideo, RecipeTag,RecipeTagTitle,RecipeTagImages,RecipeTagImage, RecipeComment,RecipeCommentHeart,RecipeComments,RecipeDate,RecipeButtons} = useRecipeLayout();
     const router = useRouter()
     const {recipe} = useRecipe();
     const {getProductWithProductId} = useProducts();
     const getProduct = getProductWithProductId;
     return (<RecipeWrapper>
         <ul>
-            {recipe.recipes.map((innerRecipe:IRecipe, idx:number)=>(<li key={idx}>
+            {recipe.recipes.map((innerRecipe:IRecipe, idx:number)=>{
+                
+                return (<li key={idx}>
                 <Header>
                     <img src={innerRecipe.companyImageURL}/>
                     <span>{innerRecipe.name}</span>
@@ -24,10 +26,23 @@ export default function Recipe(){
                         more_horiz
                     </span>
                 </Header>
-                <div>
+                <div style={{overflow:"hidden", maxHeight:"500px", display:"flex", alignItems:"center", justifyContent:"center"}}>
+                    {getProduct(innerRecipe.productId) !== undefined && 
+                    getProduct(innerRecipe.productId).videos !== undefined && 
+                    getProduct(innerRecipe.productId).videos?.length !== undefined && 
+                    getProduct(innerRecipe.productId).videos!.length > 0 && 
+                    <video style={{width:"100%"}} src={"/mov/"+getProduct(innerRecipe.productId)!.videos![
+                        Math.floor(getProduct(innerRecipe.productId)!.videos!.length * Math.random())
+                    ]} muted autoPlay playsInline loop/>}
+
+                    {
+                    getProduct(innerRecipe.productId) !== undefined && 
+                    getProduct(innerRecipe.productId).videos === undefined &&                     
                     <RecipeMainImage src={innerRecipe.imgUrl} onClick={()=>{
-                            router.push(`/product/${innerRecipe.productId}`);
+                        router.push(`/product/${innerRecipe.productId}`);
                     }}/>
+                    }
+
                 </div>
                 <RecipeTag>
                     <RecipeTagTitle>
@@ -65,7 +80,7 @@ export default function Recipe(){
                     </RecipeDate>
                 </RecipeComment>
 
-            </li>))}
+            </li>)})}
         </ul>
     </RecipeWrapper>)
 }

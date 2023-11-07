@@ -108,6 +108,7 @@ export default function Product(){
             </p>
             <p className="product-description">
                 {product.description}
+                
             </p>
             <p className="recipe-title">
                 영양성분
@@ -116,6 +117,16 @@ export default function Product(){
             <div style={{background:"#e8e8e8",width:"95%",margin:"0 auto",borderRadius:"10px"}}>
             <Radar data={chartData} options={chartOptions} />
             </div>
+            {product.descriptionImage && (<>
+            <p className="recipe-title">
+                상세설명
+            </p>
+            <hr></hr>
+            <p className="product-description">
+                <img src={product.descriptionImage} style={{"width":"100%"}}/>
+                
+            </p>
+            </>)}
             <p className="recipe-title">
                 레시피
             </p>

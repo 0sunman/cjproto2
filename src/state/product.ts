@@ -21,6 +21,8 @@ export interface IProductType{
     ingredients?:IIngredient[];
     recipeId?:number;
     taggingProduct?:number[];
+    videos?:string[];
+    descriptionImage?:string;
 }
 
 export interface IProducts{
@@ -85,105 +87,95 @@ export const productListState = atom<IProductType[]>({
       
     id:1,
     category:CATEGORY_NAME["RECIPE"],
-    name:"비비고 육개장 야채 세트",
+    name:"일상 점심 세트",
 
-    imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
+    imgUrl:"/img_1107/d_com_3.jpg",
 
-    price:6500,
+    price:8000,
 
-    saleRate:0.1,
+    saleRate:0.4,
 
-    description:"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
-
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+    descriptionImage:"/img_1107/detail/HMR_detail_sixdog.webp",
     ingredients:[{
 
       id:1,
 
-      name:"파 10g",
+      name:"대파 10g",
 
       amount:1,
 
       price:300,
 
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
+      imgUrl:"/img_1107/d_buchu_1.jpg",
 
     },{
 
       id:2,
 
-      name:"양파 20g",
+      name:"느타리버섯 50g",
 
       amount:1,
 
-      price:300,
+      price:1000,
 
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
+      imgUrl:"/img_1107/d_mushroom_1.jpg",
 
     },{
 
       id:3, 
 
-      name:"못생긴 느타리버섯 15g",
-
-      amount:1,
-
-      price:300,
-
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-
-    },{
-
-      id:4,
-
       name:"청양고추 5g",
 
       amount:1,
 
-      price:100,
+      price:200,
 
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
+      imgUrl:"/img_1107/d_onion_1.jpg",
 
     },{
 
       id:5,
 
-      name:"비비고 육개장 1EA",
+      name:"비비고 고기듬뿍 육개장 1EA",
 
       amount:1,
 
-      price:5500,
+      price:6500,
 
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
+      imgUrl:"/img_1107/d_onion_1.jpg",
 
     },
 
     ],
     recipeId:1,
-    taggingProduct:[1,2,3,4,5]
+    taggingProduct:[30003,30004,30005],
+    videos:["d_all_1.mp4","d_six_1.mp4","d_six_2.mp4","d_six_3.mp4","d_six_4.mp4","d_six_5.mp4","d_six_6.mp4","d_six_7.mp4"]
 
   },
 
 
-
   {
     id:2,
-    name:"비비고 얼큰 육개장 버섯 전골 세트",
+    name:"비비고 새우왕교자 계란찜",
     category:CATEGORY_NAME["RECIPE"],
-    imgUrl:"https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-    price:9200,
-    saleRate:0.1,        
-    description:"다양한 버섯과 두부에 육개장 한 팩을 넣어 맛과 향, 영양까지 풍부한 얼큰 육개장 버섯 전골. 건더기를 먹은 후 국물에 국수사리까지 넣어 먹으면 식사의 완성! 오랜만에 집에서 술 한잔을 기울이기 좋은 메뉴다.",        
+    imgUrl:"/img_1107/d_com_4.jpg",
+    price:2500,
+    saleRate:0.4,        
+    description:"비비고 새우왕교자를 영양부추와 팽이버섯와 동일한 크기로 썰어서 계란물에 넣어 스팀해서 완성하는 추억의 계란찜.",       
+    descriptionImage:"/img_1107/detail/HMR_detail_sp.webp", 
     ingredients:[{
 
       id:1,
 
-      name:"느타리버섯 30g",
+      name:"영양부추 30g",
 
       amount:1,
 
       price:500,
 
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
+      imgUrl:"/img_1107/d_buchu_1.jpg",
 
     },{
 
@@ -195,98 +187,42 @@ export const productListState = atom<IProductType[]>({
 
       price:500,
 
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
+
+      imgUrl:"/img_1107/d_pang_1.jpg",
 
     },{
 
       id:3,
 
-      name:"새송이버섯 30g",
+      name:"계란 150g",
 
       amount:1,
 
       price:500,
 
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
+
+      imgUrl:"/img_1107/d_onion_1.jpg",
 
     },{
 
       id:4,
 
-      name:"표고버섯 50g",
+      name:"비비고 새우 왕교자 150g",
 
       amount:1,
 
-      price:500,
+      price:1000,
 
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
-    },{
+      imgUrl:"/img_1107/d_onion_1.jpg",
 
-      id:5,
-
-      name:"양파 20g",
-
-      amount:1,
-
-      price:300,
-
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-
-    },{
-
-      id:6,
-
-      name:"대파 10g",
-
-      amount:1,
-
-      price:300,
-
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-
-    },{
-
-      id:7,
-
-      name:"두부 150g",
-
-      amount:1,
-
-      price:800,
-
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-
-    },{
-
-      id:8,
-
-      name:"쑥갓 10g",
-
-      amount:1,
-
-      price:300,
-
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-
-    },{
-
-      id:9,
-
-      name:"비비고 육개장 1EA",
-
-      amount:1,
-
-      price:5500,
-
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-
-    },
+    }
 
 
   ],
   recipeId:2,
-  taggingProduct:[1,2,3,4,5]
+  taggingProduct:[30001,30002],
+  videos:["d_egg_1.mp4","d_egg_2.mp4","d_egg_3.mp4"]
   },
 
 
@@ -363,7 +299,7 @@ export const productListState = atom<IProductType[]>({
   ],
   
   recipeId:3,
-  taggingProduct:[1,2,3,4,5]
+  taggingProduct:[30001,30003,30005]
 
   },
 
@@ -453,7 +389,7 @@ export const productListState = atom<IProductType[]>({
   ],
   
   recipeId:4,
-  taggingProduct:[1,2,3,4,5]
+  taggingProduct:[30002,30004,30006,30007]
 
 
   },
@@ -544,7 +480,7 @@ export const productListState = atom<IProductType[]>({
   ],
   
   recipeId:5,
-  taggingProduct:[1,2,3,4,5]
+  taggingProduct:[30001,30002,30003]
 
   },
 
@@ -587,9 +523,324 @@ export const productListState = atom<IProductType[]>({
 
   ],
   recipeId:-1,
-  taggingProduct:[1,2,3,4,5]
+  taggingProduct:[]
 
   },
+
+  {
+      
+    id:30001,
+    category:CATEGORY_NAME["VEGETABLE"],
+    name:"팽이버섯",
+
+    imgUrl:"/img_1107/d_pang_1.jpg",
+
+    price:1000,
+
+    saleRate:0.4,
+
+    description:"",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+
+    ingredients:[{
+
+      id:1,
+
+      name:"팽이버섯 추가",
+
+      amount:1,
+
+      price:1000,
+
+      imgUrl:"/img_1107/d_pang_1.jpg",
+
+    }
+
+    ],
+    recipeId:-1,
+    taggingProduct:[]
+  },
+
+  {
+      
+    id:30002,
+    category:CATEGORY_NAME["VEGETABLE"],
+    name:"영양부추",
+
+    imgUrl:"/img_1107/d_buchu_1.jpg",
+    descriptionImage:"/img_1107/detail/vegetable_d_buchu.jpg",
+
+    price:1000,
+
+    saleRate:0.4,
+
+    description:"",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+
+    ingredients:[{
+
+      id:1,
+
+      name:"영양부추 추가",
+
+      amount:1,
+
+      price:1000,
+
+      imgUrl:"/img_1107/d_buchu_1.jpg",
+
+    }
+
+    ],
+    recipeId:-1,
+    taggingProduct:[]
+  },
+
+  {
+      
+    id:30003,
+    category:CATEGORY_NAME["VEGETABLE"],
+    name:"느타리버섯",
+
+    imgUrl:"/img_1107/d_mushroom_1.jpg",
+
+    descriptionImage:"/img_1107/detail/vegetable_d_mushroom.jpg",
+    price:1000,
+
+    saleRate:0.4,
+
+    description:"",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+
+    ingredients:[{
+
+      id:1,
+
+      name:"느타리버섯 추가",
+
+      amount:1,
+
+      price:1000,
+
+      imgUrl:"/img_1107/d_mushroom_1.jpg",
+
+    }
+
+    ],
+    recipeId:-1,
+    taggingProduct:[]
+  },
+
+  {
+      
+    id:30004,
+    category:CATEGORY_NAME["VEGETABLE"],
+    name:"대파",
+
+    imgUrl:"/img_1107/d_buchu_1.jpg",
+
+    descriptionImage:"/img_1107/detail/vegetable_d_pa.jpg",
+    price:1000,
+
+    saleRate:0.4,
+
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+
+    ingredients:[{
+
+      id:1,
+
+      name:"대파 추가",
+
+      amount:1,
+
+      price:1000,
+
+      imgUrl:"/img_1107/d_buchu_1.jpg",
+
+    }
+
+    ],
+    recipeId:-1,
+    taggingProduct:[]
+  },
+
+  {
+      
+    id:30005,
+    category:CATEGORY_NAME["VEGETABLE"],
+    name:"청양고추",
+
+    imgUrl:"/img_1107/d_onion_1.jpg",
+
+    descriptionImage:"/img_1107/detail/vegetable_d_gochu.jpg",
+    price:1000,
+
+    saleRate:0.4,
+
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+
+    ingredients:[{
+
+      id:1,
+
+      name:"청양고추 추가",
+
+      amount:1,
+
+      price:1000,
+
+      imgUrl:"/img_1107/d_onion_1.jpg",
+
+    }
+
+    ],
+    recipeId:-1,
+    taggingProduct:[]
+  },
+
+  {
+      
+    id:30006,
+    category:CATEGORY_NAME["VEGETABLE"],
+    name:"감자",
+
+    imgUrl:"/img_1107/d_potato_1.jpg",
+
+    descriptionImage:"/img_1107/detail/vegetable_d_potato.jpg",
+    price:1000,
+
+    saleRate:0.4,
+
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+
+    ingredients:[{
+
+      id:1,
+
+      name:"감자 추가",
+
+      amount:1,
+
+      price:1000,
+
+      imgUrl:"/img_1107/d_potato_1.jpg",
+
+    }
+
+    ],
+    recipeId:-1,
+    taggingProduct:[]
+  },
+
+  {
+      
+    id:30007,
+    category:CATEGORY_NAME["VEGETABLE"],
+    name:"고구마",
+
+    imgUrl:"/img_1107/d_gogu_1.jpg",
+
+    descriptionImage:"/img_1107/detail/vegetable_d_gogu.jpg",
+    price:1000,
+
+    saleRate:0.4,
+
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+
+    ingredients:[{
+
+      id:1,
+
+      name:"고구마 추가",
+
+      amount:1,
+
+      price:1000,
+
+      imgUrl:"/img_1107/d_gogu_1.jpg",
+
+    }
+
+    ],
+    recipeId:-1,
+    taggingProduct:[]
+  },
+
+  {
+      
+    id:30008,
+    category:CATEGORY_NAME["VEGETABLE"],
+    name:"양파",
+
+    imgUrl:"/img_1107/d_onion_1.jpg",
+
+    descriptionImage:"/img_1107/detail/vegetable_d_onion.jpg",
+    price:1000,
+
+    saleRate:0.4,
+
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+
+    ingredients:[{
+
+      id:1,
+
+      name:"양파 추가",
+
+      amount:1,
+
+      price:1000,
+
+      imgUrl:"/img_1107/d_onion_1.jpg",
+
+    }
+
+    ],
+    recipeId:-1,
+    taggingProduct:[]
+  },
+
+  {
+      
+    id:30009,
+    category:CATEGORY_NAME["VEGETABLE"],
+    name:"당근",
+
+    imgUrl:"/img_1107/d_carrot_1.jpg",
+
+    price:1000,
+
+    descriptionImage:"/img_1107/detail/vegetable_d_carrot.jpg",
+    saleRate:0.4,
+
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+
+    ingredients:[{
+
+      id:1,
+
+      name:"당근 추가",
+
+      amount:1,
+
+      price:1000,
+
+      imgUrl:"/img_1107/d_carrot_1.jpg",
+
+    }
+
+    ],
+    recipeId:-1,
+    taggingProduct:[]
+  }
+
 
 
 ]

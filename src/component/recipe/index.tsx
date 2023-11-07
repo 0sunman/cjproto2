@@ -25,6 +25,7 @@ const RecipeTag = styled.div`
 const RecipeTagTitle = styled.div``
 const RecipeTagImages = styled.div``
 const RecipeTagImage = styled.img``
+const RecipeTagVideo = styled.video`width:100%;`
 
 const RecipeComment = styled.div``
 const RecipeCommentHeart = styled.div`font-size:14px; font-weight:bold; padding:5px 15px; padding-bottom:10px;`
@@ -39,5 +40,5 @@ const RecipeButtons = styled.div`
 `
 
 export const useRecipeLayout = () => {
-    return {RecipeWrapper, Header,RecipeMainImage, RecipeTag,RecipeTagTitle,RecipeTagImages,RecipeTagImage, RecipeComment,RecipeCommentHeart,RecipeComments,RecipeDate,RecipeButtons}
+    return {RecipeWrapper, Header,RecipeMainImage,RecipeTagVideo, RecipeTag,RecipeTagTitle,RecipeTagImages,RecipeTagImage, RecipeComment,RecipeCommentHeart,RecipeComments,RecipeDate,RecipeButtons}
 }
