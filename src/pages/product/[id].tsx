@@ -127,12 +127,12 @@ export default function Product(){
                 
             </p>
             </>)}
-            <p className="recipe-title">
+            {product.recipeId && product.recipeId > -1 && (<><p className="recipe-title">
                 레시피
             </p>
-            <hr></hr>
+            <hr></hr></>)}
             <ul className="recipe">
-            {currentRecipe && currentRecipe.step.map((recipeData,idx)=>{
+            {product.recipeId && product.recipeId > -1 && currentRecipe && currentRecipe.step.map((recipeData,idx)=>{
                 return (
                     <li key={idx}>
                         <div>

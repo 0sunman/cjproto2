@@ -26,7 +26,7 @@ export default function Recipe(){
                         more_horiz
                     </span>
                 </Header>
-                <div style={{overflow:"hidden", maxHeight:"500px",minHeight:"100%",background:"#000000", display:"flex", alignItems:"center", justifyContent:"center"}}>
+                <div className="skeleton-item" style={{overflow:"hidden",height:"500px",minHeight:"100%", display:"flex", alignItems:"center", justifyContent:"center"}}>
                     {getProduct(innerRecipe.productId) !== undefined && 
                     getProduct(innerRecipe.productId).videos !== undefined && 
                     getProduct(innerRecipe.productId).videos?.length !== undefined && 

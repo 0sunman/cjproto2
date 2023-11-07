@@ -239,6 +239,12 @@ body{background-color: #fff; margin:0 auto}
 }
 
 
+.ct3 {
+  color: #fff;
+  fill: var(--TRYEAT-Grey);
+}
+
+
 .ct-text2 {
   color: black;
   animation: ct-text 1s infinite;
@@ -255,9 +261,67 @@ body{background-color: #fff; margin:0 auto}
   75% {fill: #000}
 }
 
+@keyframes load {
+	25% {
+    fill: #dfdfdf;
+	}
+	75% {
+    fill: #afafaf;
+	}
+}
 
 @keyframes ct-text {
   25% {color: var(--TRYEAT-Blown);}
   50% {color: var(--TRYEAT-Green);}
   75% {color: #000}
 }
+.loading-bar{
+
+  background-color: '#c8c8c8';
+  width: 100%;
+  height: 100%;
+}
+.animationBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(245, 245, 245, 1) 0%,
+    #ffffffae 10%,
+    rgba(245, 245, 245, 1) 20%
+  );
+  animation: loading 1.5s infinite linear;
+}
+ 
+
+
+@keyframes loading {
+  0% {
+    transform: translateX(calc(-500%));
+  }
+  50%,
+  100% {
+    transform: translateX(calc(500%));
+  }
+}
+
+.skeleton-item{
+  position: relative;
+  z-index: 10;
+  background-color: #f2f2f2;
+}
+.skeleton-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to right, #f2f2f2, #fefefe, #f2f2f2);
+  animation: loading 2s infinite linear;
+  z-index: 5;
+}
+.skeleton-item img, .skeleton-item video{z-index: 11;width:100%}

@@ -29,7 +29,11 @@ gap:1px;
 > div:nth-child(31){grid-column:1/2;grid-row:13/15;height:200px;}
 > div:nth-child(38){grid-column:3/4;grid-row:15/17;height:200px;}
 `
-const ResultElement = styled.div``
+const ResultElement = styled.div`
+display:flex;position:relative;align-center:center;justify-center:center;overflow:hidden;
+> img{z-index:20;width:100%;height:auto;}
+> video{z-index:20;width:100%;height:auto;}
+`
 
 const Ad = [
     {url:"/product/1" , mov : "d_all_1.mp4"},
@@ -136,15 +140,19 @@ export default function Search(){
                             isAd=false;
                     }
                     if(isAd) return (
-                        <ResultElement style={{overflow:"hidden",display:"flex",alignItems:"center",justifyItems:"center"}} onClick={()=>{ router.push(Ad[Same[count.current]].url) }}>
-                            <video src={"/mov/"+Ad[Same[count.current]].mov} style={{width:"100%"}} muted autoPlay playsInline loop/>
+                        <ResultElement className="skeleton-item" style={{overflow:"hidden",display:"flex",alignItems:"center",justifyItems:"center"}} onClick={()=>{ router.push(Ad[Same[count.current]].url) }}>
+                            <video onLoad={()=>{}} poster="" src={"/mov/"+Ad[Same[count.current]].mov} style={{width:"100%"}} muted autoPlay playsInline loop/>
                         </ResultElement>
                     )
                     if(keyword === ""){
-                        return (<ResultElement style={{backgroundImage:`url(${product.imgUrl})`}} onClick={()=>{ changeProduct(product.id) }}></ResultElement>)
+                        return (<ResultElement className="skeleton-item" onClick={()=>{ changeProduct(product.id) }}>
+                            <img src={product.imgUrl}/>
+                        </ResultElement>)
                     }
                     if(typeof keyword === "string" && product.name.indexOf(keyword) > -1){
-                        return (<ResultElement style={{backgroundImage:`url(${product.imgUrl})`}}></ResultElement>)
+                        return (<ResultElement className="skeleton-item">
+                            <img src={product.imgUrl}/>
+                        </ResultElement>)
                     }else{
                         return ""
                     }

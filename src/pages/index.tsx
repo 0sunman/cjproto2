@@ -12,7 +12,7 @@ import { IProductType } from '@/state/product'
 import { useMiniCart } from '@/hook/miniCartHook'
 import { css } from '@emotion/react'
 import useUtilHook from '@/hook/utilHook'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRecipeLayout } from '@/component/recipe'
 import { useRecipe } from '@/hook/recipeHook'
 import { IRecipe } from '@/state/recipe'
@@ -26,9 +26,10 @@ import 'swiper/css/navigation';
 import { Navigation } from "swiper/modules"
 import { useCategory } from '@/hook/categoryHook'
 import { CATEGORY_NAME, ICategory } from '@/state/category'
+import { Product } from '@/component/product'
 
 const inter = Inter({ subsets: ['latin'] })
-const MainRecipe = styled.div`height:500px;overflow:hidden;width:100%;background-position-x:50%;background-position-y:50%;background-size:cover`
+const MainRecipe = styled.div`height:500px;overflow:hidden;width:100%;display:flex;align-items:center;justify-content:center`
 const TextHero = styled.h2`font-size:32px; font-weight:bold; padding-bottom:10px; padding-left:10px;`
 const CategorySection = styled.div`display:flex;width:100%;overflow:hidden;overflow-x:scroll;padding:20px 0px;
 background-color: #f8f8f8;
@@ -71,12 +72,12 @@ export default function Home() {
     <>
       <Head>
         <title>TRYEAT - Try another one</title>
-        <meta name="description" content="TRYEAT - Try another one" />
+        <meta name="description" content="TRYEAT - create the value" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="https://www.cj.net/images/favicon.png"/>
         <meta name="og:type" property="og:type" content="website"></meta>
         <meta name="og:url" property="og:url" content="https://cjproto2-cfwr.vercel.app/"></meta>
-        <meta name="og:image" property="og:image" content="/images/tryeat_logo_green.png"></meta>
+        <meta name="og:image" property="og:image" content="/images/tryeat_logo.jpg"></meta>
       </Head>
       <main className={`${styles.Wrapper}`}>
       <RecipeWrapper style={{marginBottom:"0px"}}>
@@ -101,7 +102,7 @@ export default function Home() {
                               </span>
                           </Header>
                           <MainRecipe>
-                              <MainRecipe style={{width:"100%",minHeight:"100%",height:"auto",overflow:"hidden",display:"flex",alignItems:"center", justifyContent:"center",backgroundColor:"#000000"}} onClick={()=>{
+                              <MainRecipe className='skeleton-item' style={{width:"100%",height:"700px",overflow:"hidden",display:"flex",alignItems:"center", justifyContent:"center"}} onClick={()=>{
                                       router.push(`/product/${innerRecipe.productId}`);
                               }}>
                               {
@@ -162,39 +163,7 @@ export default function Home() {
             return (
 
             <SwiperSlide>
-            <div className="product">
-            <a onClick={() => changeProduct(product.id)}>  
-              <div className='image' style={{overflow:"hidden",height:"200px",display:"flex",alignItems:"center", justifyContent:"center"}}>
-                {product.imgUrl.indexOf("www.") > 1 ? 
-                <img src={product.imgUrl} style={{"width":"auto","height":"220px"}} alt={product.description}/>
-                :
-                <Image src={product.imgUrl} width={1200} height={1670} style={{"width":"auto","height":"220px"}} alt={product.description}/>
-                }
-              </div>
-            </a>
-              <div className='button'>
-              <a onClick={() => addProductCartDirect(product.id)}>  
-                  <button>
-                    <span className="material-symbols-outlined">
-                      shopping_cart
-                    </span>
-                    <span>담기</span>
-                  </button>
-              </a>
-              </div>
-              <div className='description'>
-              <a onClick={() => changeProduct(product.id)}>  
-              <div className='title'>{product.name}</div>
-                <div className='price'>
-                  <div>{printPrice(product.price)}원</div>
-                  <div>
-                    <span>{product.saleRate*100}%</span>&nbsp;
-                    <span>{printPrice(product.price * (1 - product.saleRate))}원</span>
-                  </div>
-                </div>
-              </a>
-              </div>
-            </div>
+              <Product product={product}/>
             </SwiperSlide>
           )
           })}

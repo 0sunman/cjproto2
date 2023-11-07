@@ -487,47 +487,6 @@ export const productListState = atom<IProductType[]>({
 
 
   {
-    id:6,
-    name:"못생긴 느타리버섯 30g",
-    category:CATEGORY_NAME["VEGETABLE"],
-    imgUrl:"https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-    price:9200,
-    saleRate:0.1,        
-    description:"다양한 버섯과 두부에 육개장 한 팩을 넣어 맛과 향, 영양까지 풍부한 얼큰 육개장 버섯 전골. 건더기를 먹은 후 국물에 국수사리까지 넣어 먹으면 식사의 완성! 오랜만에 집에서 술 한잔을 기울이기 좋은 메뉴다.",        
-    ingredients:[{
-
-      id:1,
-
-      name:"못생긴 느타리버섯 30g (추가)",
-
-      amount:1,
-
-      price:500,
-
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-
-    },
-    {
-
-      id:2,
-
-      name:"못생긴 느타리버섯 60g (추가)",
-
-      amount:1,
-
-      price:750,
-
-      imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-
-    }
-
-  ],
-  recipeId:-1,
-  taggingProduct:[]
-
-  },
-
-  {
       
     id:30001,
     category:CATEGORY_NAME["VEGETABLE"],
@@ -540,6 +499,7 @@ export const productListState = atom<IProductType[]>({
     saleRate:0.4,
 
     description:"",
+    descriptionImage:"/img_1107/detail/vegetable_d_pang.png",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
 
     ingredients:[{
@@ -604,7 +564,7 @@ export const productListState = atom<IProductType[]>({
 
     imgUrl:"/img_1107/d_mushroom_1.jpg",
 
-    descriptionImage:"/img_1107/detail/vegetable_d_mushroom.jpg",
+    descriptionImage:"/img_1107/detail/vegetable_d_mushroom.png",
     price:1000,
 
     saleRate:0.4,
@@ -639,7 +599,7 @@ export const productListState = atom<IProductType[]>({
 
     imgUrl:"/img_1107/d_buchu_1.jpg",
 
-    descriptionImage:"/img_1107/detail/vegetable_d_pa.jpg",
+    descriptionImage:"/img_1107/detail/vegetable_d_pa.png",
     price:1000,
 
     saleRate:0.4,
@@ -674,7 +634,7 @@ export const productListState = atom<IProductType[]>({
 
     imgUrl:"/img_1107/d_onion_1.jpg",
 
-    descriptionImage:"/img_1107/detail/vegetable_d_gochu.jpg",
+    descriptionImage:"/img_1107/detail/vegetable_d_gochu.png",
     price:1000,
 
     saleRate:0.4,
@@ -744,7 +704,7 @@ export const productListState = atom<IProductType[]>({
 
     imgUrl:"/img_1107/d_gogu_1.jpg",
 
-    descriptionImage:"/img_1107/detail/vegetable_d_gogu.jpg",
+    descriptionImage:"/img_1107/detail/vegetable_d_gogu.png",
     price:1000,
 
     saleRate:0.4,
@@ -779,7 +739,7 @@ export const productListState = atom<IProductType[]>({
 
     imgUrl:"/img_1107/d_onion_1.jpg",
 
-    descriptionImage:"/img_1107/detail/vegetable_d_onion.jpg",
+    descriptionImage:"/img_1107/detail/vegetable_d_onion.png",
     price:1000,
 
     saleRate:0.4,

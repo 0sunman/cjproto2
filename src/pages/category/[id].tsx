@@ -23,7 +23,7 @@ const CategoryItemList = styled.div`display:flex;flex-direction:row;flex-wrap:wr
 const ProductItem = styled.div`display:inline-flex;width:50%;justify-content:center; align-items:center;flex-direction:column;
  margin-bottom:20px;
 
- > img{width:calc(100% - 2px); height:calc(100% - 2px)}
+ > div.image{width:calc(100% - 2px); height:calc(100% - 2px)}
  button{width:100%;border:1px solid #c8c8c8; background:white;height:40px; font-size:11px; margin-top:2px;line-height:11px;}
  button>span{font-size:11px}
  > div {width:100%;padding:5px 0px;}
@@ -62,8 +62,11 @@ export default function Category(){
         <CategoryItemList>
                 {products.map((product:IProductType, idx:number)=>{
                     return (typeof CategoryId === "string" && (CategoryId === "ALL" || product.category === CATEGORY_NAME[CategoryId]) && <ProductItem key={idx}>
-                        <img src={product.imgUrl} onClick={()=>{changeProduct(product.id)}}/>
-                        <button onClick={()=>{addProductCartDirect(product.id)}}><span className="material-symbols-outlined">
+                        <div className="skeleton-item image" style={{"overflow":"hidden","display":"flex","alignItems":"center","justifyContent":"center","width":"calc(100% - 2px)","height":"200px"}}>
+                            <img src={product.imgUrl} onClick={()=>{changeProduct(product.id)}} style={{width:"110%",height:"auto"}}/>
+                        </div>
+                        <button onClick={()=>{addProductCartDirect(product.id)}}>
+                            <span className="material-symbols-outlined">
                 shopping_cart
               </span> 담기</button>
                         <div>
