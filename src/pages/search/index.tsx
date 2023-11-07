@@ -19,7 +19,7 @@ const SearchCover = styled.div`position:fixed; left:0; top:91px; width:100%; bac
 const SearchResult1 = styled.div`display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:100px 100px 100px;
 padding-top:55px; padding-bottom: 44px;margin: 0px !important;
 gap:1px;
-> div{width:100%;height:100px;background-size:cover;background-position-x:50%;background-position-y:50%;}
+> div{display:flex;width:100%;height:100px; overflow:hidden;align-items:center;justify-items:center }
 > div:nth-child(01){grid-column:1/2;grid-row:1/3;height:200px;}
 > div:nth-child(08){grid-column:3/4;grid-row:3/5;height:200px;}
 > div:nth-child(11){grid-column:1/2;grid-row:5/7;height:200px;}
@@ -141,17 +141,17 @@ export default function Search(){
                     }
                     if(isAd) return (
                         <ResultElement className="skeleton-item" style={{overflow:"hidden",display:"flex",alignItems:"center",justifyItems:"center"}} onClick={()=>{ router.push(Ad[Same[count.current]].url) }}>
-                            <video onLoad={()=>{}} poster="" src={"/mov/"+Ad[Same[count.current]].mov} style={{width:"100%"}} muted autoPlay playsInline loop/>
+                            <video onLoad={()=>{}} poster="" src={"/mov/"+Ad[Same[count.current]].mov} style={{width:"100%",height:"auto"}} muted autoPlay playsInline loop/>
                         </ResultElement>
                     )
                     if(keyword === ""){
                         return (<ResultElement className="skeleton-item" onClick={()=>{ changeProduct(product.id) }}>
-                            <img src={product.imgUrl}/>
+                            <img src={product.imgUrl} style={{width:"100%",height:"auto"}}/>
                         </ResultElement>)
                     }
                     if(typeof keyword === "string" && product.name.indexOf(keyword) > -1){
                         return (<ResultElement className="skeleton-item">
-                            <img src={product.imgUrl}/>
+                            <img src={product.imgUrl} style={{width:"100%",height:"auto"}}/>
                         </ResultElement>)
                     }else{
                         return ""

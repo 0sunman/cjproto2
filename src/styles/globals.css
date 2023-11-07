@@ -183,7 +183,7 @@ button{color:black}
 .recipe{width: 100%; display: block; padding-bottom:52px}
 .recipe li{padding-bottom:30px}
 .recipe li > div{position: relative;}
-.recipe li > div > span{position: absolute;bottom:2px;left:0;display: inline-block; width:30px; height: 30px; line-height: 30px; text-align: center; background-color: #2a715a; color:#fff}
+.recipe li > div > span{position: absolute;bottom:0px;left:0;display: inline-block; width:30px; height: 30px; line-height: 30px; text-align: center; background-color: #2a715a; color:#fff}
 .recipe li p {line-height: 30px;}
 
 body{background-color: #fff; margin:0 auto}

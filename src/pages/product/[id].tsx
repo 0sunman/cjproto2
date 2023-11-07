@@ -99,7 +99,9 @@ export default function Product(){
 
     return(<>
     {product && <div className="Product">
-        <img src={product.imgUrl} style={{width:"100%"}}/>
+      <div className='skeleton-item' style={{ height:"430px", display:"flex", width:"100%",overflow:"hidden",alignItems:"center", justifyContent:"center"}}>
+        <img src={product.imgUrl} style={{width:"100%",height:"auto"}}/>
+      </div>
         <div className='wrapper'>
             <p>{product.name}</p>
             <p>
@@ -122,8 +124,8 @@ export default function Product(){
                 상세설명
             </p>
             <hr></hr>
-            <p className="product-description">
-                <img src={product.descriptionImage} style={{"width":"100%"}}/>
+            <p className='skeleton-item product-description' style={{ minHeight:"300px", display:"flex", width:"100%",overflow:"hidden",alignItems:"center", justifyContent:"center", paddingBottom:"0px",marginBottom:"40px"}}>
+                <img src={product.descriptionImage} style={{"width":"100%","height":"auto"}}/>
                 
             </p>
             </>)}
@@ -135,9 +137,9 @@ export default function Product(){
             {product.recipeId && product.recipeId > -1 && currentRecipe && currentRecipe.step.map((recipeData,idx)=>{
                 return (
                     <li key={idx}>
-                        <div>
+                        <div className='skeleton-item product-description' style={{ minHeight:"200px", display:"flex", width:"100%",overflow:"hidden",alignItems:"center", justifyContent:"center",padding:0}}>
                             <img src={recipeData.imgUrl}/>
-                            <span>{idx+1}</span>
+                            <span style={{zIndex:"20"}}>{idx+1}</span>
                         </div>
                         <p>{recipeData.description}</p>
                     </li>
