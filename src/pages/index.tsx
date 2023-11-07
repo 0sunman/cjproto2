@@ -101,14 +101,14 @@ export default function Home() {
                               </span>
                           </Header>
                           <MainRecipe>
-                              <MainRecipe style={{width:"100%",height:"auto",overflow:"hidden",display:"flex",alignItems:"center", justifyContent:"center",backgroundColor:"#000000"}} onClick={()=>{
+                              <MainRecipe style={{width:"100%",minHeight:"100%",height:"auto",overflow:"hidden",display:"flex",alignItems:"center", justifyContent:"center",backgroundColor:"#000000"}} onClick={()=>{
                                       router.push(`/product/${innerRecipe.productId}`);
                               }}>
                               {
                                 innerRecipe.imgUrl.indexOf("www.") > 1 ? 
                                   <img src={innerRecipe.imgUrl} style={{"width":"100%","height":"auto"}} alt={innerRecipe.description}/>
                                 :
-                                innerRecipe.id === 1 ? <video src="./mov/5.mp4" style={{width:"100%",height:"auto"}} muted autoPlay loop></video> 
+                                innerRecipe.id === 1 ? <video src="./mov/5.mp4" style={{width:"100%",height:"auto"}} muted autoPlay loop playsInline></video> 
                                 : <Image  src={innerRecipe.imgUrl} width={1200} height={1670} style={{"width":"100%","height":"auto"}} alt={innerRecipe.description}/>
                               }
                               </MainRecipe>

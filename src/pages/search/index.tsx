@@ -1,6 +1,7 @@
 import { useProducts } from "@/hook/productHook";
 import { IProductType } from "@/state/product";
 import styled from "@emotion/styled";
+import { useRouter } from "next/router";
 import { MutableRefObject, RefObject, useEffect, useRef, useState } from "react";
 
 const SearchWrapper = styled.div`margin-top:44px;display:flex; flex-direction:column; width:100%;
@@ -77,6 +78,7 @@ const Ad = [
     console.log(Same);
 export default function Search(){
     // let 
+    const router = useRouter();
     const [query, setQuery]= useState("");
     const [isCover,setCover] = useState(false)
     const [keyword,setKeyword] = useState("")
@@ -134,7 +136,7 @@ export default function Search(){
                             isAd=false;
                     }
                     if(isAd) return (
-                        <ResultElement style={{overflow:"hidden",display:"flex",alignItems:"center",justifyItems:"center"}}>
+                        <ResultElement style={{overflow:"hidden",display:"flex",alignItems:"center",justifyItems:"center"}} onClick={()=>{ router.push(Ad[Same[count.current]].url) }}>
                             <video src={"/mov/"+Ad[Same[count.current]].mov} style={{width:"100%"}} muted autoPlay playsInline loop/>
                         </ResultElement>
                     )
