@@ -308,12 +308,12 @@ body{background-color: #fff; margin:0 auto}
   }
 }
 
-.skeleton-item{
+/* .skeleton-item{
   position: relative;
   z-index: 10;
   background-color: #f2f2f2;
-}
-.skeleton-item::before {
+} */
+/* .skeleton-item::before {
   content: '';
   position: absolute;
   top: 0;
@@ -323,13 +323,47 @@ body{background-color: #fff; margin:0 auto}
   background: linear-gradient(to right, #f2f2f2, #fefefe, #f2f2f2);
   animation: loading 2s infinite linear;
   z-index: 5 !important;
-}
-.skeleton-item img, .skeleton-item video{z-index: 11 !important;width:100%}
+} */
+/* .skeleton-item img, .skeleton-item video{z-index: 11 !important;width:100%} */
 
-
+/* 
 .skeleton-item.is-done::before {
   display: none;
 }
 .swiper-slide .skeleton-item::before{
   display: none;
+} */
+
+@-webkit-keyframes skeleton-gradient {
+  0% {
+      background-color: rgba(165, 165, 165, 0.1);
+  }
+
+  50% {
+      background-color: rgba(165, 165, 165, 0.5);
+  }
+
+  100% {
+      background-color: rgba(165, 165, 165, 0.1);
+  }
+}
+
+@keyframes skeleton-gradient {
+  0% {
+      background-color: rgba(165, 165, 165, 0.1);
+  }
+
+  50% {
+      background-color: rgba(165, 165, 165, 0.5);
+  }
+
+  100% {
+      background-color: rgba(165, 165, 165, 0.1);
+  }
+}
+
+/*해당되는 컴포넌트에 적용*/
+.skeleton-item {
+  -webkit-animation: skeleton-gradient 1.8s infinite ease-in-out;
+  animation: skeleton-gradient 1.8s infinite ease-in-out;
 }
