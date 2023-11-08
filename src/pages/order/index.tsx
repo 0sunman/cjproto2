@@ -67,8 +67,8 @@ export default function CategoryList(){
     useEffect(()=>{
 
         const getRandomIndex = () =>Math.floor(Math.random() * 3);
-        thanks[getRandomIndex()]()
-        
+        thanks[0]();
+        const timer = setInterval(thanks[0],5000);
         setTimeout(()=>{
             router.push("/");
         },10000);
