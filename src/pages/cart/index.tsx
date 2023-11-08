@@ -1,6 +1,7 @@
 import { useCart } from "@/hook/cartHook";
 import { useMiniCart } from "@/hook/miniCartHook";
 import { useRecipe } from "@/hook/recipeHook";
+import { useToast } from "@/hook/toastHook";
 import useUtilHook from "@/hook/utilHook";
 import { ICartProductType } from "@/state/cart";
 import { IIngredient, IProductType } from "@/state/product";
@@ -9,8 +10,9 @@ import { useEffect, useState } from "react";
 
 export default function Cart(){
     const router = useRouter();
-    const {cart, removeProduct} = useCart();
+    const {cart,setCart, removeProduct} = useCart();
     const [cartProductList, setCartProductList] = useState(cart.productList);
+    const {openToast} = useToast();
     const {printPrice}=useUtilHook();
     const {miniCart, setMiniCart, addProductCartDirect} = useMiniCart();
     const setIngredientAmount = (product:IProductType, ingredient:IIngredient, delta:number) => {
@@ -118,7 +120,14 @@ export default function Cart(){
             </li>)}
         </ul>
         <div className="buy-button-wrapper">
-            <button>{printPrice(TotalPrice)}원 구매하기</button>
+            <button onClick={()=>{
+                if(cartProductList?.length !== undefined && cartProductList?.length === 0){
+                    openToast("물건이 아무것도 없어요!")
+                }else{
+                    setCart({productList:[]});
+                    router.push("/order");
+                }
+            }}>{printPrice(TotalPrice)}원 구매하기</button>
         </div>
     </div>
     </>

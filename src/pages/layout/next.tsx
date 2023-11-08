@@ -42,6 +42,7 @@ export default function NextLayout({children}:any){
               router.route.indexOf("/product") > -1 ? currentProduct.filter((ele:IProductType)=>ele.id === currentUser.productId ? true : false)[0].name:
               router.route.indexOf("/category") > -1 ? "카테고리" :
               router.route.indexOf("/comment") > -1 ? "리뷰보기" :
+              router.route.indexOf("/order") > -1 ? "주문" :
               router.route.indexOf("/search") > -1 ? "검색" : ""
             }
             
