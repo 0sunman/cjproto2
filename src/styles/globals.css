@@ -209,7 +209,7 @@ body{background-color: #fff; margin:0 auto}
 .cart .cartList .text{padding:20px 10px}
 .cart .cartList .image img{width: 100%;}
 .cart .cartList .detail{ display: flex; flex-wrap:wrap; margin:10px;}
-.cart .cartList .description .detail .amount > div{margin-left:auto; padding-right: 0;}
+.cart .cartList .description .detail .amount > div{margin-left:auto; padding-right: 0; white-space: nowrap;}
 .cart .cartList .description .detail .price{text-align: right;}
 .cart .cartList .detail > span{ width: 50% }
 .cart .cartList .detail > div{width: 100%;}
