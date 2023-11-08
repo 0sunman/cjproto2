@@ -73,6 +73,7 @@ export default function CategoryList(){
             router.push("/");
         },10000);
           return () => {
+            clearInterval(timer);
           }
     },[])
     return (<CategoryWrapper>
