@@ -1,8 +1,9 @@
+import { ReactNode } from "react";
 import { atom } from "recoil";
 
 export interface IToast{
     isVisible:boolean;
-    message:string;
+    message:string|ReactNode;
 }
 
 export const toastState = atom<IToast>({

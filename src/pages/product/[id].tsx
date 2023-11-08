@@ -1,7 +1,7 @@
 import { useProducts } from '@/hook/productHook';
 import { useRouter } from 'next/router';
 import { useRecoilValue } from 'recoil';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getRecipeWithProductId } from '@/state/recipe';
 import { useRecipe } from '@/hook/recipeHook';
 import { useCurrentUser } from '@/hook/userHook';
@@ -75,7 +75,7 @@ const chartOptions: ChartOptions<'radar'> & ChartOptions = {
 export default function Product(){
     const router = useRouter();
     const id = Number(router.query.id);
-    const {products, setProducts} = useProducts();
+    const {products, setProducts,getProductPriceWithProductId, getProductSalePriceWithProductId, getSaleRate} = useProducts();
     const {currentUser, setCurrentUser, setProductId, setRecipeId, setIngredientId} = useCurrentUser();
     const {miniCart, setMiniCart} = useMiniCart();
     const {printPrice}=useUtilHook();
@@ -96,6 +96,8 @@ export default function Product(){
             setMiniCart({...miniCart, isButtonShow:false})
         }
     },[])
+    const [price, setPrice] = useState(getProductPriceWithProductId(product.id));
+    const [salePrice, setSalePrice] = useState(getProductSalePriceWithProductId(product.id));
 
     return(<>
     {product && <div className="Product">
@@ -105,8 +107,8 @@ export default function Product(){
         <div className='wrapper'>
             <p>{product.name}</p>
             <p>
-                <span>{product.saleRate * 100}%</span>
-                <span>{printPrice(product.price * (1 - product.saleRate))}원</span> 
+                <span>{getSaleRate(price!,salePrice!)}%</span>
+                <span>{printPrice(salePrice!)}원</span> 
             </p>
             <p className="product-description">
                 {product.description}

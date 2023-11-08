@@ -10,7 +10,7 @@ import { IRecipe } from "@/state/recipe";
 
 import styled from '@emotion/styled'
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const CategoryWrapper = styled.div`margin-top:44px;display:flex; flex-direction:column; width:100%;`;
 const CategoryTabs = styled.div` background-color:#f8f8f8; overflow-x: scroll;
@@ -34,7 +34,7 @@ const ProductItem = styled.div`display:inline-flex;width:50%;justify-content:cen
  `
 export default function Category(){
     const router = useRouter()
-    const {products, setProducts, getProductWithProductId} = useProducts();
+    const {products, setProducts, getProductWithProductId,getProductPriceWithProductId, getProductSalePriceWithProductId, getSaleRate} = useProducts();
     const {category, setCategory} = useCategory();
     const {printPrice} = useUtilHook();
     const getProduct = getProductWithProductId;
@@ -61,6 +61,10 @@ export default function Category(){
         </CategoryTabs>
         <CategoryItemList>
                 {products.map((product:IProductType, idx:number)=>{
+                    const price = getProductPriceWithProductId(product.id);
+                    const salePrice = getProductSalePriceWithProductId(product.id);
+                    const saleRate = getSaleRate(price!,salePrice!);
+
                     return (typeof CategoryId === "string" && (CategoryId === "ALL" || product.category === CATEGORY_NAME[CategoryId]) && <ProductItem key={idx}>
                         <div className="skeleton-item image" style={{"overflow":"hidden","display":"flex","alignItems":"center","justifyContent":"center","width":"calc(100% - 2px)","height":"200px"}}>
                             <img src={product.imgUrl} onClick={()=>{changeProduct(product.id)}} style={{width:"110%",height:"auto"}}/>
@@ -71,10 +75,10 @@ export default function Category(){
               </span> 담기</button>
                         <div>
                             <p>{product.name}</p>
-                            <span>{printPrice(product.price)}원</span>
+                            <span>{printPrice(price!)}원</span>
                             <p>
-                                <span>{(product.saleRate*100)}%</span>
-                                <span>{printPrice(product.price * (1 - product.saleRate))} 원</span>
+                                <span>{(saleRate)}%</span>
+                                <span>{printPrice(salePrice!)} 원</span>
                             </p>
 
                         </div>

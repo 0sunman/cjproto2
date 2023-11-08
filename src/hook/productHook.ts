@@ -1,5 +1,5 @@
 import { useRecoilState, useRecoilValue, useSetRecoilState, } from 'recoil'
-import { IProductType, productListState } from '@/state/product';
+import { IIngredient, IProductType, productListState } from '@/state/product';
 import { useCurrentUser } from './userHook';
 import { useMiniCart } from './miniCartHook';
 import { userState } from '@/state/user';
@@ -14,8 +14,21 @@ export const useProducts = () => {
         setCurrentUser({...currentUser, productId:productId,})
         router.push(`/product/${productId}`);
       }
-    const getProductWithProductId = (id:number) => products.filter((product:IProductType)=>
-        (product.id === id ? true : false)
-    )[0]
-    return {products, setProducts, currentProduct, getProductWithProductId,changeProduct}
+      const getProductWithProductId = (id:number) => products.filter((product:IProductType)=>
+          (product.id === id ? true : false)
+      )[0]
+      const getProductSalePriceWithProductId = (id:number) => products.filter((product:IProductType)=>
+          (product.id === id ? true : false)
+      )[0].ingredients?.reduce((totalSum:number, ingredient:IIngredient)=>{
+        totalSum += ingredient.price * (1 - (ingredient.saleRate !== undefined ? ingredient.saleRate : 0))
+        return totalSum;
+      },0)
+      const getProductPriceWithProductId = (id:number) => products.filter((product:IProductType)=>
+          (product.id === id ? true : false)
+      )[0].ingredients?.reduce((totalSum:number, ingredient:IIngredient)=>{
+        totalSum += ingredient.price;
+        return totalSum;
+      },0)
+      const getSaleRate = (price:number,salePrice:number) => Number(((1 - salePrice!/price!)).toFixed(2)) * 100
+    return {products, setProducts, currentProduct, getProductWithProductId,changeProduct, getProductPriceWithProductId, getProductSalePriceWithProductId,getSaleRate}
 }

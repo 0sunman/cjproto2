@@ -5,15 +5,20 @@ import useUtilHook from "@/hook/utilHook";
 import Image from "next/image";
 import { TryEatLoader } from '@/component/Loading';
 import { IProductType } from "@/state/product";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled/macro";
 
 export function Product({product}:{product:IProductType}){
-    const {changeProduct} = useProducts();
+    const {changeProduct,getProductPriceWithProductId, getProductSalePriceWithProductId, getSaleRate} = useProducts();
     const {addProductCartDirect} = useMiniCart();
     const {printPrice} = useUtilHook();
     const [isLoading, setIsLoading] = useState(true);
+    const [price, setPrice] = useState(getProductPriceWithProductId(product.id));
+    const [salePrice, setSalePrice] = useState(getProductSalePriceWithProductId(product.id));
+    useEffect(()=>{
+      setPrice(price !== undefined ? price : 0)
+    },[price])
     return  <div className="product">
     <a onClick={() => changeProduct(product.id)}>  
       <div className={`image skeleton-item ${isLoading?"":"is-done"}`} style={{position:"relative",overflow:"hidden",height:"200px",display:"flex",alignItems:"center", justifyContent:"center", backgroundColor:"#f2f2f2"}}>
@@ -38,10 +43,10 @@ export function Product({product}:{product:IProductType}){
       <a onClick={() => changeProduct(product.id)}>  
       <div className='title'>{product.name}</div>
         <div className='price'>
-          <div>{printPrice(product.price)}원</div>
+          <div>{printPrice(price!)}원</div>
           <div>
-            <span>{product.saleRate*100}%</span>&nbsp;
-            <span>{printPrice(product.price * (1 - product.saleRate))}원</span>
+            <span>{getSaleRate(price!,salePrice!)} %</span>&nbsp;
+            <span>{printPrice(salePrice!)}원</span>
           </div>
         </div>
       </a>

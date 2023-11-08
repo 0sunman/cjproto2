@@ -46,7 +46,7 @@ export default function Home() {
 
   const {RecipeWrapper, Header,RecipeMainImage, RecipeTag,RecipeTagTitle,RecipeTagImages,RecipeTagImage, RecipeComment,RecipeCommentHeart,RecipeComments,RecipeDate,RecipeButtons} = useRecipeLayout();
   const router = useRouter();
-  const {products} = useProducts();
+  const {products,getProductPriceWithProductId, getProductSalePriceWithProductId} = useProducts();
   const {category,setCategory} = useCategory();
   const {currentUser, setCurrentUser} = useCurrentUser();
   const {miniCart, setMiniCart, addProductCartDirect} = useMiniCart();

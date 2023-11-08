@@ -8,6 +8,7 @@ export interface IIngredient{
     price:number;
     amount:number;
     imgUrl:string;
+    saleRate?:number;
   }
   
 export interface IProductType{
@@ -102,11 +103,12 @@ export const productListState = atom<IProductType[]>({
 
       id:1,
 
-      name:"대파 10g",
+      name:"대파 100g",
 
       amount:1,
 
-      price:300,
+      price:3000,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_buchu_1.jpg",
 
@@ -114,11 +116,12 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"느타리버섯 50g",
+      name:"느타리버섯 500g",
 
       amount:1,
 
-      price:1000,
+      price:1500,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_mushroom_1.jpg",
 
@@ -126,11 +129,12 @@ export const productListState = atom<IProductType[]>({
 
       id:3, 
 
-      name:"청양고추 5g",
+      name:"청양고추 200g",
 
       amount:1,
 
-      price:200,
+      price:2000,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_onion_1.jpg",
 
@@ -143,6 +147,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:6500,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_onion_1.jpg",
 
@@ -169,11 +174,12 @@ export const productListState = atom<IProductType[]>({
 
       id:1,
 
-      name:"영양부추 30g",
+      name:"영양부추 100g",
 
       amount:1,
 
-      price:500,
+      price:4290,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_buchu_1.jpg",
 
@@ -181,11 +187,12 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"팽이버섯 30g",
+      name:"팽이버섯 300g",
 
       amount:1,
 
-      price:500,
+      price:2500,
+      saleRate:0.1,
 
 
       imgUrl:"/img_1107/d_pang_1.jpg",
@@ -194,24 +201,12 @@ export const productListState = atom<IProductType[]>({
 
       id:3,
 
-      name:"계란 150g",
+      name:"비비고 새우 왕교자 315g * 2",
 
       amount:1,
 
-      price:500,
-
-
-      imgUrl:"/img_1107/d_onion_1.jpg",
-
-    },{
-
-      id:4,
-
-      name:"비비고 새우 왕교자 150g",
-
-      amount:1,
-
-      price:1000,
+      price:8980,
+      saleRate:0.1,
 
 
       imgUrl:"/img_1107/d_onion_1.jpg",
@@ -243,6 +238,7 @@ export const productListState = atom<IProductType[]>({
       name:"순두부 350g",
       amount:1,
       price:1500,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -250,11 +246,12 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"양파 20g",
+      name:"양파 200g",
 
       amount:1,
 
-      price:300,
+      price:3000,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -262,11 +259,12 @@ export const productListState = atom<IProductType[]>({
 
       id:3,
 
-      name:"홍고추 5g",
+      name:"홍고추 50g",
 
       amount:1,
 
-      price:100,
+      price:1000,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -274,11 +272,12 @@ export const productListState = atom<IProductType[]>({
 
       id:4,
 
-      name:"대파 10g",
+      name:"대파 100g",
 
       amount:1,
 
-      price:300,
+      price:3000,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -291,6 +290,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:5500,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -333,6 +333,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:2500,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -340,11 +341,12 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"대파 10g",
+      name:"대파 500g",
 
       amount:1,
 
-      price:300,
+      price:3000,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -352,11 +354,12 @@ export const productListState = atom<IProductType[]>({
 
       id:3,
 
-      name:"양파 20g",
+      name:"양파 200g",
 
       amount:1,
 
-      price:300,
+      price:3000,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -368,7 +371,8 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:800,
+      price:4000,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -381,6 +385,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:5500,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -419,11 +424,12 @@ export const productListState = atom<IProductType[]>({
 
       id:1,
 
-      name:"누룽지 50g",
+      name:"누룽지 500g",
 
       amount:1,
 
       price:2500,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -431,11 +437,12 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"감자 50g",
+      name:"감자 500g",
 
       amount:1,
 
-      price:800,
+      price:8000,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -443,11 +450,12 @@ export const productListState = atom<IProductType[]>({
 
       id:3,
 
-      name:"표고버섯 50g",
+      name:"표고버섯 100g",
 
       amount:1,
 
-      price:500,
+      price:2000,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -455,11 +463,12 @@ export const productListState = atom<IProductType[]>({
 
       id:4,
 
-      name:"피망",
+      name:"피망 200g",
 
       amount:1,
 
-      price:700,
+      price:1200,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -472,6 +481,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:5500,
+      saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
@@ -511,6 +521,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:1000,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_pang_1.jpg",
 
@@ -546,6 +557,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:1000,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_buchu_1.jpg",
 
@@ -581,6 +593,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:1000,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_mushroom_1.jpg",
 
@@ -616,6 +629,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:1000,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_buchu_1.jpg",
 
@@ -651,6 +665,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:1000,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_onion_1.jpg",
 
@@ -686,6 +701,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:1000,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_potato_1.jpg",
 
@@ -721,6 +737,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:1000,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_gogu_1.jpg",
 
@@ -756,6 +773,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:1000,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_onion_1.jpg",
 
@@ -791,6 +809,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:1000,
+      saleRate:0.1,
 
       imgUrl:"/img_1107/d_carrot_1.jpg",
 
