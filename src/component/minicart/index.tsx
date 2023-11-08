@@ -157,7 +157,7 @@ export function MiniCart(){
             </div>
                         
             <div className={` ${styles.Footer2} buy`} style={{display: isShowButton ? "flex" : "none"}}>
-                <button onClick={()=>{setMiniCartMenu(true)}} style={{display:`${isShowMiniCart ? "none" : "block"}`}}>구매하기</button>
+                <button onClick={()=>{setMiniCartMenu(true)}} style={{display:`${isShowMiniCart ? "none" : "block"}`,fontSize:"18px"}}>구매하기</button>
                 <button onClick={()=>{
                             if(router.route.indexOf("/product")>-1){
                                 setMiniCart({...miniCart, isMenuShow:false, isButtonShow:true});
@@ -169,8 +169,8 @@ export function MiniCart(){
                                 openToast("장바구니에 담겼습니다!");
                             }
                         }} 
-                        style={{display:`${isShowMiniCart ? "block" : "none"}`}}>
-                {printPrice(sum)} 원 구매하기
+                        style={{display:`${isShowMiniCart ? "block" : "none"}`,fontSize:"18px"}}>
+                {printPrice(sum)}<span style={{fontSize:"14px"}}>원</span> 구매하기
                 </button>
             </div>
         </>
