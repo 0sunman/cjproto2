@@ -16,7 +16,7 @@ import type { ChartOptions } from 'chart.js';
 
 const chartOptions: ChartOptions<'radar'> & ChartOptions = {
     elements: {
-      //데이터 속성.
+      //데이터 속성2.
       line: {
         borderWidth: 2,
         borderColor: "#ff6600",
