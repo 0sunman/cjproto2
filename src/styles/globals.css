@@ -215,8 +215,10 @@ body{background-color: #fff; margin:0 auto}
 .cart .cartList .detail > div{width: 100%;}
 .cart .cartList .detail > div > div{ width: 100px; padding:10px; }
 .cart .cartList .detail > div > * {width: 30%;}
-.cart .cartList .detail > div > div > input,.cart .cartList .detail > div> div > button {text-align: center; width: 30px; height: 30px; padding: 0; margin: 0;}
-.cart .cartList .detail > div > div > button {height: 34px;}
+.cart .cartList .detail > div > div > input,.cart .cartList .detail > div> div > button {width: 35px; height: 90%; text-align: center;border: 0;}
+.cart .cartList .detail > div > div > input{width: 25px;height: 34px;border: 0px solid #e8e8e8;border-right: 0; border-left: 0;}
+.cart .cartList .detail > div > div > button {width:35px; height: 34px;border:0}
+
 .cartList h2{font-weight: bold;}
 .cartList > li > ul{padding-bottom:10px}
 .cart .cartList .text{align-items: center;}
@@ -226,6 +228,13 @@ body{background-color: #fff; margin:0 auto}
 .cart .buy-button-wrapper{width: 100%; display: flex; justify-content: center; align-items: center; height: 43px; position: fixed; bottom: 0; max-width: calc(720px); background-color: #fff;}
 .cart .buy-button-wrapper button{width: 95%; height: 39px; border: 0; background-color: #000; color:#fff}
 
+
+/*
+.Ingredients ul > li input,.Ingredients ul > li button{width: 35px; height: 90%; text-align: center;border: 0;}
+.Ingredients ul > li input{width: 25px;height: 80%;border: 1px solid #e8e8e8;border-right: 0; border-left: 0;}
+.Ingredients ul > li button{border: 0;}
+
+*/
 
 .toast{position: fixed; display: flex; justify-content: center;align-items: center; bottom:60px; width: 100%; z-index: 9999; max-width: 720px;}
 .toast > p {background-color: rgba(0,0,0,.5); color:#fff; width:90%; padding:20px 10px; border-radius: 7px;}
