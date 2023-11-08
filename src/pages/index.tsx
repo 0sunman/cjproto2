@@ -27,9 +27,8 @@ import { Navigation } from "swiper/modules"
 import { useCategory } from '@/hook/categoryHook'
 import { CATEGORY_NAME, ICategory } from '@/state/category'
 import { Product } from '@/component/product'
+import { MainBanner } from '@/component/Main/MainBanner'
 
-const inter = Inter({ subsets: ['latin'] })
-const MainRecipe = styled.div`height:500px;overflow:hidden;width:100%;display:flex;align-items:center;justify-content:center`
 const TextHero = styled.h2`font-size:32px; font-weight:bold; padding-bottom:10px; padding-left:10px;`
 const CategorySection = styled.div`display:flex;width:100%;overflow:hidden;overflow-x:scroll;padding:20px 0px;
 background-color: #f8f8f8;
@@ -42,12 +41,7 @@ const CategoryElement = styled.div`margin:0px 10px;
 `
 const CategoryCircle = styled.div`width:75px; height:75px; border-radius:100%;background-size:cover `
 const CategoryText = styled.div`text-align:center;margin:10px 0px;font-size:12px;`
-const LongButton = styled.div`display:flex; align-items:center;
-width:100%;height:55px; background-color:#f8f8f8; border-top:1px solid #efefef;border-bottom:1px solid #efefef;
->span:nth-child(1){margin-right:auto;padding-left:20px;font-size:14px}
->span:nth-child(2){margin-left:auto;padding-right:10px;}
-&:active{color:white;background:var(--TRYEAT-Orange)}
-`
+
 export default function Home() {
 
   const {RecipeWrapper, Header,RecipeMainImage, RecipeTag,RecipeTagTitle,RecipeTagImages,RecipeTagImage, RecipeComment,RecipeCommentHeart,RecipeComments,RecipeDate,RecipeButtons} = useRecipeLayout();
@@ -91,50 +85,11 @@ export default function Home() {
                       }}
                       modules={[Pagination,Navigation]}
                       >
-            {recipe.recipes.map((innerRecipe:IRecipe)=>
-            (
-                        <SwiperSlide style={{background:"white"}}>
-                          <Header style={{paddingTop:"5px", position:"absolute", top:"10px",color:"white"}}>
-                              <img src={innerRecipe.companyImageURL}  style={{width:"40px", height:"40px"}}/>
-                              <span>{innerRecipe.name}</span>
-                              <span>
-                                  
-                              </span>
-                          </Header>
-                          <MainRecipe>
-                              <MainRecipe className='skeleton-item' style={{width:"100%",height:"700px",overflow:"hidden",display:"flex",alignItems:"center", justifyContent:"center"}} onClick={()=>{
-                                      router.push(`/product/${innerRecipe.productId}`);
-                              }}>
-                              {
-                                innerRecipe.imgUrl.indexOf("www.") > 1 ? 
-                                  <img src={innerRecipe.imgUrl} style={{"width":"100%","height":"auto"}} alt={innerRecipe.description}/>
-                                :
-                                innerRecipe.id === 1 ? <video src="./mov/5.mp4" style={{width:"100%",height:"auto"}} muted autoPlay loop playsInline></video> 
-                                : <Image  src={innerRecipe.imgUrl} width={1200} height={1670} style={{"width":"100%","height":"auto"}} alt={innerRecipe.description}/>
-                              }
-                              </MainRecipe>
-                          </MainRecipe>
-                          <LongButton onClick={()=>{ addProductCartDirect(innerRecipe.productId)}}>
-                            <span>장바구니 바로담기</span>
-                            <span className="material-symbols-outlined">
-                              chevron_right
-                            </span>
-                          </LongButton>
-                          <RecipeTag style={{marginBottom:"0px"}}>
-                              <RecipeTagTitle>
-                                  <span>#태그상품</span>
-                              </RecipeTagTitle>
-                              <RecipeTagImages>
-                              {getProduct(innerRecipe.productId).taggingProduct?.map((productId:number)=>{
-                                  const product = getProduct(productId);
-                                  return (<RecipeTagImage src={product.imgUrl} onClick={()=>{
-                                      router.push(`/product/${productId}`);
-                                  }}/>)
-                              })}
-                              </RecipeTagImages>
-                          </RecipeTag>
-                        </SwiperSlide>
-            
+                {recipe.recipes.map((innerRecipe:IRecipe)=>
+                (
+                <SwiperSlide style={{background:"white"}}>
+                  <MainBanner innerRecipe={innerRecipe}/>
+                </SwiperSlide>
                 ))}
                 </Swiper>
     </RecipeWrapper>
