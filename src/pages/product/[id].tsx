@@ -74,7 +74,7 @@ const chartOptions: ChartOptions<'radar'> & ChartOptions = {
   };
 export default function Product(){
     const router = useRouter();
-    const id = Number(router.query.id);
+    const id = router.query.id !== undefined ? Number(router.query.id) : 1;
     const {products, setProducts,getProductPriceWithProductId, getProductSalePriceWithProductId, getSaleRate} = useProducts();
     const {currentUser, setCurrentUser, setProductId, setRecipeId, setIngredientId} = useCurrentUser();
     const {miniCart, setMiniCart} = useMiniCart();
