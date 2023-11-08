@@ -328,6 +328,8 @@ body{background-color: #fff; margin:0 auto}
 
 
 .skeleton-item.is-done::before {
-
+  display: none;
+}
+.swiper-slide .skeleton-item::before{
   display: none;
 }
