@@ -143,7 +143,6 @@ export default function Product(){
                         </div>
                         <p>{recipeData.description}</p>
                     </li>
-                    
                 )
             })}
             </ul>
