@@ -13,14 +13,14 @@ export function Product({product}:{product:IProductType}){
     const {changeProduct} = useProducts();
     const {addProductCartDirect} = useMiniCart();
     const {printPrice} = useUtilHook();
-    // const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     return  <div className="product">
     <a onClick={() => changeProduct(product.id)}>  
-      <div className='image skeleton-item' style={{position:"relative",overflow:"hidden",height:"200px",display:"flex",alignItems:"center", justifyContent:"center", backgroundColor:"#f2f2f2"}}>
+      <div className={`image skeleton-item ${isLoading?"":"is-done"}`} style={{position:"relative",overflow:"hidden",height:"200px",display:"flex",alignItems:"center", justifyContent:"center", backgroundColor:"#f2f2f2"}}>
         {product.imgUrl.indexOf("www.") > 1 ? 
-        <img src={product.imgUrl} style={{"width":"150%","height":"auto","zIndex":"10"}} alt={product.description}/>
+        <img src={product.imgUrl} style={{"width":"150%","height":"auto","zIndex":"10"}} alt={product.description}  onLoad={()=>{setIsLoading(false)}}/>
         :
-        <Image src={product.imgUrl} width={1200} height={1670} style={{"width":"150%","height":"auto","zIndex":"10"}} alt={product.description}/>
+        <Image src={product.imgUrl} width={1200} height={1670} style={{"width":"150%","height":"auto","zIndex":"10"}} alt={product.description}  onLoad={()=>{setIsLoading(false)}}/>
         } 
       </div>
     </a>
