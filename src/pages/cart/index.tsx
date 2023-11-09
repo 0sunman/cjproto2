@@ -38,12 +38,12 @@ export default function Cart(){
         return cartProductList?.reduce(
             (pv:any,product:ICartProductType) => {
                 let a = product.isCheck ? ((product?.ingredients?.reduce((previousValue:number, ingredient:IIngredient)=>{
-                        previousValue = previousValue + (ingredient.price * ingredient.amount)
+                        previousValue = previousValue + ((ingredient.price * (1 - ingredient.saleRate!)) * ingredient.amount)
                         return previousValue;
                     },0) )) : 0;
                 let b = pv;
                 if(typeof a === "number"){
-                    b += a *  (1 - product?.saleRate);
+                    b += a;
                 }
                 return b
             },0)
@@ -89,13 +89,13 @@ export default function Cart(){
                                     <li>
                                         <span>금액 : {
                                         product.ingredients && printPrice(product.ingredients?.reduce((previousValue:number, ingredient:IIngredient)=>{
-                                            previousValue = previousValue + (ingredient.price * ingredient.amount)
+                                            previousValue = previousValue + ((ingredient.price * (1 - ingredient.saleRate!))  * ingredient.amount)
                                             return previousValue;
                                         },0))} 원</span>
                                     </li>
                                     {product.ingredients?.map((ingredient:IIngredient, idx:number)=>(<li key={idx} className="detail">
                                         <span>{ingredient.name}</span>
-                                        <span className="price">{printPrice(ingredient.price)} 원</span>
+                                        <span className="price">{printPrice((ingredient.price * (1 - ingredient.saleRate!)) )} 원</span>
                                         <div className="amount">
                                             <div>
                                                 <button onClick={()=>setIngredientAmount(product,ingredient,-1)}>-</button>
