@@ -31,7 +31,9 @@ export default function Recipe(){
                     getProduct(innerRecipe.productId).videos !== undefined && 
                     getProduct(innerRecipe.productId).videos?.length !== undefined && 
                     getProduct(innerRecipe.productId).videos!.length > 0 && 
-                    <video style={{width:"100%"}} src={"/mov/"+getProduct(innerRecipe.productId)!.videos![
+                    <video style={{width:"100%"}} onClick={()=>{
+                        router.push(`/product/${innerRecipe.productId}`);
+                    }} src={"/mov/"+getProduct(innerRecipe.productId)!.videos![
                         Math.floor(getProduct(innerRecipe.productId)!.videos!.length * Math.random())
                     ]} muted autoPlay playsInline loop/>}
 

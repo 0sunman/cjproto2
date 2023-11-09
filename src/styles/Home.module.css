@@ -17,6 +17,7 @@
   top:0;
   max-width: 720px;
   z-index: 20;
+  border-bottom: 1px solid #f8f8f8;
 }
 .Header div:first-child{margin-left: 10px; margin-right: auto;}
 .Header div.title{margin:0 auto;text-align: center;}
@@ -33,6 +34,7 @@
   position: fixed;
   bottom:0px;
   justify-content: space-around;
+  border-top: 1px solid #f8f8f8;
 }
 
 .Footer2{
@@ -47,4 +49,5 @@
   bottom:0px;
   justify-content: center;
   align-items: center;
+  border: 1px solid #f8f8f8;
 }

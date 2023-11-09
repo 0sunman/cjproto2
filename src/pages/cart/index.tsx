@@ -91,7 +91,7 @@ export default function Cart(){
                                         product.ingredients && printPrice(product.ingredients?.reduce((previousValue:number, ingredient:IIngredient)=>{
                                             previousValue = previousValue + (ingredient.price * ingredient.amount)
                                             return previousValue;
-                                        },0) * (1 - product.saleRate))} 원</span>
+                                        },0))} 원</span>
                                     </li>
                                     {product.ingredients?.map((ingredient:IIngredient, idx:number)=>(<li key={idx} className="detail">
                                         <span>{ingredient.name}</span>

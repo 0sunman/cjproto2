@@ -22,7 +22,7 @@ const RecipeTag = styled.div`
     > div:nth-child(2) { width: 80%; text-align:right; padding-right:10px}
     > div:nth-child(2) > img { width:45px; height:45px; margin-right:5px;}
 `
-const RecipeTagTitle = styled.div``
+const RecipeTagTitle = styled.div`text-align:left !important; padding-left:15px !important;`
 const RecipeTagImages = styled.div``
 const RecipeTagImage = styled.img``
 const RecipeTagVideo = styled.video`width:100%;`

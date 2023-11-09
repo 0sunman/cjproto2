@@ -63,8 +63,9 @@ export function MiniCart(){
                 return ele;
             }))
             if(10*Math.random() > 4){
+                
                 openToast(`<div> 
-                    <p style="display:block;padding-bottom:15px;">[ ${product?.name} ]</p>
+                    <p style="display:block;padding-bottom:15px;">[ ${currentIngredients[index].name} ]</p>
                     <span style="background-color:rgba(255,255,224,.9); color:black; line-height:21px; padding:0px 3px">3일 전에</span> 구매하셨는데,<br/>
                     재구매 하시겠습니까?"
                 </div>`)
