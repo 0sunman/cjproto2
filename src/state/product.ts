@@ -103,7 +103,7 @@ export const productListState = atom<IProductType[]>({
 
       id:1,
 
-      name:"대파 100g",
+      name:"대파 1개 (70~130g)",
 
       amount:1,
 
@@ -116,7 +116,7 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"느타리버섯 500g",
+      name:"느타리버섯 200g",
 
       amount:1,
 
@@ -129,7 +129,7 @@ export const productListState = atom<IProductType[]>({
 
       id:3, 
 
-      name:"청양고추 200g",
+      name:"청양고추 2개 (30~45g)",
 
       amount:1,
 
@@ -187,7 +187,7 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"팽이버섯 300g",
+      name:"팽이버섯 150g",
 
       amount:1,
 
@@ -209,14 +209,14 @@ export const productListState = atom<IProductType[]>({
       saleRate:0.1,
 
 
-      imgUrl:"/img_1107/d_onion_1.jpg",
+      imgUrl:"/images/shrimp.jpg",
 
     }
 
 
   ],
   recipeId:2,
-  taggingProduct:[30001,30002],
+  taggingProduct:[30010,30001,30002],
   videos:["d_egg_1.mp4","d_egg_2.mp4","d_egg_3.mp4"]
   },
 
@@ -246,7 +246,7 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"양파 200g",
+      name:"피양파 (300~400g)",
 
       amount:1,
 
@@ -272,7 +272,7 @@ export const productListState = atom<IProductType[]>({
 
       id:4,
 
-      name:"대파 100g",
+      name:"대파 1개 (70~130g)",
 
       amount:1,
 
@@ -341,7 +341,7 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"대파 500g",
+      name:"대파 1개 (70~130g)",
 
       amount:1,
 
@@ -354,7 +354,7 @@ export const productListState = atom<IProductType[]>({
 
       id:3,
 
-      name:"양파 200g",
+      name:"피양파 (300~400g)",
 
       amount:1,
 
@@ -367,7 +367,7 @@ export const productListState = atom<IProductType[]>({
 
       id:4,
 
-      name:"부추 150g",
+      name:"영양부추 100g",
 
       amount:1,
 
@@ -818,7 +818,44 @@ export const productListState = atom<IProductType[]>({
     ],
     recipeId:-1,
     taggingProduct:[]
-  }
+  },
+
+
+  {
+      
+    id:30010,
+    category:CATEGORY_NAME["VEGETABLE"],
+    name:"비비고 새우왕교자",
+
+    imgUrl:"/images/shrimp.jpg",
+
+    price:6000,
+
+    descriptionImage:"/images/shrimp.jpg",
+    saleRate:0.4,
+
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+
+    ingredients:[{
+
+      id:1,
+
+      name:"비비고 새우왕교자",
+
+      amount:1,
+
+      price:6000,
+      saleRate:0.1,
+
+      imgUrl:"/images/shrimp.jpg",
+
+    }
+
+    ],
+    recipeId:-1,
+    taggingProduct:[]
+  },
 
 
 
