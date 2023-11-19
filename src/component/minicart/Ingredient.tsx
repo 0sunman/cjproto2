@@ -8,6 +8,11 @@ const MiniCartLeftArea = styled.div`display: flex; flex-direction: column; justi
 > div:nth-child(1){padding-bottom: 8px;}
 > div:nth-child(2){font-size: 15px;}`
 
+const HighLightRed= styled.span`box-shadow: inset 0 -10px 0 #ffdce0; `
+const HighLightGreen= styled.span`box-shadow: inset 0 -10px 0 #bfffa1; `
+const HighLightBlue= styled.span`box-shadow: inset 0 -10px 0 #a8c7d6; `
+const HighLightYellow= styled.span`box-shadow: inset 0 -10px 0 #fff5b1; `
+
 function companyLogo(n:string){
     let company = "/images/";
     switch(n){
@@ -24,44 +29,33 @@ function companyLogo(n:string){
 
     return <img src={company} style={{paddingLeft:"2px", width:"17px",height:"17px",borderRadius:"50%"}}/>
 }
-export function MiniIngredient({Ingredient,index,plusIngredient,minusIngredient}:{Ingredient:IIngredient,index:number,plusIngredient:Function,minusIngredient:Function}){
+export function MiniIngredient({Ingredient,index,plusIngredient,minusIngredient,compareProduct}:{Ingredient:IIngredient,index:number,plusIngredient:Function,minusIngredient:Function,compareProduct:ICompareProduct[]}){
     const {printPrice} = useUtilHook();
-    const [ingredient,setIngredient] = useState<IIngredient>(Ingredient);
-    const [compareProduct,setcompareProduct] = useRecoilState<ICompareProduct[]>(compareProductState);
-    const [compare, setCompare] = useState<ICompareProduct | null>(null);
-    const [compareRate,setCompareRate] = useState(0);
-    const [isCompare,setIsCompare] = useState(false);
-    const [random, setRandom] = useState(0)
-    const [randomCompany, setRandomCompany] = useState<"n"|"c"|"k">(random === 2 ? "n" : random == 1 ? "c" : "k")
+
+    const [compare,setCompare] = useState<ICompareProduct|null>(null);
+    const [compareRate,setCompareRate] = useState<number>(0);
+    const [comparePrice,setComparePrice] = useState<number>(0);
+    const [companyMark,setCompanyMark] = useState<"n"|"c"|"k">("n");
+    const random = Math.floor(Math.random() * 3)
+    const randomCompany = random === 2 ? "n" : random == 1 ? "c" : "k"
+    
     useEffect(()=>{
-        console.log("compareProduct : "+compareProduct);
-        setCompare(compareProduct && 
-            compareProduct.filter((ele:ICompareProduct)=> {
-                return Ingredient.name.indexOf(ele.name)>-1
-            }).length > 0 ?
-            compareProduct.filter((ele:ICompareProduct)=> Ingredient.name.indexOf(ele.name)>-1)[0]
-            : null)
-    })
-    useEffect(()=>{
-        console.log("compare : "+compare + " | "+ Ingredient.name)
-        if(compare !== null){
-            if(Ingredient)
-            setIsCompare(true);
-        }    
-    },[compare]);
-    useEffect(()=>{
-        setRandom(Math.floor(Math.random() * 3));
-    },[isCompare])
-    useEffect(()=>{
-        if(compare !== null){
-        setRandomCompany(random === 2 ? "n" : random == 1 ? "c" : "k")
+        const temp = compareProduct.filter((ele:ICompareProduct)=> Ingredient.name.indexOf(ele.name)>-1);
+        if(temp.length >= 1){
+            setCompare(temp[0]);
+        }else{
+            setCompare(null);
         }
-    },[random])
+    },[Ingredient]);
     useEffect(()=>{
         if(compare !== null){
-        setCompareRate(Math.floor(100 - (Ingredient.price / compare.data[randomCompany]) * 100))
+            setCompanyMark(randomCompany);
+            setComparePrice(compare.data[randomCompany]);
+            setCompareRate(Math.floor(100 - ((Ingredient.price / compare.data[randomCompany]) * 100)))
+        }else{
+            setCompareRate(0);
         }
-    },[randomCompany]);
+    },[compare])
     return <li>
         <MiniCartLeftArea>
         <div style={{fontSize:"12px"}}>{Ingredient.name} </div>
@@ -69,13 +63,13 @@ export function MiniIngredient({Ingredient,index,plusIngredient,minusIngredient}
             {printPrice(Ingredient.price * (1 - (Ingredient.saleRate !== undefined ? Ingredient.saleRate : 0)))}
             <span style={{fontSize:"11px"}}>원</span> 
             <span style={{fontSize:"11px",textDecoration:"line-through",color:"#a8a8a8", paddingLeft:"5px"}}>{printPrice(Ingredient.price)}원</span>
-            {compare !== null && isCompare && <div style={{margin:"0px", fontSize:"10px","display":"flex",alignItems:"center",paddingTop:"10px" }}>
-                 <div style={{display:"flex",alignItems:"center"}}>
-                    {companyLogo(randomCompany)} 
-                    <span style={{paddingLeft:"5px"}}> {printPrice(compare.data[randomCompany])}원 대비 </span>
+            {compare && <div style={{margin:"0px", fontSize:"10px","display":"flex",alignItems:"center",paddingTop:"10px" }}>
+                 <HighLightYellow style={{display:"flex",alignItems:"center"}}>
+                    {companyLogo(companyMark)} 
+                    <span style={{paddingLeft:"5px"}}> {printPrice(comparePrice)}원 대비 </span>
                     <span style={{color:"red",fontSize:"13px",padding:"0px 1px 0px 3px"}}>{(compareRate)}</span>
                     <span> % 저렴 </span>
-                </div>
+                </HighLightYellow>
             </div>}
             </div>
         </MiniCartLeftArea>

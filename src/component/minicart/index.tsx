@@ -32,6 +32,7 @@ const HighLightYellow= styled.span`box-shadow: inset 0 -10px 0 #fff5b1; `
 
 export function MiniCart(){
     const router = useRouter();
+    const [compareProduct,setcompareProduct] = useRecoilState<ICompareProduct[]>(compareProductState);
     const {printPrice} = useUtilHook();
     const {products, setProducts} = useProducts();
     //index
@@ -133,7 +134,7 @@ export function MiniCart(){
                         </MiniCartTextBlock>
                     <ul>
                         {currentIngredients?.map((ingredient:IIngredient,index:number) => {
-                            return <MiniIngredient index={index} key={index} Ingredient={ingredient} plusIngredient={plusIngredient} minusIngredient={minusIngredient}/>
+                            return <MiniIngredient index={index} key={index} Ingredient={ingredient} plusIngredient={plusIngredient} minusIngredient={minusIngredient} compareProduct={compareProduct}/>
                         })}
                         
                     </ul>
