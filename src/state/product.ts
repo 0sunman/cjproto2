@@ -26,6 +26,15 @@ export interface IProductType{
     descriptionImage?:string;
 }
 
+export interface ICompareProduct{
+  name:string,
+  data:{
+    c:number,
+    k:number,
+    n:number
+  }
+}
+
 export interface IProducts{
     option?:boolean,
     list:IProductType[]
@@ -81,6 +90,64 @@ export const getIngredient = selector({
     }
     })
 })
+export const compareProductState = atom<ICompareProduct[]>({
+  key:"compareProduct",
+  default:[{
+    name:"대파",
+    data:{
+      c:5500,
+      n:5000,
+      k:7000
+    }
+  },
+  {
+    name:"느타리버섯",
+    data:{
+      c:3500,
+      n:3000,
+      k:4000
+    }
+  },
+  {
+    name:"청양고추",
+    data:{
+      c:3500,
+      n:3000,
+      k:4000
+    }
+  },
+  {
+    name:"팽이버섯",
+    data:{
+      c:3500,
+      n:3000,
+      k:4000
+    }
+  },
+  {
+    name:"영양부추",
+    data:{
+      c:5500,
+      n:5000,
+      k:7000
+    }
+  },
+  {
+    name:"피양파",
+    data:{
+      c:5500,
+      n:5000,
+      k:6500
+    }
+  }]
+})
+/*
+청양고추 2개 (30~45g) : 2000
+      name:"영양부추 100g", : 
+      name:"팽이버섯 150g",
+      name:"피양파 (300~400g)",
+
+*/
 
 export const productListState = atom<IProductType[]>({
   key:"productList",

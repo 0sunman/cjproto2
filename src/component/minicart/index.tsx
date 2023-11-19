@@ -1,15 +1,16 @@
 import { useProducts } from "@/hook/productHook";
 import { useEffect, useState } from "react";
-import { useRecoilValue } from "recoil";
+import { useRecoilState,useRecoilValue } from "recoil";
 import styles from '@/styles/Home.module.css'
 import { useRouter } from "next/router";
-import { IIngredient, IProductType, getProduct } from "@/state/product";
+import { IIngredient, IProductType, getProduct, compareProductState, ICompareProduct } from "@/state/product";
 import { useMiniCart } from "@/hook/miniCartHook";
 import { useCurrentUser } from "@/hook/userHook";
 import { useCart } from "@/hook/cartHook";
 import useUtilHook from "@/hook/utilHook";
 import { useToast } from "@/hook/toastHook";
 import styled from "@emotion/styled";
+import { MiniIngredient } from "./Ingredient";
 
 
 const MiniCartHRBar = styled.hr`width: 80%;margin: 20px auto;border-top: 1px solid rgba(200, 200, 200,.5);`
@@ -28,9 +29,6 @@ const HighLightGreen= styled.span`box-shadow: inset 0 -10px 0 #bfffa1; `
 const HighLightBlue= styled.span`box-shadow: inset 0 -10px 0 #a8c7d6; `
 const HighLightYellow= styled.span`box-shadow: inset 0 -10px 0 #fff5b1; `
 
-const MiniCartLeftArea = styled.div`display: flex; flex-direction: column; justify-content: center; align-items: baseline !important;
-> div:nth-child(1){padding-bottom: 8px;}
-> div:nth-child(2){font-size: 15px;}`
 
 export function MiniCart(){
     const router = useRouter();
@@ -101,6 +99,7 @@ export function MiniCart(){
             }
         }
     },[currentIngredients])
+
     
     return <>
         <div className={`dimmed ${isShowMiniCart ? "on" : ""}`}></div>
@@ -134,18 +133,7 @@ export function MiniCart(){
                         </MiniCartTextBlock>
                     <ul>
                         {currentIngredients?.map((ingredient:IIngredient,index:number) => {
-                            return <li key={index}>
-                                <MiniCartLeftArea>
-                                <div style={{fontSize:"12px"}}>{ingredient.name} </div>
-                                <div>{printPrice(ingredient.price * (1 - (ingredient.saleRate !== undefined ? ingredient.saleRate : 0)))}<span style={{fontSize:"11px"}}>원</span> <span style={{fontSize:"11px",textDecoration:"line-through",color:"#a8a8a8", paddingLeft:"5px"}}>{printPrice(ingredient.price)}원</span></div>
-                                
-                                </MiniCartLeftArea>
-                                <div>
-                                    <button onClick={() => minusIngredient(index)}>-</button>
-                                    <input type="text" value={ingredient.amount}/>
-                                    <button onClick={() => plusIngredient(index)}>+</button>
-                                </div>
-                                </li>
+                            return <MiniIngredient index={index} key={index} Ingredient={ingredient} plusIngredient={plusIngredient} minusIngredient={minusIngredient}/>
                         })}
                         
                     </ul>
