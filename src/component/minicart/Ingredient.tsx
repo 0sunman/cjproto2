@@ -51,7 +51,8 @@ export function MiniIngredient({Ingredient,index,plusIngredient,minusIngredient,
         if(compare !== null){
             setCompanyMark(randomCompany);
             setComparePrice(compare.data[randomCompany]);
-            setCompareRate(Math.floor(100 - ((Ingredient.price / compare.data[randomCompany]) * 100)))
+            const realPrice = Ingredient.price - (Ingredient.saleRate ? Ingredient.price  * Ingredient.saleRate : 0)
+            setCompareRate(Math.floor(100 - ((realPrice / compare.data[randomCompany]) * 100)))
         }else{
             setCompareRate(0);
         }
