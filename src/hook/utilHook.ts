@@ -1,6 +1,7 @@
 export default function useUtilHook() {
     const printPrice = (price:number)=>{
-        return String(price).split("").reverse().reduce((a:Array<string>,v:string,idx:number)=>{
+        const test = Math.floor(price)
+        return String(test).split("").reverse().reduce((a:Array<string>,v:string,idx:number)=>{
             if(idx !== 0 && 0 == (idx % 3)){
                 a.unshift(",");
             }
