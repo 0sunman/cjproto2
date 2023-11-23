@@ -95,49 +95,49 @@ export const compareProductState = atom<ICompareProduct[]>({
   default:[{
     name:"대파",
     data:{
-      c:5500,
-      n:5000,
-      k:7000
+      c:2200,
+      n:2500,
+      k:2490
     }
   },
   {
     name:"느타리버섯",
     data:{
-      c:3500,
-      n:3000,
-      k:4000
+      c:1490,
+      n:1500,
+      k:1590
     }
   },
   {
     name:"청양고추",
     data:{
-      c:3500,
-      n:3000,
-      k:4000
+      c:1450,
+      n:1980,
+      k:1250
     }
   },
   {
     name:"팽이버섯",
     data:{
-      c:3500,
-      n:3000,
-      k:4000
+      c:1160,
+      n:950,
+      k:1290
     }
   },
   {
     name:"영양부추",
     data:{
-      c:5500,
-      n:5000,
-      k:7000
+      c:3500,
+      n:4450,
+      k:4990
     }
   },
   {
     name:"피양파",
     data:{
-      c:5500,
-      n:5000,
-      k:6500
+      c:2190,
+      n:1935,
+      k:2990
     }
   }]
 })
@@ -170,12 +170,12 @@ export const productListState = atom<IProductType[]>({
 
       id:1,
 
-      name:"대파 1개 (70~130g)",
+      name:"대파 1개 (250g)",
 
       amount:1,
 
-      price:3000,
-      saleRate:0.1,
+      price:2200,
+      saleRate:0.3,
 
       imgUrl:"/img_1107/d_buchu_1.jpg",
 
@@ -183,12 +183,12 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"느타리버섯 200g",
+      name:"느타리버섯 (200g)",
 
       amount:1,
 
-      price:1500,
-      saleRate:0.1,
+      price:1250,
+      saleRate:0.25,
 
       imgUrl:"/img_1107/d_mushroom_1.jpg",
 
@@ -196,12 +196,12 @@ export const productListState = atom<IProductType[]>({
 
       id:3, 
 
-      name:"청양고추 2개 (30~45g)",
+      name:"청양고추 (80g)",
 
       amount:1,
 
-      price:2000,
-      saleRate:0.1,
+      price:1450,
+      saleRate:0.2,
 
       imgUrl:"/img_1107/d_onion_1.jpg",
 
@@ -213,8 +213,8 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:6500,
-      saleRate:0.1,
+      price:5980,
+      saleRate:0.2,
 
       imgUrl:"/img_1107/d_onion_1.jpg",
 
@@ -245,7 +245,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:4290,
+      price:3100,
       saleRate:0.1,
 
       imgUrl:"/img_1107/d_buchu_1.jpg",
@@ -254,11 +254,11 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"팽이버섯 150g",
+      name:"팽이버섯 300g",
 
       amount:1,
 
-      price:2500,
+      price:1000,
       saleRate:0.1,
 
 
@@ -313,11 +313,11 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"피양파 (300~400g)",
+      name:"피양파 (500g)",
 
       amount:1,
 
-      price:3000,
+      price:2000,
       saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -330,7 +330,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:1000,
+      price:1200,
       saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -339,11 +339,11 @@ export const productListState = atom<IProductType[]>({
 
       id:4,
 
-      name:"대파 1개 (70~130g)",
+      name:"대파 1개 (250g)",
 
       amount:1,
 
-      price:3000,
+      price:2200,
       saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -356,7 +356,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:5500,
+      price:5980,
       saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -408,11 +408,11 @@ export const productListState = atom<IProductType[]>({
 
       id:2,
 
-      name:"대파 1개 (70~130g)",
+      name:"대파 1개 (250g)",
 
       amount:1,
 
-      price:3000,
+      price:2200,
       saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -421,11 +421,11 @@ export const productListState = atom<IProductType[]>({
 
       id:3,
 
-      name:"피양파 (300~400g)",
+      name:"피양파 (500g)",
 
       amount:1,
 
-      price:3000,
+      price:2000,
       saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -438,7 +438,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:4000,
+      price:3100,
       saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -508,7 +508,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:8000,
+      price:3500,
       saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -521,7 +521,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:2000,
+      price:5000,
       saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -530,11 +530,11 @@ export const productListState = atom<IProductType[]>({
 
       id:4,
 
-      name:"피망 200g",
+      name:"피망 2개",
 
       amount:1,
 
-      price:1200,
+      price:2000,
       saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -547,7 +547,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:5500,
+      price:5980,
       saleRate:0.1,
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
@@ -608,7 +608,7 @@ export const productListState = atom<IProductType[]>({
     imgUrl:"/img_1107/d_buchu_1.jpg",
     descriptionImage:"/img_1107/detail/vegetable_d_buchu.jpg",
 
-    price:1000,
+    price:3100,
 
     saleRate:0.4,
 
@@ -623,7 +623,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:1000,
+      price:3100,
       saleRate:0.1,
 
       imgUrl:"/img_1107/d_buchu_1.jpg",
@@ -644,7 +644,7 @@ export const productListState = atom<IProductType[]>({
     imgUrl:"/img_1107/d_mushroom_1.jpg",
 
     descriptionImage:"/img_1107/detail/vegetable_d_mushroom.png",
-    price:1000,
+    price:1250,
 
     saleRate:0.4,
 
@@ -659,7 +659,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:1000,
+      price:1250,
       saleRate:0.1,
 
       imgUrl:"/img_1107/d_mushroom_1.jpg",
@@ -680,7 +680,7 @@ export const productListState = atom<IProductType[]>({
     imgUrl:"/img_1107/d_buchu_1.jpg",
 
     descriptionImage:"/img_1107/detail/vegetable_d_pa.png",
-    price:1000,
+    price:2200,
 
     saleRate:0.4,
 
@@ -695,7 +695,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:1000,
+      price:2200,
       saleRate:0.1,
 
       imgUrl:"/img_1107/d_buchu_1.jpg",
@@ -716,7 +716,7 @@ export const productListState = atom<IProductType[]>({
     imgUrl:"/img_1107/d_onion_1.jpg",
 
     descriptionImage:"/img_1107/detail/vegetable_d_gochu.png",
-    price:1000,
+    price:1450,
 
     saleRate:0.4,
 
@@ -731,7 +731,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:1000,
+      price:1450,
       saleRate:0.1,
 
       imgUrl:"/img_1107/d_onion_1.jpg",
@@ -752,7 +752,7 @@ export const productListState = atom<IProductType[]>({
     imgUrl:"/img_1107/d_potato_1.jpg",
 
     descriptionImage:"/img_1107/detail/vegetable_d_potato.jpg",
-    price:1000,
+    price:3500,
 
     saleRate:0.4,
 
@@ -767,7 +767,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:1000,
+      price:3500,
       saleRate:0.1,
 
       imgUrl:"/img_1107/d_potato_1.jpg",
@@ -788,7 +788,7 @@ export const productListState = atom<IProductType[]>({
     imgUrl:"/img_1107/d_gogu_1.jpg",
 
     descriptionImage:"/img_1107/detail/vegetable_d_gogu.png",
-    price:1000,
+    price:3000,
 
     saleRate:0.4,
 
@@ -803,7 +803,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:1000,
+      price:3000,
       saleRate:0.1,
 
       imgUrl:"/img_1107/d_gogu_1.jpg",
@@ -824,7 +824,7 @@ export const productListState = atom<IProductType[]>({
     imgUrl:"/img_1107/d_onion_1.jpg",
 
     descriptionImage:"/img_1107/detail/vegetable_d_onion.png",
-    price:1000,
+    price:2000,
 
     saleRate:0.4,
 
@@ -839,7 +839,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:1000,
+      price:2000,
       saleRate:0.1,
 
       imgUrl:"/img_1107/d_onion_1.jpg",
@@ -859,7 +859,7 @@ export const productListState = atom<IProductType[]>({
 
     imgUrl:"/img_1107/d_carrot_1.jpg",
 
-    price:1000,
+    price:4900,
 
     descriptionImage:"/img_1107/detail/vegetable_d_carrot.jpg",
     saleRate:0.4,
@@ -875,7 +875,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:1000,
+      price:4900,
       saleRate:0.1,
 
       imgUrl:"/img_1107/d_carrot_1.jpg",
