@@ -73,7 +73,7 @@ export default function Cart(){
                             }}/>
                             <span>{product.name}</span>
                             <span className="material-symbols-outlined close" onClick={()=>{ 
-                                removeProduct(product.id);                                
+                                removeProduct(product.cartId);                                
                             }} style={{paddingRight:"15px"}}>
                                 close
                             </span>
