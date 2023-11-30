@@ -13,39 +13,40 @@ import { Chart as ChartJS, RadarController, RadialLinearScale, LineController, L
 ChartJS.register(RadarController, RadialLinearScale, LineController, LineElement, PointElement, LinearScale, Title);
 
 import type { ChartOptions } from 'chart.js';
+import styled from '@emotion/styled';
 
 const chartOptions: ChartOptions<'radar'> & ChartOptions = {
     elements: {
       //데이터 속성2.
       line: {
         borderWidth: 2,
-        borderColor: "#ff6600",
+        borderColor: "#fff",
       },
       //데이터 꼭짓점.
       point: {
-        backgroundColor:"#ff6600",
+        backgroundColor:"#fff",
       }
     },
     scales: {
       r: {
         ticks: {
-          stepSize: 2.5,
-          display: false,
+          stepSize:1.5,
+          display: false
         },
         grid: {
-          color: "#ff6600",
+          color: "#ddd",
         },
         //라벨 속성 지정.
         pointLabels: {
           font: {
-            size: 12,
+            size: 11,
             weight: '700',
             family: 'Pretendard',
+            
           },
           color: "#000000",
         },
         angleLines: {
-          display: false,
         },
         suggestedMin: 0,
         suggestedMax: 5,
@@ -63,15 +64,41 @@ const chartOptions: ChartOptions<'radar'> & ChartOptions = {
     },
   };
   const chartData = {
-    labels: ['열량', '단백질', '나트륨', '지방', '탄수화물'],
+    labels: ['비타민','단백질', '나트륨', '지방', '탄수화물'],
     datasets: [
       {
-        label: '팀 점수',
         data: [3,3,4,2,4],
-        backgroundColor: '#ff6600',
+        fill: true,
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgb(255, 99, 132)',
+        pointBackgroundColor: 'rgb(255, 99, 132)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(255, 99, 132)'
+      },
+      {
+        data: [1,2,3,2,1],
+        fill: true,
+        backgroundColor: 'rgba(132, 99, 255, 0.2)',
+        borderColor: 'rgb(132, 99, 255)',
+        pointBackgroundColor: 'rgb(132, 99, 255)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(132, 99, 255)'
       },
     ],
   };
+
+  const StyleTable = styled.table`
+  width:90%; text-align:center;border:1px solid #ddd;
+  font-size:12px;
+  th,td{  padding:8px; }
+  th{background:rgba(10,10,10,.1);font-weight:bold;}
+  th,td{border-bottom:1px solid #ccc; border-right:1px solid #ccc}
+  th:last-child,td:last-child{border-right:0px;}
+  td:nth-child(2){background:rgba(132, 99, 255, 0.2);}
+  td:nth-child(3){background:rgba(255, 99, 132, 0.2);}
+`
 export default function Product(){
     const router = useRouter();
     const id = router.query.id !== undefined ? Number(router.query.id) : 1;
@@ -118,8 +145,49 @@ export default function Product(){
                 영양성분
             </p>
             <hr></hr>
-            <div style={{background:"#e8e8e8",width:"95%",margin:"0 auto",borderRadius:"10px"}}>
-            <Radar data={chartData} options={chartOptions} />
+            <div style={{display:"flex",width:"100%",flexDirection:"column"}}>
+              <div style={{width:"75%",margin:"0 auto",borderRadius:"10px"}}>
+                <Radar data={chartData} options={chartOptions} />
+              </div>
+              <div style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                <StyleTable>
+                  <thead>
+                    <tr>
+                      <th>구분</th>
+                      <th>고기듬뿍 육개장</th>
+                      <th>일상 점심 세트</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>비타민</td>
+                      <td>300mg</td>
+                      <td>500mg</td>
+                    </tr>
+                    <tr>
+                      <td>단백질</td>
+                      <td>300mg</td>
+                      <td>500mg</td>
+                    </tr>
+                    <tr>
+                      <td>지방</td>
+                      <td>300mg</td>
+                      <td>500mg</td>
+                    </tr>
+                    <tr>
+                      <td>탄수화물</td>
+                      <td>300mg</td>
+                      <td>500mg</td>
+                    </tr>
+                    <tr>
+                      <td>나트륨</td>
+                      <td>300mg</td>
+                      <td>500mg</td>
+                    </tr>
+                  </tbody>
+                </StyleTable>
+              </div>
+
             </div>
             {product.descriptionImage && (<>
             <p className="recipe-title">

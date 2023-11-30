@@ -29,6 +29,6 @@ export const useProducts = () => {
         totalSum += ingredient.price;
         return totalSum;
       },0)
-      const getSaleRate = (price:number,salePrice:number) => Number(((1 - salePrice!/price!)).toFixed(2)) * 100
+      const getSaleRate = (price:number,salePrice:number) => String(Number(((1 - salePrice!/price!)).toFixed(2)) * 100).substring(0,2)
     return {products, setProducts, currentProduct, getProductWithProductId,changeProduct, getProductPriceWithProductId, getProductSalePriceWithProductId,getSaleRate}
 }

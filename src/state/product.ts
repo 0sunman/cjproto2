@@ -9,6 +9,7 @@ export interface IIngredient{
     amount:number;
     imgUrl:string;
     saleRate?:number;
+    addProduct?:boolean;
   }
   
 export interface IProductType{
@@ -24,6 +25,7 @@ export interface IProductType{
     taggingProduct?:number[];
     videos?:string[];
     descriptionImage?:string;
+    addProduct?:number[];
 }
 
 export interface ICompareProduct{
@@ -151,7 +153,8 @@ export const compareProductState = atom<ICompareProduct[]>({
 
 export const productListState = atom<IProductType[]>({
   key:"productList",
-  default:[{
+  default:[
+    {
       
     id:1,
     category:CATEGORY_NAME["RECIPE"],
@@ -216,14 +219,75 @@ export const productListState = atom<IProductType[]>({
       price:5980,
       saleRate:0.2,
 
-      imgUrl:"/img_1107/d_onion_1.jpg",
+      imgUrl:"/images/6dog.jpg",
 
-    },
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
+    }
+    /*
+    name:"햇반 작은공기130g 1EA",
+  
+    imgUrl:"/images/shrimp.jpg",
+  
+    price:1300,
+    name:"햇반 210g 1EA",
+  
+    imgUrl:"/images/shr0mp.jpg",
+  
+    price:1900,
+  
+    name:"햇반 큰공기 300g 1EA",
+  
+    imgUrl:"/images/shrimp.jpg",
+  
+    price:2700,
+    */
 
     ],
     recipeId:1,
     taggingProduct:[30003,30004,30005],
-    videos:["d_all_1.mp4","d_six_1.mp4","d_six_2.mp4","d_six_3.mp4","d_six_4.mp4","d_six_5.mp4","d_six_6.mp4","d_six_7.mp4"]
+    videos:["d_all_1.mp4","d_six_1.mp4","d_six_2.mp4","d_six_3.mp4","d_six_4.mp4","d_six_5.mp4","d_six_6.mp4","d_six_7.mp4"],
+    addProduct:[90011,90012,90013]
 
   },
 
@@ -279,12 +343,55 @@ export const productListState = atom<IProductType[]>({
       imgUrl:"/images/shrimp.jpg",
 
     }
+    ,{
 
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
+    }
 
   ],
   recipeId:2,
   taggingProduct:[30010,30001,30002],
-  videos:["d_egg_1.mp4","d_egg_2.mp4","d_egg_3.mp4"]
+  videos:["d_egg_1.mp4","d_egg_2.mp4","d_egg_3.mp4"],
+  addProduct:[90011,90012,90013]
   },
 
 
@@ -361,12 +468,55 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
-    },
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
+    }
 
   ],
   
   recipeId:3,
-  taggingProduct:[30001,30003,30005]
+  taggingProduct:[30001,30003,30005],
+  addProduct:[90011,90012,90013]
 
   },
 
@@ -456,12 +606,55 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
-    },
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
+    }
 
   ],
   
   recipeId:4,
-  taggingProduct:[30002,30004,30006,30007]
+  taggingProduct:[30002,30004,30006,30007],
+  addProduct:[90011,90012,90013]
 
 
   },
@@ -552,12 +745,55 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
 
-    },
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
+    }
 
   ],
   
   recipeId:5,
-  taggingProduct:[30001,30002,30003]
+  taggingProduct:[30001,30002,30003],
+  addProduct:[90011,90012,90013]
 
   },
 
@@ -592,11 +828,54 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"/img_1107/d_pang_1.jpg",
 
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
     }
 
     ],
     recipeId:-1,
-    taggingProduct:[]
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
   },
 
   {
@@ -628,11 +907,54 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"/img_1107/d_buchu_1.jpg",
 
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
     }
 
     ],
     recipeId:-1,
-    taggingProduct:[]
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
   },
 
   {
@@ -664,11 +986,54 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"/img_1107/d_mushroom_1.jpg",
 
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
     }
 
     ],
     recipeId:-1,
-    taggingProduct:[]
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
   },
 
   {
@@ -700,11 +1065,54 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"/img_1107/d_buchu_1.jpg",
 
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
     }
 
     ],
     recipeId:-1,
-    taggingProduct:[]
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
   },
 
   {
@@ -736,11 +1144,54 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"/img_1107/d_onion_1.jpg",
 
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
     }
 
     ],
     recipeId:-1,
-    taggingProduct:[]
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
   },
 
   {
@@ -772,11 +1223,54 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"/img_1107/d_potato_1.jpg",
 
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
     }
 
     ],
     recipeId:-1,
-    taggingProduct:[]
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
   },
 
   {
@@ -808,11 +1302,54 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"/img_1107/d_gogu_1.jpg",
 
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
     }
 
     ],
     recipeId:-1,
-    taggingProduct:[]
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
   },
 
   {
@@ -844,11 +1381,54 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"/img_1107/d_onion_1.jpg",
 
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
     }
 
     ],
     recipeId:-1,
-    taggingProduct:[]
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
   },
 
   {
@@ -880,11 +1460,54 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"/img_1107/d_carrot_1.jpg",
 
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
     }
 
     ],
     recipeId:-1,
-    taggingProduct:[]
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
   },
 
 
@@ -917,12 +1540,288 @@ export const productListState = atom<IProductType[]>({
 
       imgUrl:"/images/shrimp.jpg",
 
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
     }
 
     ],
     recipeId:-1,
-    taggingProduct:[]
-  },
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
+  },{
+      
+    id:90011,
+    category:CATEGORY_NAME["HMR"],
+    name:"햇반 작은공기130g 1EA",
+  
+    imgUrl:"/images/shrimp.jpg",
+  
+    price:1300,
+  
+    descriptionImage:"/images/shrimp.jpg",
+    saleRate:0.4,
+  
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+  
+    ingredients:[{
+  
+      id:1,
+  
+      name:"햇반 작은공기130g 1EA",
+  
+      amount:1,
+  
+      price:1300,
+      saleRate:0.1,
+  
+      imgUrl:"/images/shrimp.jpg",
+  
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
+    }
+  
+    ],
+    recipeId:-1,
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
+  }
+  ,{
+      
+    id:90012,
+    category:CATEGORY_NAME["HMR"],
+    name:"햇반 210g 1EA",
+  
+    imgUrl:"/images/shr0mp.jpg",
+  
+    price:1900,
+  
+    descriptionImage:"/images/shrimp.jpg",
+    saleRate:0.4,
+  
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+  
+    ingredients:[{
+  
+      id:1,
+  
+      name:"햇반 210g 1EA",
+  
+      amount:0,
+  
+      price:1900,
+      saleRate:0.1,
+  
+      imgUrl:"/images/shrimp.jpg",
+  
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
+    }
+  
+    ],
+    recipeId:-1,
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
+  }
+  ,{
+      
+    id:90013,
+    category:CATEGORY_NAME["HMR"],
+    name:"햇반 큰공기 300g 1EA",
+  
+    imgUrl:"/images/shrimp.jpg",
+  
+    price:2700,
+  
+    descriptionImage:"/images/shrimp.jpg",
+    saleRate:0.4,
+  
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+  
+    ingredients:[{
+  
+      id:1,
+  
+      name:"햇반 큰공기 300g 1EA",
+  
+      amount:1,
+  
+      price:2700,
+      saleRate:0.1,
+  
+      imgUrl:"/images/shrimp.jpg",
+  
+    },{
+
+      id:6,
+
+      name:"햇반 210g 1EA",
+
+      amount:0,
+
+      price:1900,
+      saleRate:0.2,
+
+      imgUrl:"/images/hb2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"비비고 썰은배추김치 100g",
+
+      amount:0,
+
+      price:1800,
+      saleRate:0.2,
+
+      imgUrl:"/images/kc.jpg",
+      addProduct:true
+
+    },{
+
+      id:8,
+
+      name:"비비고 소고기장조림 125g",
+
+      amount:0,
+
+      price:3680,
+      saleRate:0.2,
+
+
+      imgUrl:"/images/jjr.jpg",
+      addProduct:true
+
+    }
+  
+    ],
+    recipeId:-1,
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
+  }
 
 
 

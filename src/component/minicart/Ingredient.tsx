@@ -3,10 +3,36 @@ import { useRecoilState } from "recoil"
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import useUtilHook from "@/hook/utilHook";
-
-const MiniCartLeftArea = styled.div`display: flex; flex-direction: column; justify-content: center; align-items: baseline !important;
-> div:nth-child(1){padding-bottom: 8px;}
-> div:nth-child(2){font-size: 15px;}`
+const MinicartIngredient = styled.li`
+margin:0 auto;
+`
+const MiniCartLeftArea = styled.div`
+    display:flex; flex-wrap:wrap; flex-direction:row; align-items:center; justify-content:center;
+        > div:nth-child(1){
+            width:30%; overflow:hidden;
+            > img{width:100%;}
+        }
+        > div:nth-child(2){ 
+            width:70%; 
+            > div:first-child{padding:5px 20px;}
+            > div:nth-child(3) > span{display:inline-flex;flex-direction:row;align-items:center;justify-content:start}
+            > div{padding-left:20px;}
+            .addNumber{
+                padding:10px 20px 0px;
+                button{height:35px; width:35px; border:0;}
+                input{height:35px; padding:0; margin:0; border:0; text-align:center; width:35px;}
+            }
+            .compare{
+                padding:2px 20px;
+                >span{
+                    display:inline-flex;
+                   align-items:center;
+                }
+            }
+        }
+    max-width:450px;
+    margin-bottom:30px;
+}`
 
 const HighLightRed= styled.span`box-shadow: inset 0 -10px 0 #ffdce0; `
 const HighLightGreen= styled.span`box-shadow: inset 0 -10px 0 #bfffa1; `
@@ -57,27 +83,35 @@ export function MiniIngredient({Ingredient,index,plusIngredient,minusIngredient,
             setCompareRate(0);
         }
     },[compare])
-    return <li>
+    return <MinicartIngredient>
         <MiniCartLeftArea>
-        <div style={{fontSize:"12px"}}>{Ingredient.name} </div>
-        <div>
-            {printPrice(Ingredient.price * (1 - (Ingredient.saleRate !== undefined ? Ingredient.saleRate : 0)))}
-            <span style={{fontSize:"11px"}}>원</span> 
-            <span style={{fontSize:"11px",textDecoration:"line-through",color:"#a8a8a8", paddingLeft:"5px"}}>{printPrice(Ingredient.price)}원</span>
-            {compare && <div style={{margin:"0px", fontSize:"10px","display":"flex",alignItems:"center",paddingTop:"10px" }}>
-                 <HighLightYellow style={{display:"flex",alignItems:"center"}}>
-                    {companyLogo(companyMark)} 
-                    <span style={{paddingLeft:"5px"}}> {printPrice(comparePrice)}원 대비 </span>
-                    <span style={{color:"red",fontSize:"13px",padding:"0px 1px 0px 3px"}}>{(compareRate)}</span>
-                    <span> % 저렴 </span>
-                </HighLightYellow>
-            </div>}
+            <div>
+                <img src={Ingredient.imgUrl}></img>
             </div>
+            <div>
+                <div style={{fontSize:"12px"}}>{Ingredient.name} </div>
+                {compare && <div className="compare" style={{margin:"0px",fontSize:"10px"}}>
+                        <HighLightRed>
+                            {companyLogo(companyMark)} 
+                            <span style={{paddingLeft:"5px"}}> {printPrice(comparePrice)}원 대비 </span>
+                            <span style={{color:"red",fontSize:"13px",padding:"0px 1px 0px 3px"}}>{(compareRate)}</span>
+                            <span> % 저렴 </span>
+                        </HighLightRed>
+                    </div>}
+
+                    <div>
+                    {printPrice(Ingredient.price * (1 - (Ingredient.saleRate !== undefined ? Ingredient.saleRate : 0)))}
+                    <span style={{fontSize:"11px"}}>원</span> 
+                    <span style={{fontSize:"11px",textDecoration:"line-through",color:"#a8a8a8", paddingLeft:"5px"}}>{printPrice(Ingredient.price)}원</span>
+                </div>
+                    <div className="addNumber">
+                        <button onClick={() => minusIngredient(index)}>-</button>
+                        <input type="text" value={Ingredient.amount}/>
+                        <button onClick={() => plusIngredient(index)}>+</button>
+                    </div>
+            </div>
+            
+            
         </MiniCartLeftArea>
-        <div>
-            <button onClick={() => minusIngredient(index)}>-</button>
-            <input type="text" value={Ingredient.amount}/>
-            <button onClick={() => plusIngredient(index)}>+</button>
-        </div>
-        </li>
+        </MinicartIngredient>
 }

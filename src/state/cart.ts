@@ -2,7 +2,8 @@ import { atom, selector } from "recoil"
 import { IProductType } from "./product"
 
 export interface ICartProductType extends IProductType{
-    isCheck:boolean
+    cartId:string;
+    isCheck:boolean;
 }
 
 export interface ICart{
