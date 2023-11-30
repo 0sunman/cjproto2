@@ -180,7 +180,7 @@ export const productListState = atom<IProductType[]>({
       price:2200,
       saleRate:0.3,
 
-      imgUrl:"/img_1107/d_buchu_1.jpg",
+      imgUrl:"/img_1107/d_pa.jpg",
 
     },{
 
@@ -193,7 +193,7 @@ export const productListState = atom<IProductType[]>({
       price:1250,
       saleRate:0.25,
 
-      imgUrl:"/img_1107/d_mushroom_1.jpg",
+      imgUrl:"/img_1107/d_nuta.jpg",
 
     },{
 
@@ -206,7 +206,7 @@ export const productListState = atom<IProductType[]>({
       price:1450,
       saleRate:0.2,
 
-      imgUrl:"/img_1107/d_onion_1.jpg",
+      imgUrl:"/img_1107/d_gochu.jpg",
 
     },{
 
@@ -963,7 +963,7 @@ export const productListState = atom<IProductType[]>({
     category:CATEGORY_NAME["VEGETABLE"],
     name:"느타리버섯",
 
-    imgUrl:"/img_1107/d_mushroom_1.jpg",
+    imgUrl:"/img_1107/d_nuta.jpg",
 
     descriptionImage:"/img_1107/detail/vegetable_d_mushroom.png",
     price:1250,
@@ -984,7 +984,7 @@ export const productListState = atom<IProductType[]>({
       price:1250,
       saleRate:0.1,
 
-      imgUrl:"/img_1107/d_mushroom_1.jpg",
+      imgUrl:"/img_1107/d_nuta.jpg",
 
     },{
 
@@ -1042,7 +1042,7 @@ export const productListState = atom<IProductType[]>({
     category:CATEGORY_NAME["VEGETABLE"],
     name:"대파",
 
-    imgUrl:"/img_1107/d_buchu_1.jpg",
+    imgUrl:"/img_1107/d_pa.jpg",
 
     descriptionImage:"/img_1107/detail/vegetable_d_pa.png",
     price:2200,
@@ -1063,7 +1063,7 @@ export const productListState = atom<IProductType[]>({
       price:2200,
       saleRate:0.1,
 
-      imgUrl:"/img_1107/d_buchu_1.jpg",
+      imgUrl:"/img_1107/d_pa.jpg",
 
     },{
 
@@ -1121,7 +1121,7 @@ export const productListState = atom<IProductType[]>({
     category:CATEGORY_NAME["VEGETABLE"],
     name:"청양고추",
 
-    imgUrl:"/img_1107/d_onion_1.jpg",
+    imgUrl:"/img_1107/d_gochu.jpg",
 
     descriptionImage:"/img_1107/detail/vegetable_d_gochu.png",
     price:1450,
@@ -1142,7 +1142,7 @@ export const productListState = atom<IProductType[]>({
       price:1450,
       saleRate:0.1,
 
-      imgUrl:"/img_1107/d_onion_1.jpg",
+      imgUrl:"/img_1107/d_gochu.jpg",
 
     },{
 
@@ -1676,7 +1676,7 @@ export const productListState = atom<IProductType[]>({
   
     price:1900,
   
-    descriptionImage:"/images/shrimp.jpg",
+    descriptionImage:"/images/hb2.jpg",
     saleRate:0.4,
   
     description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
@@ -1693,7 +1693,7 @@ export const productListState = atom<IProductType[]>({
       price:1900,
       saleRate:0.1,
   
-      imgUrl:"/images/shrimp.jpg",
+      imgUrl:"/images/hb2.jpg",
   
     },{
 
@@ -1771,7 +1771,7 @@ export const productListState = atom<IProductType[]>({
       price:2700,
       saleRate:0.1,
   
-      imgUrl:"/images/shrimp.jpg",
+      imgUrl:"/images/hb2.jpg",
   
     },{
 

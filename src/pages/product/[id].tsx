@@ -64,10 +64,10 @@ const chartOptions: ChartOptions<'radar'> & ChartOptions = {
     },
   };
   const chartData = {
-    labels: ['비타민','단백질', '나트륨', '지방', '탄수화물'],
+    labels: ['당류','단백질', '나트륨', '지방', '탄수화물'],
     datasets: [
       {
-        data: [3,3,4,2,4],
+        data: [2,4,2,2,4],
         fill: true,
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
         borderColor: 'rgb(255, 99, 132)',
@@ -77,7 +77,7 @@ const chartOptions: ChartOptions<'radar'> & ChartOptions = {
         pointHoverBorderColor: 'rgb(255, 99, 132)'
       },
       {
-        data: [1,2,3,2,1],
+        data: [2,3,2,1,2],
         fill: true,
         backgroundColor: 'rgba(132, 99, 255, 0.2)',
         borderColor: 'rgb(132, 99, 255)',
@@ -154,35 +154,35 @@ export default function Product(){
                   <thead>
                     <tr>
                       <th>구분</th>
-                      <th>고기듬뿍 육개장</th>
-                      <th>일상 점심 세트</th>
+                      <th>HMR (단독)</th>
+                      <th>현재 상품</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>비타민</td>
-                      <td>300mg</td>
-                      <td>500mg</td>
+                      <td>당류</td>
+                      <td>5g</td>
+                      <td>5g</td>
                     </tr>
                     <tr>
                       <td>단백질</td>
-                      <td>300mg</td>
-                      <td>500mg</td>
+                      <td>15g</td>
+                      <td>21g</td>
                     </tr>
                     <tr>
                       <td>지방</td>
-                      <td>300mg</td>
-                      <td>500mg</td>
+                      <td>5g</td>
+                      <td>11g</td>
                     </tr>
                     <tr>
                       <td>탄수화물</td>
-                      <td>300mg</td>
-                      <td>500mg</td>
+                      <td>11g</td>
+                      <td>26g</td>
                     </tr>
                     <tr>
                       <td>나트륨</td>
-                      <td>300mg</td>
-                      <td>500mg</td>
+                      <td>1670mg</td>
+                      <td>1670mg</td>
                     </tr>
                   </tbody>
                 </StyleTable>
