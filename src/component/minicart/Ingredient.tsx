@@ -106,7 +106,7 @@ export function MiniIngredient({Ingredient,index,plusIngredient,minusIngredient,
                 </div>
                     <div className="addNumber">
                         <button onClick={() => minusIngredient(index)}>-</button>
-                        <input type="text" value={Ingredient.amount} readonly/>
+                        <input type="text" value={Ingredient.amount}/>
                         <button onClick={() => plusIngredient(index)}>+</button>
                     </div>
             </div>
