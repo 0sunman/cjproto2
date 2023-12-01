@@ -1593,13 +1593,13 @@ export const productListState = atom<IProductType[]>({
       
     id:90011,
     category:CATEGORY_NAME["KUKBC"],
-    name:"햇반 작은공기130g 1EA",
+    name:"비비고 소고기장조림 125g",
   
-    imgUrl:"/images/hb1.jpg",
+    imgUrl:"/images/jjr.jpg",
   
-    price:1300,
+    price:3680,
   
-    descriptionImage:"/images/hb1.jpg",
+    descriptionImage:"/images/jjr.jpg",
     saleRate:0.4,
   
     description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
@@ -1611,7 +1611,7 @@ export const productListState = atom<IProductType[]>({
   
       name:"햇반 작은공기130g 1EA",
   
-      amount:1,
+      amount:0,
   
       price:1300,
       saleRate:0.1,
@@ -1651,7 +1651,7 @@ export const productListState = atom<IProductType[]>({
 
       name:"비비고 소고기장조림 125g",
 
-      amount:0,
+      amount:1,
 
       price:3680,
       saleRate:0.2,
@@ -1750,14 +1750,14 @@ export const productListState = atom<IProductType[]>({
       
     id:90013,
     category:CATEGORY_NAME["KUKBC"],
-    name:"햇반 큰공기 300g 1EA",
+    name:"비비고 썰은배추김치 100g",
   
-    imgUrl:"/images/hb3.jpg",
-  
-    price:2700,
-  
-    descriptionImage:"/images/hb3.jpg",
-    saleRate:0.4,
+
+    price:1800,
+    saleRate:0.2,
+
+    imgUrl:"/images/kc.jpg",
+    descriptionImage:"/images/kc.jpg",
   
     description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
@@ -1768,7 +1768,7 @@ export const productListState = atom<IProductType[]>({
   
       name:"햇반 큰공기 300g 1EA",
   
-      amount:1,
+      amount:0,
   
       price:2700,
       saleRate:0.1,
@@ -1794,7 +1794,7 @@ export const productListState = atom<IProductType[]>({
 
       name:"비비고 썰은배추김치 100g",
 
-      amount:0,
+      amount:1,
 
       price:1800,
       saleRate:0.2,
