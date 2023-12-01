@@ -24,7 +24,7 @@ export function MainBanner({innerRecipe}:{innerRecipe:IRecipe}){
 
     const {RecipeWrapper, Header,RecipeMainImage, RecipeTag,RecipeTagTitle,RecipeTagImages,RecipeTagImage, RecipeComment,RecipeCommentHeart,RecipeComments,RecipeDate,RecipeButtons} = useRecipeLayout();
     return <>
-        <Header style={{paddingTop:"5px", position:"absolute", top:"10px",color:"white"}}>
+        <Header style={{position:"absolute", top:"10px",color:"white"}}>
             {/* <img src={innerRecipe.companyImageURL}  style={{width:"40px", height:"40px"}}/> */}
             <span>{innerRecipe.name}</span>
             <span>
