@@ -7,10 +7,17 @@ import { Swiper, SwiperSlide,  } from 'swiper/react'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import { useRouter } from "next/router";
 
 const Comments = styled.div`margin-top:44px;display:flex; flex-direction:column; width:100%;
 `;
-const CommentWrapper = styled.div`border-bottom:1px solid #e8e8e8; padding-bottom:20px`;
+//border-bottom:1px solid #e8e8e8; 
+
+const CommentWrapper = styled.div`
+padding-bottom:20px
+&:last-child{border-bottom:0px};
+&:nth-child(n+2){margin-top:20px}
+`;
 const CommentColumnText = styled.div`
 display:flex; width:100%; background-color:#ffffff;
 overflow:hidden;
@@ -23,7 +30,7 @@ const CommentColumnSlider = styled.div`
 width:100%;
 overflow:hidden;
 `;
-const CommentHeader = styled.div`display:flex; flex-direction:row; justify-content:center; align-items:center;margin:0px 0px;
+const CommentHeader = styled.div`display:flex; flex-direction:row; justify-content:center; align-items:start;margin:0px 0px;
 >img{margin-left:5px; width:50px; height:50px; border-radius:50%;}`;
 const UserImage = styled.img``;
 const TextArea = styled.div`margin-left:10px;
@@ -35,20 +42,25 @@ const CommentImageArea = styled.div`
 img{width:100%;}
 `;
 const CommentDate = styled.div`
-margin-top:10px;
+display:flex; align-items:end; justify-contents:end; width:100%;
+margin-top:10px;    font-size: 14px;
 span:first-child{padding-right:20px; color:#a8a8a8}
-span:last-child{font-weight:bold}
+span:last-child{font-weight:bold;}
 `;
 const CommentHeart = styled.div`display:flex; justify-content:center; align-items:top; padding-top:35px; height:20px;
 >span{font-size:18px;padding-right:10px}
 `;
 export default function Comment(){
+    const router = useRouter();
     const {comments, setComments} = useComment();
     const {users, setUsers, getUser} = useUsers();
+    const query = String(router.query.id);
+    console.log(query)
 
     return <>
     <Comments>
         {comments.map((comment:IComment, idx:number)=>{
+            if(query !== String(comment.productId)) return <></>
         const {imgUrl:UserImageURL,id:userId} = getUser(comment.userId)
         
         return <CommentWrapper key={idx}>
@@ -59,12 +71,13 @@ export default function Comment(){
                         <TextArea>
                             <UserName>{userId}</UserName>
                             <CommentText>{comment.texts}</CommentText>
+                            <CommentDate>
+                                <span>{comment.createAt}</span> 
+                                <span>좋아요 {Math.floor(Math.random()*100)}</span>
+                            </CommentDate>
                         </TextArea>
                     </CommentHeader>
-                    <CommentDate>
-                        <span>{comment.createAt}</span> 
-                    <span>좋아요 {1000}개</span>
-                    </CommentDate>
+                    
                 </CommentContent>
                 <CommentHeart><span className="material-symbols-outlined">
                             favorite

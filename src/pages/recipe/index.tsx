@@ -72,10 +72,10 @@ export default function Recipe(){
                 </RecipeButtons>
                 <RecipeComment>
                     <RecipeCommentHeart>
-                        좋아요 {999}만개
+                        좋아요 {100}+
                     </RecipeCommentHeart>
                     <RecipeComments onClick={()=>{router.push(`/comment/${innerRecipe.productId}`)}}>
-                        댓글 {1}만개 모두보기
+                        댓글 {100}+ 모두보기
                     </RecipeComments>
                     <RecipeDate>
                         10월 22일

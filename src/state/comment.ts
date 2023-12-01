@@ -12,138 +12,63 @@ export interface IComment{
 
 export const commentState = atom<IComment[]>({
   key:"recipeState",
-  default:[{
-    id:1,
-    productId:1,
-    userId:"goodman1",
-    texts:"맛있는 육개장을 먹는 순간 행복을 느껴요.",
-    createAt:"2021-04-19 00:00:00",
-    imgUrl:[
-        "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-        "https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",
-        "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
-        "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg",
-        "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-  ],
-    recipeId:1
-  },{
-    id:2,
-    productId:1,
-    userId:"nicegirl",
-    texts:"육개장은 제 최애 음식 중 하나에요. 정말 감동적이에요.",
-    createAt:"2021-04-19 00:00:00",
-    imgUrl:[
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",
-        "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
-      "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg"],
-    recipeId:1
-  },{
+  default:[
+    
+    {
+      id:1,
+      productId:1,
+      userId:"minikini_k2",
+      texts:"제대로 된 국 한그릇 있으면 쉬우면서도 맛있는 한끼 완성 ❤️ 남편 아침 밥상 꼭 차려주고 싶어서 주문한 #일상점심세트 건더기 실한 거 보이시나요? 남편이 입맛없다하면 육개장 대접하면 없던 입맛도 되살아나네요 😆",
+      createAt:"2023-11-19 14:30:23",
+      imgUrl:[
+        "/new/6/2-1.png",
+        "/new/6/2-2.png",
+        "/new/6/2-3.png",
+        "/new/6/2-4.png",
+      ],
+      recipeId:1
+    },{
+      id:2,
+      productId:2,
+      userId:"0sunman",
+      texts:"와! 대박!! 🥟🥟🥟 비비고 새우교자가 계란찜이랑 이렇게 잘 어울리는지 몰랐어요! 😋 완전 간단하게 계란찜이 만들어져서 완전 Surprise!! 😆 저녁 차려먹기 귀찮았는데 뚝딱 만들어먹으니 너무 편하네요 👍",
+      createAt:"2023-11-21 21:15:34",
+      imgUrl:[
+        "/new/2/1-1.png",
+        "/new/2/1-2.png",
+        "/new/2/1-3.png",
+        "/new/2/1-4.png",
+      ],
+      recipeId:1
+    }
+    ,{
     id:3,
     productId:1,
-    userId:"sarah_wilson",
-    texts:"육개장의 감칠맛은 신비로워요. 항상 기분 좋아집니다.",
-    createAt:"2021-04-19 00:00:00",
+    userId:"d.eunjee",
+    texts:"최애 CJ비비고 고기 듬뿍 육개장국 🍜🍜🍜 에 못난이 숙주랑 각종 채소 🥗🍄🌶️ 까지 추가해서 먹으면 그야말로 최애 밥 😆",
+    createAt:"2023-12-01 05:44:23",
+
     imgUrl:[
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg",
-      "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg"],
+      "/new/6/1-1.png",
+      "/new/6/1-2.png",
+      "/new/6/1-3.png",
+      "/new/6/1-4.png",
+    ],
     recipeId:1
   },{
     id:4,
-    productId:1,
-    userId:"goodman1",
-    texts:"육개장은 제 심장을 뛰게 만들어요. 사랑합니다.",
-    createAt:"2021-04-19 00:00:00",
+    productId:2,
+    userId:"joo020202",
+    texts:"아주 기본에 충실하지만 🦐🦐🦐 새우가 톡 튀는 느낌의 계란찜🥚🍳🥚🍳입니다~ 갑자기 본가가 그리워지는 느낌이네요 😳😳😳",
+    createAt:"2023-12-02 23:11:34",
     imgUrl:[
-      "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg"],
+      "/new/2/2-1.png",
+      "/new/2/2-2.png",
+      "/new/2/2-3.png",
+      "/new/2/2-4.png",
+    ],
     recipeId:1
-  },{
-    id:5,
-    productId:1,
-    userId:"nicegirl",
-    texts:"육개장은 정말 환상적이에요. 꼭 한 번 맛보세요.",
-    createAt:"2021-04-19 00:00:00",
-    imgUrl:[
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
-      "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg"],
-    recipeId:1
-  },{
-    id:6,
-    productId:1,
-    userId:"goodman1",
-    texts:"육개장은 제 인생 음식 중 최고에요. 매일 먹고 싶어요.",
-    createAt:"2021-04-19 00:00:00",
-    imgUrl:[
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg",
-      "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",],
-    recipeId:1
-  },{
-    id:7,
-    productId:1,
-    userId:"michael_davis",
-    texts:"육개장은 먹을 때마다 감동을 줘요. 그 맛을 잊을 수 없어요.",
-    createAt:"2021-04-19 00:00:00",
-    imgUrl:[
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg",
-      "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg"],
-    recipeId:1
-  },{
-    id:8,
-    productId:1,
-    userId:"nicegirl",
-    texts:"육개장은 제 입맛을 완벽하게 만족시켜요. 최고에요.",
-    createAt:"2021-04-19 00:00:00",
-    imgUrl:[
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
-      "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg"],
-    recipeId:1
-  },{
-    id:9,
-    productId:1,
-    userId:"david_brown",
-    texts:"맛있는 육개장을 먹으면 스트레스가 사라져요. 찐 힐링 음식이에요.",
-    createAt:"2021-04-19 00:00:00",
-    imgUrl:[
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg",
-      "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",],
-    recipeId:1
-  },{
-    id:10,
-    productId:1,
-    userId:"sarah_wilson",
-    texts:"육개장은 정말 즐겁게 먹을 수 있는 최고의 음식이에요.",
-    createAt:"2021-04-19 00:00:00",
-    imgUrl:[
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000001741/0000006541/0000001741.jpg",
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000001744/0000006562/0000001744.jpg",
-      "https://www.cj.co.kr/images/theKitchen/PHON/0000002238/0000009166/0000002238.jpg",
-      "https://img.cjthemarket.com/images/file/product/843/20220510174529772.jpg?SF=webp&RS=299x299",
-    "https://www.cj.co.kr/images/theKitchen/PHON/0000001737/0000006514/0000001737.jpg"],
-    recipeId:1
-  },
+  }
 ]
 })
 
