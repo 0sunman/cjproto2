@@ -157,7 +157,7 @@ export const productListState = atom<IProductType[]>({
     {
       
     id:1,
-    category:CATEGORY_NAME["RECIPE"],
+    category:CATEGORY_NAME["MAIN"],
     name:"일상 점심 세트",
 
     imgUrl:"/new/k/k1.jpeg",
@@ -295,7 +295,7 @@ export const productListState = atom<IProductType[]>({
   {
     id:2,
     name:"비비고 새우왕교자 계란찜",
-    category:CATEGORY_NAME["RECIPE"],
+    category:CATEGORY_NAME["MAIN"],
     imgUrl:"/new/k/k2.jpeg",
     price:2500,
     saleRate:0.4,        
@@ -802,7 +802,7 @@ export const productListState = atom<IProductType[]>({
   {
       
     id:30001,
-    category:CATEGORY_NAME["VEGETABLE"],
+    category:CATEGORY_NAME["VEGET"],
     name:"팽이버섯",
 
     imgUrl:"/img_1107/d_pang_1.jpg",
@@ -960,7 +960,7 @@ export const productListState = atom<IProductType[]>({
   {
       
     id:30003,
-    category:CATEGORY_NAME["VEGETABLE"],
+    category:CATEGORY_NAME["VEGET"],
     name:"느타리버섯",
 
     imgUrl:"/img_1107/d_nuta.jpg",
@@ -1039,7 +1039,7 @@ export const productListState = atom<IProductType[]>({
   {
       
     id:30004,
-    category:CATEGORY_NAME["VEGETABLE"],
+    category:CATEGORY_NAME["VEGET"],
     name:"대파",
 
     imgUrl:"/img_1107/d_pa.jpg",
@@ -1118,7 +1118,7 @@ export const productListState = atom<IProductType[]>({
   {
       
     id:30005,
-    category:CATEGORY_NAME["VEGETABLE"],
+    category:CATEGORY_NAME["VEGET"],
     name:"청양고추",
 
     imgUrl:"/img_1107/d_gochu.jpg",
@@ -1197,7 +1197,7 @@ export const productListState = atom<IProductType[]>({
   {
       
     id:30006,
-    category:CATEGORY_NAME["VEGETABLE"],
+    category:CATEGORY_NAME["VEGET"],
     name:"감자",
 
     imgUrl:"/img_1107/d_potato_1.jpg",
@@ -1276,7 +1276,7 @@ export const productListState = atom<IProductType[]>({
   {
       
     id:30007,
-    category:CATEGORY_NAME["VEGETABLE"],
+    category:CATEGORY_NAME["VEGET"],
     name:"고구마",
 
     imgUrl:"/img_1107/d_gogu_1.jpg",
@@ -1355,7 +1355,7 @@ export const productListState = atom<IProductType[]>({
   {
       
     id:30008,
-    category:CATEGORY_NAME["VEGETABLE"],
+    category:CATEGORY_NAME["VEGET"],
     name:"양파",
 
     imgUrl:"/img_1107/d_onion_1.jpg",
@@ -1434,7 +1434,7 @@ export const productListState = atom<IProductType[]>({
   {
       
     id:30009,
-    category:CATEGORY_NAME["VEGETABLE"],
+    category:CATEGORY_NAME["VEGET"],
     name:"당근",
 
     imgUrl:"/img_1107/d_carrot_1.jpg",
@@ -1514,7 +1514,7 @@ export const productListState = atom<IProductType[]>({
   {
       
     id:30010,
-    category:CATEGORY_NAME["VEGETABLE"],
+    category:CATEGORY_NAME["VEGET"],
     name:"비비고 새우왕교자",
 
     imgUrl:"/images/shrimp.jpg",
@@ -1591,7 +1591,7 @@ export const productListState = atom<IProductType[]>({
   },{
       
     id:90011,
-    category:CATEGORY_NAME["HMR"],
+    category:CATEGORY_NAME["KUKBC"],
     name:"햇반 작은공기130g 1EA",
   
     imgUrl:"/images/shrimp.jpg",
@@ -1669,7 +1669,7 @@ export const productListState = atom<IProductType[]>({
   ,{
       
     id:90012,
-    category:CATEGORY_NAME["HMR"],
+    category:CATEGORY_NAME["KUKBC"],
     name:"햇반 210g 1EA",
   
     imgUrl:"/images/shr0mp.jpg",
@@ -1747,7 +1747,7 @@ export const productListState = atom<IProductType[]>({
   ,{
       
     id:90013,
-    category:CATEGORY_NAME["HMR"],
+    category:CATEGORY_NAME["KUKBC"],
     name:"햇반 큰공기 300g 1EA",
   
     imgUrl:"/images/shrimp.jpg",

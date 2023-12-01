@@ -81,8 +81,10 @@ export function MiniCart(){
     const minusIngredient = (index:number) =>{
         if(currentIngredients !== undefined)
             setCurrentIngredients(currentIngredients.map((ele,idx)=>{
-                if(idx === index){
-                    return {...ele, amount:ele.amount-1}
+                if(ele.amount > 0){
+                    if(idx === index){
+                        return {...ele, amount:ele.amount-1}
+                    }                        
                 }
                 return ele;
             }))

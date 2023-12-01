@@ -16,11 +16,11 @@ export interface ICategory{
 
 */
 export const CATEGORY_NAME:any = {
-    "ALL":"10000000",
-    "RECIPE":"10010000",
-    "HMR":"10020000",
-    "VEGETABLE":"10030000",
-    "SAUCE":"10040000",
+    "MIN"  :"10010000",
+    "MAIN" :"10020000",
+    "VEGET":"10030000",
+    "KUKBC":"10040000",
+    "BREAD":"10050000",
 }
 export const categoryState = atom<ICategory[]>({
     key:"categoryState",
@@ -45,7 +45,7 @@ export const categoryState = atom<ICategory[]>({
     },{
         id:"10040000",
         name:"국·반찬",
-        engName:"KUK",
+        engName:"KUKBC",
         parent:"10000000",
         imgUrl:"/new/kuk.png"
     },{
