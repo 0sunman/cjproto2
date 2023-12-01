@@ -8,6 +8,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const Comments = styled.div`margin-top:44px;display:flex; flex-direction:column; width:100%;
 `;
@@ -50,11 +51,24 @@ span:last-child{font-weight:bold;}
 const CommentHeart = styled.div`display:flex; justify-content:center; align-items:top; padding-top:35px; height:20px;
 >span{font-size:18px;padding-right:10px}
 `;
+const ImagePopupWrapper = styled.div`
+position:fixed; width:100%; height:100%; background:rgba(0,0,0,.3);
+display:flex; flex-direction:column; justify-content:center; align-items:center;
+z-index:999999;
+top:0;left:0;
+`
+const ImageArea = styled.img`
+    width:90%;
+    height:auto;
+`
+
 export default function Comment(){
     const router = useRouter();
     const {comments, setComments} = useComment();
     const {users, setUsers, getUser} = useUsers();
     const query = String(router.query.id);
+    const [imageUrl, setImageUrl] = useState<string>("")
+    const [isImagePopup, setIsImagePopup] = useState<boolean>(true)
     console.log(query)
 
     return <>
@@ -91,10 +105,18 @@ export default function Comment(){
             slidesPerView={2.5}
             autoplay={{ delay: 2000 }}
             modules={[Autoplay]}
-            >{comment.imgUrl.map((pictureUrl:string)=>(<SwiperSlide><img src={pictureUrl}></img></SwiperSlide>))}</Swiper>
+            >{comment.imgUrl.map((pictureUrl:string)=>(<SwiperSlide onClick={()=>{
+                setIsImagePopup(true);
+                setImageUrl(pictureUrl)
+            }}><img src={pictureUrl}></img></SwiperSlide>))}</Swiper>
                 
             </CommentImageArea>
         </CommentColumnSlider>
+        <ImagePopupWrapper style={{display:(isImagePopup)? "flex" : "none"}} onClick={()=>{
+            setIsImagePopup(false);
+        }}>
+            <ImageArea src={imageUrl}></ImageArea>
+        </ImagePopupWrapper>
         </CommentWrapper>})}
     </Comments>
     </>
