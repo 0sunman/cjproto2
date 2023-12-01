@@ -10,7 +10,7 @@ import { IRecipe } from "@/state/recipe";
 
 import styled from '@emotion/styled'
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const CategoryWrapper = styled.div`margin-top:44px;display:flex; flex-direction:column; width:100%;`;
 const CategoryTabs = styled.div` background-color:#f8f8f8; overflow-x: scroll;
@@ -40,6 +40,7 @@ export default function Category(){
     const getProduct = getProductWithProductId;
     const {currentUser, setCurrentUser} = useCurrentUser();
     const {miniCart, setMiniCart, addProductCartDirect} = useMiniCart();
+    let productLength = 0;
     
     const changeProduct = (productId:number) => {
       setCurrentUser({...currentUser, productId:productId,})
@@ -64,6 +65,9 @@ export default function Category(){
                     const price = getProductPriceWithProductId(product.id);
                     const salePrice = getProductSalePriceWithProductId(product.id);
                     const saleRate = getSaleRate(price!,salePrice!);
+                    if(typeof CategoryId === "string" && (CategoryId === "ALL" || product.category === CATEGORY_NAME[CategoryId] || (CategoryId == "MIN" && product.isSale === true))){
+                        productLength++
+                    }
                     return (typeof CategoryId === "string" && (CategoryId === "ALL" || product.category === CATEGORY_NAME[CategoryId] || (CategoryId == "MIN" && product.isSale === true)) && <ProductItem key={idx}>
                         <div className="skeleton-item image" style={{"overflow":"hidden","display":"flex","alignItems":"center","justifyContent":"center","width":"calc(100% - 2px)","height":"200px","borderRadius":"5px"}}>
                             <img src={product.imgUrl} onClick={()=>{changeProduct(product.id)}} style={{width:"110%",height:"auto"}}/>
@@ -84,6 +88,10 @@ export default function Category(){
                         
                         </ProductItem>)
                 })}
+
+                { productLength === 0 && <div style={{width:"100%", height:"83vh", display:"flex", alignItems:"center", justifyContent:"center"}}>
+                좋은 상품으로 다시 찾아 뵐게요! 😀
+                </div>}
         </CategoryItemList>
     </CategoryWrapper>)
 }
