@@ -64,12 +64,11 @@ export default function Category(){
                     const price = getProductPriceWithProductId(product.id);
                     const salePrice = getProductSalePriceWithProductId(product.id);
                     const saleRate = getSaleRate(price!,salePrice!);
-
-                    return (typeof CategoryId === "string" && (CategoryId === "ALL" || product.category === CATEGORY_NAME[CategoryId]) && <ProductItem key={idx}>
-                        <div className="skeleton-item image" style={{"overflow":"hidden","display":"flex","alignItems":"center","justifyContent":"center","width":"calc(100% - 2px)","height":"200px"}}>
+                    return (typeof CategoryId === "string" && (CategoryId === "ALL" || product.category === CATEGORY_NAME[CategoryId] || (CategoryId == "MIN" && product.isSale === true)) && <ProductItem key={idx}>
+                        <div className="skeleton-item image" style={{"overflow":"hidden","display":"flex","alignItems":"center","justifyContent":"center","width":"calc(100% - 2px)","height":"200px","borderRadius":"5px"}}>
                             <img src={product.imgUrl} onClick={()=>{changeProduct(product.id)}} style={{width:"110%",height:"auto"}}/>
                         </div>
-                        <button onClick={()=>{addProductCartDirect(product.id)}}>
+                        <button onClick={()=>{addProductCartDirect(product.id)}} style={{"borderRadius":"5px"}}>
                             <span className="material-symbols-outlined">
                 shopping_cart
               </span> 담기</button>

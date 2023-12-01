@@ -26,6 +26,7 @@ export interface IProductType{
     videos?:string[];
     descriptionImage?:string;
     addProduct?:number[];
+    isSale?:boolean;
 }
 
 export interface ICompareProduct{
@@ -155,7 +156,8 @@ export const productListState = atom<IProductType[]>({
   key:"productList",
   default:[
     {
-      
+    
+    isSale:true,
     id:1,
     category:CATEGORY_NAME["MAIN"],
     name:"일상 점심 세트",
@@ -261,8 +263,7 @@ export const productListState = atom<IProductType[]>({
 
 
       imgUrl:"/images/jjr.jpg",
-      addProduct:true
-
+      addProduct:true,
     }
     /*
     name:"햇반 작은공기130g 1EA",
@@ -1594,11 +1595,11 @@ export const productListState = atom<IProductType[]>({
     category:CATEGORY_NAME["KUKBC"],
     name:"햇반 작은공기130g 1EA",
   
-    imgUrl:"/images/shrimp.jpg",
+    imgUrl:"/images/hb1.jpg",
   
     price:1300,
   
-    descriptionImage:"/images/shrimp.jpg",
+    descriptionImage:"/images/hb1.jpg",
     saleRate:0.4,
   
     description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
@@ -1672,12 +1673,13 @@ export const productListState = atom<IProductType[]>({
     category:CATEGORY_NAME["KUKBC"],
     name:"햇반 210g 1EA",
   
-    imgUrl:"/images/shr0mp.jpg",
+    imgUrl:"/images/hb2.jpg",
   
     price:1900,
   
     descriptionImage:"/images/hb2.jpg",
     saleRate:0.4,
+  
   
     description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
@@ -1688,7 +1690,7 @@ export const productListState = atom<IProductType[]>({
   
       name:"햇반 210g 1EA",
   
-      amount:0,
+      amount:1,
   
       price:1900,
       saleRate:0.1,
@@ -1750,11 +1752,11 @@ export const productListState = atom<IProductType[]>({
     category:CATEGORY_NAME["KUKBC"],
     name:"햇반 큰공기 300g 1EA",
   
-    imgUrl:"/images/shrimp.jpg",
+    imgUrl:"/images/hb3.jpg",
   
     price:2700,
   
-    descriptionImage:"/images/shrimp.jpg",
+    descriptionImage:"/images/hb3.jpg",
     saleRate:0.4,
   
     description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
