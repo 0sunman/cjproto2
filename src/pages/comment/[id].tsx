@@ -68,7 +68,7 @@ export default function Comment(){
     const {users, setUsers, getUser} = useUsers();
     const query = String(router.query.id);
     const [imageUrl, setImageUrl] = useState<string>("")
-    const [isImagePopup, setIsImagePopup] = useState<boolean>(true)
+    const [isImagePopup, setIsImagePopup] = useState<boolean>(false)
     console.log(query)
 
     return <>
