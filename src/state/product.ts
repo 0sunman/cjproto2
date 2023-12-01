@@ -160,7 +160,7 @@ export const productListState = atom<IProductType[]>({
     category:CATEGORY_NAME["RECIPE"],
     name:"일상 점심 세트",
 
-    imgUrl:"/img_1107/d_com_3.jpg",
+    imgUrl:"/new/k/k1.jpeg",
 
     price:8000,
 
