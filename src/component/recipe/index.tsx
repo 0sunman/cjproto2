@@ -8,12 +8,11 @@ const RecipeWrapper = styled.div`
 `
 const Header = styled.div`
     display:flex;
-    width:100%;  justify-content:start; align-items:start;
-
-    > span:nth-child(1){margin-left:10px; font-size:12px}
+    width:100%;  justify-content:center; align-items:center;
+    > img {width:50px; height:50px; border-radius:50%; margin-left:10px;}
+    > span:nth-child(2){margin-left:10px; font-size:14px}
     > span:nth-child(3){margin-left:auto; margin-right:10px;}
-        `
-        //    > img {width:50px; height:50px; border-radius:50%; margin-left:10px;}
+`
 const RecipeMainImage = styled.img`
     width:100%;
 `
