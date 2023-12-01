@@ -35,11 +35,11 @@ margin: 30px 0px;
 margin-top:0px;
 
 `
-const CategoryElement = styled.div`margin:0px 10px;
->div:nth-child(1){width:75px; height:75px; border-radius:100%;background-size:cover}
+const CategoryElement = styled.div`width:20%; display:inline-flex; flex-direction:column; align-items:center;
+>div:nth-child(1){width:60px; height:60px; border-radius:100%;background-size:cover}
 `
-const CategoryCircle = styled.div`width:75px; height:75px; border-radius:100%;background-size:cover `
-const CategoryText = styled.div`text-align:center;margin:10px 0px;font-size:12px;`
+const CategoryCircle = styled.div`width:50px; height:50px; border-radius:100%;background-size:cover `
+const CategoryText = styled.div`text-align:center;margin:10px 0px;font-size:10px;`
 
 export default function Home() {
 

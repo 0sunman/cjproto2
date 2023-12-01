@@ -38,12 +38,18 @@ export const categoryState = atom<ICategory[]>({
         imgUrl:"/new/pona.png"
     },{
         id:"10030000",
+        name:"채소",
+        engName:"VEGET",
+        parent:"10000000",
+        imgUrl:"/new/veget.png"
+    },{
+        id:"10040000",
         name:"국·반찬",
         engName:"KUK",
         parent:"10000000",
         imgUrl:"/new/kuk.png"
     },{
-        id:"10040000",
+        id:"10050000",
         name:"치즈·델리",
         engName:"BREAD",
         parent:"10000000",
