@@ -20,13 +20,13 @@ export const useProducts = () => {
       const getProductSalePriceWithProductId = (id:number) => products.filter((product:IProductType)=>
           (product.id === id ? true : false)
       )[0].ingredients?.reduce((totalSum:number, ingredient:IIngredient)=>{
-        totalSum += ingredient.price * (1 - (ingredient.saleRate !== undefined ? ingredient.saleRate : 0))
+        totalSum += ingredient.amount * (ingredient.price * (1 - (ingredient.saleRate !== undefined ? ingredient.saleRate : 0)))
         return totalSum;
       },0)
       const getProductPriceWithProductId = (id:number) => products.filter((product:IProductType)=>
           (product.id === id ? true : false)
       )[0].ingredients?.reduce((totalSum:number, ingredient:IIngredient)=>{
-        totalSum += ingredient.price;
+        totalSum += ingredient.amount * ingredient.price;
         return totalSum;
       },0)
       const getSaleRate = (price:number,salePrice:number) => String(Number(((1 - salePrice!/price!)).toFixed(2)) * 100).substring(0,2)

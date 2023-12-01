@@ -7,6 +7,14 @@ export interface ICategory{
     engName:string,
     imgUrl:string
 }
+/*
+
+    background-image: url(/new/kuk.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+
+*/
 export const CATEGORY_NAME:any = {
     "ALL":"10000000",
     "RECIPE":"10010000",
@@ -17,35 +25,29 @@ export const CATEGORY_NAME:any = {
 export const categoryState = atom<ICategory[]>({
     key:"categoryState",
     default:[{
-        id:"10000000",
-        name:"전체",
-        engName:"ALL",
-        parent:"0",
-        imgUrl:"/images/food.jpg"
-    },{
         id:"10010000",
-        name:"레시피",
-        engName:"RECIPE",
+        name:"최저가도전",
+        engName:"MIN",
         parent:"10000000",
-        imgUrl:"/images/recipe.jpg"
+        imgUrl:"/new/minimum.png"
     },{
         id:"10020000",
-        name:"HMR",
-        engName:"HMR",
+        name:"메인요리",
+        engName:"MAIN",
         parent:"10000000",
-        imgUrl:"/images/hmr.jpg"
+        imgUrl:"/new/pona.png"
     },{
         id:"10030000",
-        name:"야채",
-        engName:"VEGETABLE",
+        name:"국·반찬",
+        engName:"KUK",
         parent:"10000000",
-        imgUrl:"/images/vegetable.jpg"
+        imgUrl:"/new/kuk.png"
     },{
         id:"10040000",
-        name:"소스",
-        engName:"SAUCE",
+        name:"치즈·델리",
+        engName:"BREAD",
         parent:"10000000",
-        imgUrl:"/images/sauce.jpg"
+        imgUrl:"/new/bread.png"
     }]
 })
 

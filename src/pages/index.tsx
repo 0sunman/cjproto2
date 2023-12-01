@@ -31,7 +31,6 @@ import { MainBanner } from '@/component/Main/MainBanner'
 
 const TextHero = styled.h2`font-size:32px; font-weight:bold; padding-bottom:10px; padding-left:10px;`
 const CategorySection = styled.div`display:flex;width:100%;overflow:hidden;overflow-x:scroll;padding:20px 0px;
-background-color: #f8f8f8;
 margin: 30px 0px;
 margin-top:0px;
 
@@ -99,7 +98,16 @@ export default function Home() {
       return <CategoryElement onClick={()=>{
         router.push(`/category/${categoryElement.engName}`)
       }}>
-              <div style={{backgroundImage:`url(${categoryElement.imgUrl})`}}></div>
+        { categoryElement.id === "10010000" ? 
+        <div style={{backgroundImage:`url(${categoryElement.imgUrl})`}}></div> : 
+        <div style={{backgroundImage:`url(${categoryElement.imgUrl})`,
+                      backgroundRepeat:"no-repeat",
+                      backgroundSize:"60%",
+                      backgroundPosition:"50%",
+                      backgroundColor:"#f8f8f8"
+                    }}></div> 
+        }
+              
               <CategoryText>{categoryElement.name}</CategoryText>
             </CategoryElement>
     })}
