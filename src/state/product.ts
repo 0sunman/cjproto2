@@ -882,7 +882,7 @@ export const productListState = atom<IProductType[]>({
   {
       
     id:30002,
-    category:CATEGORY_NAME["VEGETABLE"],
+    category:CATEGORY_NAME["VEGET"],
     name:"영양부추",
 
     imgUrl:"/img_1107/d_buchu_1.jpg",
