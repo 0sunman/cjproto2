@@ -29,8 +29,8 @@ import { CATEGORY_NAME, ICategory } from '@/state/category'
 import { Product } from '@/component/product'
 import { MainBanner } from '@/component/Main/MainBanner'
 
-const TextHero = styled.h2`font-size:32px; font-weight:bold; padding-bottom:10px; padding-left:10px;`
-const CategorySection = styled.div`display:flex;width:100%;overflow:hidden;overflow-x:scroll;padding:20px 0px;
+const TextHero = styled.h2`font-size:18px; padding-bottom:10px; padding-left:10px;`
+const CategorySection = styled.div`display:flex;width:100%;overflow:hidden;overflow-x:scroll;padding:00px 0px;
 margin: 30px 0px;
 margin-top:0px;
 
@@ -114,6 +114,7 @@ export default function Home() {
 
   </CategorySection>
         <TextHero>오늘의 특가</TextHero>
+        <TextHero style={{fontSize:"14px",color:"rgb(153, 153, 153)"}}>TRYEAT이 최대 혜택으로 보장해요!</TextHero>
         <div className="Slide">
           <Swiper
           spaceBetween={0}

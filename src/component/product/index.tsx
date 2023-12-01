@@ -21,7 +21,7 @@ export function Product({product}:{product:IProductType}){
     },[price])
     return  <div className="product">
     <a onClick={() => changeProduct(product.id)}>  
-      <div className={`image skeleton-item ${isLoading?"":"is-done"}`} style={{position:"relative",overflow:"hidden",height:"200px",display:"flex",alignItems:"center", justifyContent:"center", backgroundColor:"#f2f2f2"}}>
+      <div className={`image skeleton-item ${isLoading?"":"is-done"}`} style={{borderRadius:"5px",position:"relative",overflow:"hidden",height:"200px",display:"flex",alignItems:"center", justifyContent:"center", backgroundColor:"#f2f2f2"}}>
         {product.imgUrl.indexOf("www.") > 1 ? 
         <img src={product.imgUrl} style={{"width":"150%","height":"auto","zIndex":"10"}} alt={product.description}  onLoad={()=>{setIsLoading(false)}}/>
         :
@@ -29,7 +29,7 @@ export function Product({product}:{product:IProductType}){
         } 
       </div>
     </a>
-      <div className='button'>
+      <div className='button' style={{borderRadius:"5px"}}>
       <a onClick={() => addProductCartDirect(product.id)}>  
           <button>
             <span className="material-symbols-outlined">

@@ -57,7 +57,7 @@ export function MainBanner({innerRecipe}:{innerRecipe:IRecipe}){
             <span>#태그상품</span>
         </RecipeTagTitle>
         <RecipeTagImages>
-        {getProduct(innerRecipe.productId).taggingProduct?.map((productId:number)=>{
+        {getProduct(innerRecipe.productId) && getProduct(innerRecipe.productId).taggingProduct && getProduct(innerRecipe.productId).taggingProduct?.map((productId:number)=>{
             const product = getProduct(productId);
             return (<RecipeTagImage src={product.imgUrl} onClick={()=>{
                 router.push(`/product/${productId}`);

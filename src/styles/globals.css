@@ -10,6 +10,13 @@
   src: url(/font/symbols.woff2) format('woff2');
 }
 
+@font-face {
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  src: url(/font/AppleSDGothicNeoR) format('truetype');
+}
+
+
 :root {
   --swiper-pagination-color: rgba(255,255,255,.8);
   --swiper-pagination-left: auto;
@@ -85,7 +92,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-  font-family: 'Noto Sans KR';
+  font-family: -apple-system, BlinkMacSystemFont, AppleSDGothicNeo, "Apple SD Gothic Neo", Helvetica, "Noto Sans KR", "malgun gothic", "맑은 고딕", sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
