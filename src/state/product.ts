@@ -1515,7 +1515,7 @@ export const productListState = atom<IProductType[]>({
   {
       
     id:30010,
-    category:CATEGORY_NAME["VEGET"],
+    category:CATEGORY_NAME["KUKBC"],
     name:"비비고 새우왕교자",
 
     imgUrl:"/images/shrimp.jpg",
