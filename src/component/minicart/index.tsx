@@ -114,7 +114,10 @@ export function MiniCart(){
                 <div className='header'>
                     <ul>
                         <li style={{display:"flex",justifyContent:"end",padding:"10px 0px"}}>
-                            <span className="material-symbols-outlined" onClick={()=>{setMiniCart({...miniCart, isMenuShow:false, isButtonShow:false});}} style={{paddingRight:"15px"}}>
+                            <span className="material-symbols-outlined" onClick={()=>{
+                                setMiniCart({...miniCart, isMenuShow:false, isButtonShow:false});
+                                setIsStepOne(true);
+                                }} style={{paddingRight:"15px"}}>
                             close
                             </span>
                         </li>
