@@ -89,7 +89,7 @@ export default function Category(){
                         </ProductItem>)
                 })}
 
-                { productLength === 0 && <div style={{width:"100%", height:"83vh", display:"flex", alignItems:"center", justifyContent:"center"}}>
+                { productLength === 0 && <div style={{width:"100%", height:"75vh", display:"flex", alignItems:"center", justifyContent:"center"}}>
                 좋은 상품으로 다시 찾아 뵐게요! 😀
                 </div>}
         </CategoryItemList>

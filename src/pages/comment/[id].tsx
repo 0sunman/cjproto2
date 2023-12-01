@@ -34,10 +34,10 @@ overflow:hidden;
 const CommentHeader = styled.div`display:flex; flex-direction:row; justify-content:center; align-items:start;margin:0px 0px;
 >img{margin-left:5px; width:50px; height:50px; border-radius:50%;}`;
 const UserImage = styled.img``;
-const TextArea = styled.div`margin-left:10px;
+const TextArea = styled.div`margin-left:10px; 
 `;
-const UserName = styled.span`font-weight:bold; padding-right:10px;`;
-const CommentText = styled.span`line-height:22px;`;
+const UserName = styled.span`font-weight:bold; padding-right:10px;font-size:14px;`;
+const CommentText = styled.span`line-height:21px;font-size:14px;`;
 const CommentContent = styled.div`padding: 10px`;
 const CommentImageArea = styled.div`
 img{width:100%;}
