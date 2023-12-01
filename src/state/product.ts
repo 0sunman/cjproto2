@@ -296,7 +296,7 @@ export const productListState = atom<IProductType[]>({
     id:2,
     name:"비비고 새우왕교자 계란찜",
     category:CATEGORY_NAME["RECIPE"],
-    imgUrl:"/img_1107/d_com_4.jpg",
+    imgUrl:"/new/k/k2.jpeg",
     price:2500,
     saleRate:0.4,        
     description:"비비고 새우왕교자를 영양부추와 팽이버섯와 동일한 크기로 썰어서 계란물에 넣어 스팀해서 완성하는 추억의 계란찜.",       

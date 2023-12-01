@@ -25,7 +25,7 @@ export function MainBanner({innerRecipe}:{innerRecipe:IRecipe}){
     const {RecipeWrapper, Header,RecipeMainImage, RecipeTag,RecipeTagTitle,RecipeTagImages,RecipeTagImage, RecipeComment,RecipeCommentHeart,RecipeComments,RecipeDate,RecipeButtons} = useRecipeLayout();
     return <>
         <Header style={{paddingTop:"5px", position:"absolute", top:"10px",color:"white"}}>
-            <img src={innerRecipe.companyImageURL}  style={{width:"40px", height:"40px"}}/>
+            {/* <img src={innerRecipe.companyImageURL}  style={{width:"40px", height:"40px"}}/> */}
             <span>{innerRecipe.name}</span>
             <span>
                 
@@ -39,7 +39,9 @@ export function MainBanner({innerRecipe}:{innerRecipe:IRecipe}){
         innerRecipe.imgUrl.indexOf("www.") > 1 ? 
             <img src={innerRecipe.imgUrl} style={{"width":"100%","height":"auto"}} alt={innerRecipe.description} onLoad={()=>{setIsLoading(false)}}/>
         :
-        innerRecipe.id === 1 ? <video onPlay={()=>{setIsLoading(false)}} src="./mov/5.mp4" style={{width:"100%",height:"auto"}} muted autoPlay loop playsInline></video> 
+        innerRecipe.id === 1 ? 
+        <Image src={innerRecipe.imgUrl} width={1200} height={1670} style={{"width":"100%","height":"auto"}} alt={innerRecipe.description} onLoad={()=>{setIsLoading(false)}}/>
+        // <video onPlay={()=>{setIsLoading(false)}} src="./mov/5.mp4" style={{width:"100%",height:"auto"}} muted autoPlay loop playsInline></video> 
         : <Image src={innerRecipe.imgUrl} width={1200} height={1670} style={{"width":"100%","height":"auto"}} alt={innerRecipe.description} onLoad={()=>{setIsLoading(false)}}/>
         }
         </MainRecipe>
