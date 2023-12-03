@@ -206,7 +206,7 @@ export const productListState = atom<IProductType[]>({
       amount:1,
 
       price:1350,
-      saleRate:0.2,
+      saleRate:0.4,
 
       imgUrl:"/img_1107/d_gochu.jpg",
 
