@@ -1,7 +1,7 @@
 import { compareProductState, ICompareProduct, IIngredient } from "@/state/product";
 import { useRecoilState } from "recoil"
 import styled from "@emotion/styled";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useUtilHook from "@/hook/utilHook";
 const MinicartIngredient = styled.li`
 margin:0 auto;
@@ -55,8 +55,16 @@ function companyLogo(n:string){
 
     return <img src={company} style={{paddingLeft:"2px", width:"17px",height:"17px",borderRadius:"50%"}}/>
 }
+function calculateComparePrice(compare:any, randomCompany:string){
+    return compare.data[randomCompany]
+}
+function calculateCompareRate(ingredient:IIngredient, compare:any, randomCompany:string){
+    const realPrice = ingredient.price - (ingredient.saleRate ? ingredient.price  * ingredient.saleRate : 0)
+    return Math.floor(100 - ((realPrice / compare.data[randomCompany]) * 100))
+}
 export function MiniIngredient({Ingredient,index,plusIngredient,minusIngredient,compareProduct}:{Ingredient:IIngredient,index:number,plusIngredient:Function,minusIngredient:Function,compareProduct:ICompareProduct[]}){
     const {printPrice} = useUtilHook();
+    const scrollCompare = useRef<HTMLDivElement>(null)
 
     const [compare,setCompare] = useState<ICompareProduct|null>(null);
     const [compareRate,setCompareRate] = useState<number>(0);
@@ -64,7 +72,34 @@ export function MiniIngredient({Ingredient,index,plusIngredient,minusIngredient,
     const [companyMark,setCompanyMark] = useState<"n"|"c"|"k">("n");
     const random = Math.floor(Math.random() * 3)
     const randomCompany = random === 2 ? "n" : random == 1 ? "c" : "k"
-    
+    const [count, setCount] = useState<number>(1);
+    function clearTicker(){
+        document.querySelectorAll("#CompareScrollArea"+(index+1)+" > span").forEach((element:any,key:number)=>{
+            if(element){
+                element.style.display = "none"
+            }
+        })
+    }
+    function ActiveTicker(idx:number){
+        let test:any = document.querySelector("#CompareScrollArea"+(index+1)+" > span:nth-child("+(idx+1)+")");
+        console.log(idx)
+        if(test !== null){
+            test.style.display = "inline-flex"
+        }
+    }
+    useEffect(()=>{
+
+        clearTicker()
+        ActiveTicker(1);
+        setCount((count+1)%3);
+    },[])
+    useEffect(()=>{
+        const timer = setTimeout(()=>{
+            clearTicker()
+            ActiveTicker(count);
+            setCount((count+1)%3);
+        },3000)
+    },[count])
     useEffect(()=>{
         const temp = compareProduct.filter((ele:ICompareProduct)=> Ingredient.name.indexOf(ele.name)>-1);
         if(temp.length >= 1){
@@ -75,10 +110,10 @@ export function MiniIngredient({Ingredient,index,plusIngredient,minusIngredient,
     },[Ingredient]);
     useEffect(()=>{
         if(compare !== null){
-            setCompanyMark(randomCompany);
-            setComparePrice(compare.data[randomCompany]);
-            const realPrice = Ingredient.price - (Ingredient.saleRate ? Ingredient.price  * Ingredient.saleRate : 0)
-            setCompareRate(Math.floor(100 - ((realPrice / compare.data[randomCompany]) * 100)))
+            // setCompanyMark(randomCompany);
+            // setComparePrice(compare.data[randomCompany]);
+            // const realPrice = Ingredient.price - (Ingredient.saleRate ? Ingredient.price  * Ingredient.saleRate : 0)
+            // setCompareRate(Math.floor(100 - ((realPrice / compare.data[randomCompany]) * 100)))
         }else{
             setCompareRate(0);
         }
@@ -90,11 +125,23 @@ export function MiniIngredient({Ingredient,index,plusIngredient,minusIngredient,
             </div>
             <div>
                 <div style={{fontSize:"12px"}}>{Ingredient.name} </div>
-                {compare && <div className="compare" style={{margin:"0px",fontSize:"10px"}}>
-                        <HighLightRed>
-                            {companyLogo(companyMark)} 
-                            <span style={{paddingLeft:"5px"}}> {printPrice(comparePrice)}원 대비 </span>
-                            <span style={{color:"red",fontSize:"13px",padding:"0px 1px 0px 3px"}}>{(compareRate)}</span>
+                {compare && <div id={"CompareScrollArea"+(index+1)} className="compare" style={{margin:"0px",fontSize:"10px",overflow:"hidden"}}>
+                        <HighLightRed className="fadein" style={{fontSize:"10px"}}>
+                            {companyLogo("k")} 
+                            <span style={{paddingLeft:"5px"}}> {(calculateComparePrice(compare,"k"))}원 대비 </span>
+                            <span style={{color:"red",fontSize:"13px",padding:"0px 1px 0px 3px"}}>{(calculateCompareRate(Ingredient,compare,"k"))}</span>
+                            <span> % 저렴 </span>
+                        </HighLightRed>
+                        <HighLightRed className="fadein" style={{"display":"none",fontSize:"10px"}}>
+                            {companyLogo("c")} 
+                            <span style={{paddingLeft:"5px"}}> {(calculateComparePrice(compare,"c"))}원 대비 </span>
+                            <span style={{color:"red",fontSize:"13px",padding:"0px 1px 0px 3px"}}>{(calculateCompareRate(Ingredient,compare,"c"))}</span>
+                            <span> % 저렴 </span>
+                        </HighLightRed>
+                        <HighLightRed className="fadein" style={{"display":"none",fontSize:"10px"}}>
+                            {companyLogo("n")} 
+                            <span style={{paddingLeft:"5px"}}> {(calculateComparePrice(compare,"n"))}원 대비 </span>
+                            <span style={{color:"red",fontSize:"13px",padding:"0px 1px 0px 3px"}}>{(calculateCompareRate(Ingredient,compare,"n"))}</span>
                             <span> % 저렴 </span>
                         </HighLightRed>
                     </div>}

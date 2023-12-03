@@ -30,9 +30,9 @@ import { Product } from '@/component/product'
 import { MainBanner } from '@/component/Main/MainBanner'
 
 const TextHero = styled.h2`font-size:18px; padding-bottom:10px; padding-left:10px;`
-const CategorySection = styled.div`display:flex;width:100%;overflow:hidden;overflow-x:scroll;padding:00px 0px;
-margin: 30px 0px;
-margin-top:0px;
+const CategorySection = styled.div`display:flex; width:100%; 
+overflow:hidden; overflow-x:scroll; padding:0px 0px;
+margin: 30px 0px; margin-top:0px;
 
 `
 const CategoryElement = styled.div`width:20%; display:inline-flex; flex-direction:column; align-items:center;

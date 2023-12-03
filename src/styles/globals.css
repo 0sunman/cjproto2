@@ -380,3 +380,25 @@ body{background-color: #fff; margin:0 auto}
 }
 
 .display-none{display:none !important;}
+
+.fadein{
+  font-size: medium;
+  position: relative;
+  overflow: hidden;
+  animation: fadein 1s ease-in-out;
+
+
+}
+
+
+@keyframes fadein{
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+
+}
