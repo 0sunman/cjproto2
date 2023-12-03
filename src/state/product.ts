@@ -205,7 +205,7 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:1450,
+      price:1350,
       saleRate:0.2,
 
       imgUrl:"/img_1107/d_gochu.jpg",
@@ -1125,7 +1125,7 @@ export const productListState = atom<IProductType[]>({
     imgUrl:"/img_1107/d_gochu.jpg",
 
     descriptionImage:"/img_1107/detail/vegetable_d_gochu.png",
-    price:1450,
+    price:1350,
 
     saleRate:0.4,
 
@@ -1140,8 +1140,8 @@ export const productListState = atom<IProductType[]>({
 
       amount:1,
 
-      price:1450,
-      saleRate:0.1,
+      price:1350,
+      saleRate:0.4,
 
       imgUrl:"/img_1107/d_gochu.jpg",
 
