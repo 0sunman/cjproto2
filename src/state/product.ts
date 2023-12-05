@@ -529,13 +529,12 @@ export const productListState = atom<IProductType[]>({
 
   {
     
-    isSale:true,
     id:11,
     category:CATEGORY_NAME["MAIN"],
     name:"고메함박스테이크 수제 햄버거",
 
     
-    imgUrl:"/new/ham/0.jpg",
+    imgUrl:"/new/ham/000.jpg",
 
     price:8000,
 
