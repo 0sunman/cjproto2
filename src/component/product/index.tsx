@@ -26,11 +26,11 @@ export function Product({product}:{product:IProductType}){
       <div className={`image skeleton-item ${isLoading?"":"is-done"}`} style={{borderRadius:"5px",position:"relative",overflow:"hidden",height:"200px",display:"flex",alignItems:"center", justifyContent:"center", backgroundColor:"#f2f2f2"}}>
         {
           (product.id === 10) ? 
-          <video style={{height:"100%"}} onClick={()=>{
+          <video style={{height:"100%",width:"auto"}} onClick={()=>{
             router.push(`/product/10`);
           }} src={"/new/soup/1.mp4"} muted autoPlay playsInline loop/> :
           (product.id === 11) ? 
-          <video style={{height:"100%"}} onClick={()=>{
+          <video className="modifyVideo" onClick={()=>{
             router.push(`/product/11`);
           }} src={"/new/ham/1.mp4"} muted autoPlay playsInline loop/>
           : product.imgUrl.indexOf("www.") > 1 ? 

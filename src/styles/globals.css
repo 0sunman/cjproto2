@@ -402,3 +402,7 @@ body{background-color: #fff; margin:0 auto}
   }
 
 }
+.modifyVideo{height: 100% !important;width:auto}
+@media (min-width:600px){
+  .modifyVideo{height:130% !important;width:auto}
+}
