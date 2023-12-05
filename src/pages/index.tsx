@@ -121,15 +121,12 @@ export default function Home() {
           slidesPerView={2.5}
           >
           {products.map((product:IProductType, idx:number)=>{
-            if(idx === -1 || product.category === CATEGORY_NAME["VEGET"]){
-              return (<></>)
-            }else
-            return (
-
-            <SwiperSlide>
-              <Product product={product}/>
-            </SwiperSlide>
-          )
+            if(idx !== -1 && product.category === CATEGORY_NAME["MAIN"]){
+              return (
+                <SwiperSlide>
+                  <Product product={product}/>
+                </SwiperSlide>)
+            }
           })}
           </Swiper>
         </div>

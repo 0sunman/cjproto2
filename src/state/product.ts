@@ -142,6 +142,30 @@ export const compareProductState = atom<ICompareProduct[]>({
       n:1935,
       k:2990
     }
+  },
+  {
+    name:"감자",
+    data:{
+      c:1600,
+      n:1745,
+      k:1600
+    }
+  },
+  {
+    name:"토마토",
+    data:{
+      c:6710,
+      n:12900,
+      k:8980
+    }
+  },
+  {
+    name:"상추",
+    data:{
+      c:2300,
+      n:2450,
+      k:1990
+    }
   }]
 })
 /*
@@ -292,6 +316,113 @@ export const productListState = atom<IProductType[]>({
 
   },
 
+  {
+    
+    isSale:true,
+    id:10,
+    category:CATEGORY_NAME["MAIN"],
+    name:"비비고 사골곰탕 대파스프",
+
+    
+    imgUrl:"/new/soup/0.jpg",
+
+    price:8000,
+
+    saleRate:0.4,
+
+    description:"",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+    descriptionImage:"/new/soup/8.jpg",
+    ingredients:[{
+
+      id:1,
+
+      name:"대파 1개 (250g)",
+
+      amount:1,
+
+      price:2200,
+      saleRate:0.3,
+
+      imgUrl:"/img_1107/d_pa.jpg",
+
+    },{
+      id:2,
+      name:"감자 500g",
+      amount:1,
+      imgUrl:"/img_1107/d_potato_1.jpg",
+      price:1500,
+      saleRate:0.1,
+    },{
+
+      id:5,
+
+      name:"비비고 사골곰탕 500g",
+
+      amount:1,
+
+      price:1650,
+      saleRate:0.3,
+
+
+      imgUrl:"/new/soup/7.jpg",
+
+    },{
+
+      id:6,
+
+      name:"크레잇 그릴후랑크 660g",
+
+      amount:0,
+
+      price:7500,
+      saleRate:0.2,
+
+      imgUrl:"/new/soup/5.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"고메 베이커리 크로와상 330g",
+
+      amount:0,
+
+      price:9330,
+      saleRate:0.2,
+
+      imgUrl:"/new/soup/6.jpg",
+      addProduct:true
+
+    }
+    /*
+    name:"햇반 작은공기130g 1EA",
+  
+    imgUrl:"/images/shrimp.jpg",
+  
+    price:1300,
+    name:"햇반 210g 1EA",
+  
+    imgUrl:"/images/shr0mp.jpg",
+  
+    price:1900,
+  
+    name:"햇반 큰공기 300g 1EA",
+  
+    imgUrl:"/images/shrimp.jpg",
+  
+    price:2700,
+    */
+
+    ],
+    recipeId:1,
+    taggingProduct:[30006,30004],
+    videos:["d_all_1.mp4","d_six_1.mp4","d_six_2.mp4","d_six_3.mp4","d_six_4.mp4","d_six_5.mp4","d_six_6.mp4","d_six_7.mp4"],
+    addProduct:[90012,90013]
+
+  },
+
+  
 
   {
     id:2,
@@ -396,7 +527,223 @@ export const productListState = atom<IProductType[]>({
   },
 
 
+  {
+    
+    isSale:true,
+    id:11,
+    category:CATEGORY_NAME["MAIN"],
+    name:"고메함박스테이크 수제 햄버거",
 
+    
+    imgUrl:"/new/ham/0.jpg",
+
+    price:8000,
+
+    saleRate:0.4,
+
+    description:"",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+    descriptionImage:"/new/ham/6.jpg",
+    ingredients:[{
+
+      id:1,
+
+      name:"토마토 1kg",
+
+      amount:1,
+
+      price:6500,
+      saleRate:0.3,
+
+      imgUrl:"/new/ham/tomato.jpg",
+
+    },{
+      id:2,
+      name:"쌀 버거번 (3개입)",
+      amount:1,
+      imgUrl:"/new/ham/bun.jpg",
+      price:5900,
+      saleRate:0.1,
+    },{
+      id:3,
+      name:"상추 200g",
+      amount:1,
+      imgUrl:"/new/ham/sc.jpg",
+      price:1700,
+      saleRate:0.1,
+    },{
+
+      id:5,
+
+      name:"고메함박스테이크 540g",
+
+      amount:1,
+
+      price:1650,
+      saleRate:0.3,
+
+
+      imgUrl:"/new/ham/hambac.jpg",
+
+    },{
+
+      id:6,
+
+      name:"고메 치즈함박스테이크 465g",
+
+      amount:0,
+
+      price:10980,
+      saleRate:0.3,
+
+      imgUrl:"/new/ham/hambac2.jpg",
+      addProduct:true
+    },{
+
+      id:7,
+
+      name:"하선정 먹기좋게썰어놓은오이지 1kg",
+
+      amount:0,
+
+      price:8420,
+      saleRate:0.2,
+
+      imgUrl:"/new/ham/oi.jpg",
+      addProduct:true
+
+    },{
+
+      id:7,
+
+      name:"메티에 뱅쇼향시럽",
+
+      amount:0,
+
+      price:13500,
+      saleRate:0.33,
+
+      imgUrl:"/new/ham/micho/m2.jpg",
+      addProduct:true
+
+    }
+    ,{
+
+      id:8,
+
+      name:"메티에 청포도시럽",
+
+      amount:0,
+
+      price:13500,
+      saleRate:0.33,
+
+      imgUrl:"/new/ham/micho/m1.jpg",
+      addProduct:true
+
+    }
+    /*m*/
+    ,{
+
+      id:10,
+
+      name:"쁘띠첼 미초 청포도 900ml",
+
+      amount:0,
+
+      price:9330,
+      saleRate:0.4,
+
+      imgUrl:"/new/ham/micho/p1.jpg",
+      addProduct:true
+
+    }
+    ,{
+
+      id:11,
+
+      name:"쁘띠첼 미초 파인애플 900ml",
+
+      amount:0,
+
+      price:9330,
+      saleRate:0.4,
+
+      imgUrl:"/new/ham/micho/p2.jpg",
+      addProduct:true
+
+    }
+    ,{
+
+      id:10,
+
+      name:"쁘띠첼 미초 깔라만시 900ml",
+
+      amount:0,
+
+      price:9330,
+      saleRate:0.4,
+
+      imgUrl:"/new/ham/micho/p3.jpg",
+      addProduct:true
+
+    }
+    ,{
+
+      id:10,
+
+      name:"쁘띠첼 미초 복숭아 900ml",
+
+      amount:0,
+
+      price:9330,
+      saleRate:0.4,
+
+      imgUrl:"/new/ham/micho/p4.jpg",
+      addProduct:true
+
+    }
+    ,{
+
+      id:10,
+
+      name:"쁘띠첼 미초 석류 900ml",
+
+      amount:0,
+
+      price:9330,
+      saleRate:0.4,
+
+      imgUrl:"/new/ham/micho/p5.jpg",
+      addProduct:true
+
+    }
+    /*
+    name:"햇반 작은공기130g 1EA",
+  
+    imgUrl:"/images/shrimp.jpg",
+  
+    price:1300,
+    name:"햇반 210g 1EA",
+  
+    imgUrl:"/images/shr0mp.jpg",
+  
+    price:1900,
+  
+    name:"햇반 큰공기 300g 1EA",
+  
+    imgUrl:"/images/shrimp.jpg",
+  
+    price:2700,
+    */
+
+    ],
+    recipeId:1,
+    taggingProduct:[30006,30004],
+    videos:["d_all_1.mp4","d_six_1.mp4","d_six_2.mp4","d_six_3.mp4","d_six_4.mp4","d_six_5.mp4","d_six_6.mp4","d_six_7.mp4"],
+    addProduct:[90012,90013]
+
+  },
  
 
   // {
@@ -1823,7 +2170,8 @@ export const productListState = atom<IProductType[]>({
     recipeId:-1,
     taggingProduct:[],
     addProduct:[90011,90012,90013]
-  }
+  },
+
 
 
 

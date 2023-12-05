@@ -36,6 +36,9 @@ export function MainBanner({innerRecipe}:{innerRecipe:IRecipe}){
                 router.push(`/product/${innerRecipe.productId}`);
         }}>
         {
+        innerRecipe.id === 3 ? 
+        <Image src={innerRecipe.imgUrl} width={1200} height={1670} style={{"width":"auto","height":"100%"}} alt={innerRecipe.description} onLoad={()=>{setIsLoading(false)}}/>
+        :
         innerRecipe.imgUrl.indexOf("www.") > 1 ? 
             <img src={innerRecipe.imgUrl} style={{"width":"100%","height":"auto"}} alt={innerRecipe.description} onLoad={()=>{setIsLoading(false)}}/>
         :
