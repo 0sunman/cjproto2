@@ -11,6 +11,7 @@ import Image from "next/image";
 import styled from "@emotion/styled";
 
 const CategoryProduct = ({product, idx}:{product:IProductType,idx:number}) =>{
+    if(product === undefined) return <></>
     const router = useRouter()
     const {products, setProducts, getProductWithProductId,getProductPriceWithProductId, getProductSalePriceWithProductId, getSaleRate} = useProducts();
     const {category, setCategory} = useCategory();
@@ -37,7 +38,7 @@ const CategoryProduct = ({product, idx}:{product:IProductType,idx:number}) =>{
     `
 
 
-    const CategoryId = router.query.id;
+    const CategoryId = router?.query?.id;
     const [width,setWidth] = useState<number>(0);
     const [height,setHeight] = useState<number>(0);
     const [targetWidth,setTargetWidth] = useState<string>("120%");
