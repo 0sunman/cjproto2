@@ -242,11 +242,11 @@ body{background-color: #fff; margin:0 auto}
 .toast > p {background-color: rgba(0,0,0,.5); color:#fff; width:90%; padding:20px 10px; border-radius: 7px;}
 
 
-.cart-icon span:nth-child(2){position:absolute; top:5px; right:5px; display: inline-flex; align-items: center; justify-content: center; background-color:var(--TRYEAT-Icon); color:#fff; width: 12px; height: 12px; font-size:10px; border-radius: 100%;}
+.cart-icon span:nth-child(2){position:absolute; top:5px; right:7px; display: inline-flex; align-items: center; justify-content: center; background-color:var(--TRYEAT-Icon); color:#fff; width: 12px; height: 12px; font-size:10px; border-radius: 100%;}
 
 .ct2 {
   color: #fff;
-  animation: ct 6s infinite;
+  fill: var(--TRYEAT-Green);
 }
 
 
@@ -258,13 +258,12 @@ body{background-color: #fff; margin:0 auto}
 
 .ct-text2 {
   color: black;
-  animation: ct-text 1s infinite;
 }
 
 /*
 
 
-*/
+/*
 
 @keyframes ct {
   25% {fill: var(--TRYEAT-Blown);}
@@ -285,7 +284,7 @@ body{background-color: #fff; margin:0 auto}
   25% {color: var(--TRYEAT-Blown);}
   50% {color: var(--TRYEAT-Green);}
   75% {color: #000}
-}
+} */
 .loading-bar{
 
   background-color: '#c8c8c8';
