@@ -22,9 +22,10 @@ export default function BaseLayout({children}:any){
               </svg>
             </div>
             <div className='default_icon cart-icon'>
-              <span className="material-symbols-outlined"  onClick={(()=>{ router.push("/cart")})}>
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000"><path d="M9.00909 12.8752V5.62506C9.00909 3.62299 10.572 2 12.5 2C14.428 2 15.9909 3.62299 15.9909 5.62506V12.8752"></path><path d="M4.5 21.3749H20.5L19.396 9.1875H5.60403L4.5 21.3749Z"></path></svg>
+              {/* <span className="material-symbols-outlined"  onClick={(()=>{ router.push("/cart")})}>
                 shopping_cart
-              </span>
+              </span> */}
               <span>
                 {cart.productList?.length}
               </span>

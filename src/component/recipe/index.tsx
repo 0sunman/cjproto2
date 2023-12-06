@@ -10,8 +10,8 @@ const Header = styled.div`
     display:flex;
     width:100%;  justify-content:center; align-items:center;
     > img {width:35px; height:35px; border-radius:50%; margin-left:10px;}
-    > span:nth-child(2){margin-left:10px; font-size:14px;}
-    > span:nth-child(3){margin-left:auto; margin-right:10px;}
+    > span:nth-child(2){margin-left:10px; font-size:12px; font-weight:normal}
+    > span:nth-child(3),svg:nth-child(3){margin-left:auto; margin-right:3px;}
 `
 const RecipeMainImage = styled.img`
     width:100%;
@@ -28,15 +28,15 @@ const RecipeTagImage = styled.img``
 const RecipeTagVideo = styled.video`width:100%;`
 
 const RecipeComment = styled.div``
-const RecipeCommentHeart = styled.div`font-size:14px; font-weight:bold; padding:5px 15px; padding-bottom:10px;`
-const RecipeComments = styled.div`font-size:14px; color:#a8a8a8; padding:0px 15px; padding-bottom:10px;`
+const RecipeCommentHeart = styled.div`font-size:12px; padding:5px 15px; padding-bottom:10px;`
+const RecipeComments = styled.div`font-size:12px; color:#a8a8a8; padding:0px 15px; padding-bottom:10px;`
 const RecipeDate = styled.div`font-size:11px; color:#a8a8a8; padding:0px 15px; padding-bottom:40px;`
 
 const RecipeButtons = styled.div`
     display:flex;
-    > span:first-child{padding-left:15px; }
-    > span {font-size:28px; padding:5px; padding-top:0px}
-    > span:last-child{margin-left:auto;padding-right:15px; }
+    > svg:first-child{padding-left:15px; }
+    > svg {font-size:28px; padding:5px; padding-top:0px}
+    > svg:last-child{margin-left:auto;padding-right:15px; }
 `
 
 export const useRecipeLayout = () => {
