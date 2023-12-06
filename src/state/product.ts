@@ -738,7 +738,7 @@ export const productListState = atom<IProductType[]>({
 
     ],
     recipeId:1,
-    taggingProduct:[30006,30004],
+    taggingProduct:[90016,90017],
     videos:["d_all_1.mp4","d_six_1.mp4","d_six_2.mp4","d_six_3.mp4","d_six_4.mp4","d_six_5.mp4","d_six_6.mp4","d_six_7.mp4"],
     addProduct:[90012,90013]
 
@@ -2171,6 +2171,119 @@ export const productListState = atom<IProductType[]>({
     addProduct:[90011,90012,90013]
   },
 
+//
+      // price:6500,
+      // saleRate:0.3,
+
+      // imgUrl:"/new/ham/tomato.jpg",
+  {
+      
+    id:90016,
+    category:CATEGORY_NAME["VEGET"],
+    name:"상추 300g",
+  
+
+    price:1700,
+    saleRate:0.1,
+
+    imgUrl:"/new/ham/sc.jpg",
+    descriptionImage:"/new/ham/sc.jpg",
+  
+    description:"",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+  
+    ingredients:[{
+  
+      id:1,
+  
+      name:"상추 300g",
+  
+      amount:0,
+  
+      price:1700,
+      saleRate:0.1,
+  
+      imgUrl:"/new/ham/sc.jpg",
+  
+    },{
+
+
+      id:2,
+  
+      name:"상추 300g (할인 20%)",
+  
+      amount:0,
+  
+      price:1700,
+      saleRate:0.2,
+  
+      imgUrl:"/new/ham/sc.jpg",
+  
+      addProduct:true
+
+    }
+  
+    ],
+    recipeId:-1,
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
+  },
+
+  {
+      
+    id:90017,
+    category:CATEGORY_NAME["VEGET"],
+    name:"토마토 1kg",
+  
+
+    price:6500,
+    saleRate:0.3,
+
+    imgUrl:"/new/ham/tomato.jpg",
+    descriptionImage:"/new/ham/tomato.jpg",
+  
+    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
+  
+    ingredients:[{
+
+      id:7,
+
+      name:"토마토 1kg",
+
+      amount:1,
+
+
+      price:6500,
+      saleRate:0.3,
+  
+
+      imgUrl:"/new/ham/tomato.jpg",
+
+    },{
+
+
+      id:7,
+
+      name:"토마토 1kg (특가 40% 할인)",
+
+      amount:1,
+
+
+      price:6500,
+      saleRate:0.4,
+  
+
+      imgUrl:"/new/ham/tomato.jpg",
+      addProduct:true
+
+    }
+  
+    ],
+    recipeId:-1,
+    taggingProduct:[],
+    addProduct:[90011,90012,90013]
+  }
 
 
 
