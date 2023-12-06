@@ -71,7 +71,7 @@ export default function Cart(){
                                     return temp;
                                 }))
                             }}/>
-                            <span>{product.name}</span>
+                            <span style={{fontSize:"15px"}}>{product.name}</span>
                             <span className="material-symbols-outlined close" onClick={()=>{ 
                                 removeProduct(product.cartId);                                
                             }} style={{paddingRight:"15px"}}>
@@ -85,7 +85,7 @@ export default function Cart(){
                                 <img src={product.imgUrl}/>
                             </div>
                             <div className="description">
-                                <ul>
+                                <ul style={{fontSize:"12px"}}>
                                     <li>
                                         <span>금액 : {
                                         product.ingredients && printPrice(product.ingredients?.reduce((previousValue:number, ingredient:IIngredient)=>{
@@ -94,7 +94,7 @@ export default function Cart(){
                                         },0))} 원</span>
                                     </li>
                                     {product.ingredients?.map((ingredient:IIngredient, idx:number)=>(<li key={idx} className="detail">
-                                        <span>{ingredient.name}</span>
+                                        <span style={{overflow:"hidden",whiteSpace:"nowrap",textOverflow:"ellipsis"}}>{ingredient.name}</span>
                                         <span className="price">{printPrice((ingredient.price * (1 - ingredient.saleRate!)) )} 원</span>
                                         <div className="amount">
                                             <div>
@@ -119,15 +119,15 @@ export default function Cart(){
                 </ul>
             </li>)}
         </ul>
-        <div className="buy-button-wrapper">
-            <button onClick={()=>{
+        <div className="buy-button-wrapper" style={{height:"60px"}}>
+            <button style={{borderRadius:"5px",height:"45px",fontSize:"12px"}} onClick={()=>{
                 if(cartProductList?.length !== undefined && cartProductList?.length === 0){
                     openToast("물건이 아무것도 없어요!")
                 }else{
                     setCart({productList:[]});
                     router.push("/order");
                 }
-            }}>{printPrice(TotalPrice)}원 구매하기</button>
+            }}><span style={{fontSize:"18px"}}>{printPrice(TotalPrice)}</span> 원 <span style={{fontSize:"18px"}}>구매하기</span></button>
         </div>
     </div>
     </>
