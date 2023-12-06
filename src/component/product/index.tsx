@@ -21,9 +21,10 @@ export function Product({product}:{product:IProductType}){
     useEffect(()=>{
       setPrice(price !== undefined ? price : 0)
     },[price])
-    return  <div className="product">
+    return  <div className="product" style={{margin:"10px"}}>
     <a onClick={() => changeProduct(product.id)}>  
       <div className={`image skeleton-item ${isLoading?"":"is-done"}`} style={{borderRadius:"5px",position:"relative",overflow:"hidden",height:"200px",display:"flex",alignItems:"center", justifyContent:"center", backgroundColor:"#f2f2f2"}}>
+        <div style={{background:"red",zIndex:"10000",fontSize:"10px"}}>쿠폰</div>
         {
           (product.id === 10) ? 
           <video style={{height:"100%",width:"auto"}} onClick={()=>{

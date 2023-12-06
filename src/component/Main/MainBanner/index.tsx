@@ -13,7 +13,7 @@ const LongButton = styled.div`display:flex; align-items:center;
 width:100%;height:55px; background-color:#f8f8f8; border-top:1px solid #efefef;border-bottom:1px solid #efefef;
 >span:nth-child(1){margin-right:auto;padding-left:20px;font-size:14px}
 >span:nth-child(2){margin-left:auto;padding-right:10px;}
-&:active{color:white;background:var(--TRYEAT-Orange)}
+&:active{color:white;background:var(--TRYEAT-Common)}
 `
 export function MainBanner({innerRecipe}:{innerRecipe:IRecipe}){
     const router = useRouter();
