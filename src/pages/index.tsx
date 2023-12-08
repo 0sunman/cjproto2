@@ -28,19 +28,25 @@ import { useCategory } from '@/hook/categoryHook'
 import { CATEGORY_NAME, ICategory } from '@/state/category'
 import { Product } from '@/component/product'
 import { MainBanner } from '@/component/Main/MainBanner'
+import { RecipeSVG } from '@/component/SVG/recipe'
 
 const TextHero = styled.h2`font-size:18px; padding-bottom:10px; padding-left:10px;`
 const CategorySection = styled.div`display:flex; width:100%; 
 overflow:hidden; overflow-x:scroll; padding:0px 0px;
-margin: 30px 0px; margin-top:0px;
+margin: 30px auto; margin-top:0px;
 
 `
-const CategoryElement = styled.div`width:20%; display:inline-flex; flex-direction:column; align-items:center;
->div:nth-child(1){width:60px; height:60px; border-radius:100%;background-size:cover}
+const CategoryElement = styled.div`margin-right:20px; display:inline-flex; flex-direction:column; 
+&:last-child{margin-right:0px;}
+>div:nth-child(1){width:60px; height:80px;background-size:cover; }
 `
 const CategoryCircle = styled.div`width:50px; height:50px; border-radius:100%;background-size:cover `
-const CategoryText = styled.div`text-align:center;margin:10px 0px;font-size:10px;`
-
+const CategoryText = styled.div`text-align:center;margin:5px 0px;font-size:10px;`
+const CategoryElementWrapper = styled.div`
+  display:flex; flex-direction:column; align-items:center; justify-contents:center;
+  > .svgWrapper { border-radius:15px; background-color:#F5F5F5; }
+  > .svgWrapper > svg {width:35px; height:35px; padding:12.5px;}
+`
 export default function Home() {
 
   const {RecipeWrapper, Header,RecipeMainImage, RecipeTag,RecipeTagTitle,RecipeTagImages,RecipeTagImage, RecipeComment,RecipeCommentHeart,RecipeComments,RecipeDate,RecipeButtons} = useRecipeLayout();
@@ -98,17 +104,13 @@ export default function Home() {
       return <CategoryElement onClick={()=>{
         router.push(`/category/${categoryElement.engName}`)
       }}>
-        { categoryElement.id === "10010000" ? 
-        <div style={{backgroundImage:`url(${categoryElement.imgUrl})`}}></div> : 
-        <div style={{backgroundImage:`url(${categoryElement.imgUrl})`,
-                      backgroundRepeat:"no-repeat",
-                      backgroundSize:"60%",
-                      backgroundPosition:"50%",
-                      backgroundColor:"#f8f8f8"
-                    }}></div> 
-        }
-              
-              <CategoryText>{categoryElement.name}</CategoryText>
+        <CategoryElementWrapper>
+          <div className='svgWrapper'>
+            <RecipeSVG/>                
+          </div>
+          <CategoryText>{categoryElement.name}</CategoryText>
+        </CategoryElementWrapper>
+             
             </CategoryElement>
     })}
 

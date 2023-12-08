@@ -29,31 +29,31 @@ export const categoryState = atom<ICategory[]>({
         name:"최저가도전",
         engName:"MIN",
         parent:"10000000",
-        imgUrl:"/new/minimum.png"
+        imgUrl:"/category/sale.svg"
     },{
         id:"10020000",
         name:"메인요리",
         engName:"MAIN",
         parent:"10000000",
-        imgUrl:"/new/pona.png"
+        imgUrl:"/category/main.svg"
     },{
         id:"10030000",
         name:"채소",
         engName:"VEGET",
         parent:"10000000",
-        imgUrl:"/new/veget.png"
+        imgUrl:"/category/vegetable.svg"
     },{
         id:"10040000",
         name:"국·반찬",
         engName:"KUKBC",
         parent:"10000000",
-        imgUrl:"/new/kuk.png"
+        imgUrl:"/category/soup.svg"
     },{
         id:"10050000",
         name:"치즈·델리",
         engName:"BREAD",
         parent:"10000000",
-        imgUrl:"/new/bread.png"
+        imgUrl:"/category/bread.svg"
     }]
 })
 
