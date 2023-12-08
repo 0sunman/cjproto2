@@ -10,11 +10,18 @@ import { useState } from "react";
 
 const MainRecipe = styled.div`height:500px;overflow:hidden;width:100%;display:flex;align-items:center;justify-content:center`
 const LongButton = styled.div`display:flex; align-items:center;
-width:100%;height:55px; background-color:#f8f8f8; border-top:1px solid #efefef;border-bottom:1px solid #efefef;
+width:100%;height:55px; background-color:#fff; 
 >span:nth-child(1){margin-right:auto;padding-left:20px;font-size:14px}
 >span:nth-child(2){margin-left:auto;padding-right:10px;}
-&:active{color:white;background:var(--TRYEAT-Common)}
+&:active{color:white;background:var(--TRYEAT-Common)}box-shadow: 0px 2px 5px 0px #00000014;
+
 `
+const RecipeButton = styled.div`
+    width:100px; background:#fff;
+    padding:10px 20px 10px; border-radius:30px; font-size:13px;box-shadow: 2px 2px 2px 0px #D9D9D94D;
+
+`
+
 export function MainBanner({innerRecipe}:{innerRecipe:IRecipe}){
     const router = useRouter();
     const {addProductCartDirect} = useMiniCart();
@@ -60,7 +67,7 @@ export function MainBanner({innerRecipe}:{innerRecipe:IRecipe}){
     </LongButton>
     <RecipeTag style={{marginBottom:"0px"}}>
         <RecipeTagTitle>
-            <span>#태그상품</span>
+            <RecipeButton>#태그상품</RecipeButton>
         </RecipeTagTitle>
         <RecipeTagImages>
         {getProduct(innerRecipe.productId) && getProduct(innerRecipe.productId).taggingProduct && getProduct(innerRecipe.productId).taggingProduct?.map((productId:number)=>{

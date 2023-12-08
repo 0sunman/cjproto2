@@ -14,17 +14,18 @@ const Header = styled.div`
     > span:nth-child(3),svg:nth-child(3){margin-left:auto; margin-right:3px;}
 `
 const RecipeMainImage = styled.img`
-    width:100%;
+    width:100%; 
 `
 const RecipeTag = styled.div`
     display:flex; justify-content:start; align-items:center; width:100%; padding:10px 0px; margin-bottom:5px;
+    background-color:#f5f5f5;
     > div:nth-child(1) { width: 20%; padding-left:20px; text-align:center; font-size:13px;}
     > div:nth-child(2) { width: 80%; text-align:right; padding-right:20px}
     > div:nth-child(2) > img { width:45px; height:45px; margin-right:5px;}
 `
 const RecipeTagTitle = styled.div`text-align:left !important; `
 const RecipeTagImages = styled.div``
-const RecipeTagImage = styled.img``
+const RecipeTagImage = styled.img`box-shadow: 0px 2px 5px 0px #00000014;`
 const RecipeTagVideo = styled.video`width:100%;`
 
 const RecipeComment = styled.div``
