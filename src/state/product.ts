@@ -192,7 +192,7 @@ export const productListState = atom<IProductType[]>({
 
     saleRate:0.4,
 
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
     descriptionImage:"/img_1107/detail/HMR_detail_sixdog.webp",
     ingredients:[{
@@ -1396,7 +1396,7 @@ export const productListState = atom<IProductType[]>({
 
     saleRate:0.4,
 
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
 
     ingredients:[{
@@ -1475,7 +1475,7 @@ export const productListState = atom<IProductType[]>({
 
     saleRate:0.4,
 
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
 
     ingredients:[{
@@ -1554,7 +1554,7 @@ export const productListState = atom<IProductType[]>({
 
     saleRate:0.4,
 
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
 
     ingredients:[{
@@ -1633,7 +1633,7 @@ export const productListState = atom<IProductType[]>({
 
     saleRate:0.4,
 
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
 
     ingredients:[{
@@ -1712,7 +1712,7 @@ export const productListState = atom<IProductType[]>({
 
     saleRate:0.4,
 
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
 
     ingredients:[{
@@ -1791,7 +1791,7 @@ export const productListState = atom<IProductType[]>({
     descriptionImage:"/img_1107/detail/vegetable_d_carrot.jpg",
     saleRate:0.4,
 
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
 
     ingredients:[{
@@ -1871,7 +1871,7 @@ export const productListState = atom<IProductType[]>({
     descriptionImage:"/images/shrimp.jpg",
     saleRate:0.4,
 
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
 
     ingredients:[{
@@ -1948,7 +1948,7 @@ export const productListState = atom<IProductType[]>({
     descriptionImage:"/images/jjr.jpg",
     saleRate:0.4,
   
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
   
     ingredients:[{
@@ -2027,7 +2027,7 @@ export const productListState = atom<IProductType[]>({
     saleRate:0.4,
   
   
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
   
     ingredients:[{
@@ -2105,7 +2105,7 @@ export const productListState = atom<IProductType[]>({
     imgUrl:"/images/kc.jpg",
     descriptionImage:"/images/kc.jpg",
   
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
   
     ingredients:[{
@@ -2198,7 +2198,7 @@ export const productListState = atom<IProductType[]>({
   
       name:"상추 300g",
   
-      amount:0,
+      amount:1,
   
       price:1700,
       saleRate:0.1,
@@ -2242,7 +2242,7 @@ export const productListState = atom<IProductType[]>({
     imgUrl:"/new/ham/tomato.jpg",
     descriptionImage:"/new/ham/tomato.jpg",
   
-    description:"비비고 고기 듬뿍 육개장에 볼매 야채(대파, 느타리버섯, 청양고추)를 준비합니다.",
+    description:"",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
   
     ingredients:[{
