@@ -31,7 +31,7 @@ import { MainBanner } from '@/component/Main/MainBanner'
 import { RecipeSVG } from '@/component/SVG/recipe'
 
 const TextHero = styled.h2`font-size:18px; padding-bottom:10px; padding-left:20px;`
-const CategorySection = styled.div`display:flex; width:calc(100% - 40px); 
+const CategorySection = styled.div`display:flex; width:calc(100% - 30px); 
 overflow:hidden; overflow-x:scroll; padding:0px 0px;
 margin: 30px auto; margin-top:0px;
 
@@ -39,6 +39,7 @@ margin: 30px auto; margin-top:0px;
 const CategoryElement = styled.div`width:20%; display:inline-flex; flex-direction:column; align-items:center; justify-contents:center;
 &:last-child{margin-right:0px;}
 >div:nth-child(1){width:60px; height:80px;background-size:cover; }
+&:first-child .svgWrapper > svg {width:20px; height:20px; padding:20px;}
 `
 const CategoryCircle = styled.div`width:50px; height:50px; border-radius:100%;background-size:cover `
 const CategoryText = styled.div`text-align:center;margin:5px 0px;font-size:10px;`
@@ -98,15 +99,16 @@ export default function Home() {
                 ))}
                 </Swiper>
     </RecipeWrapper>
-        <TextHero style={{marginTop:"40px",marginBottom:"10px"}}>카테고리</TextHero>
+        <TextHero style={{marginTop:"30px",marginBottom:"10px"}}>카테고리</TextHero>
   <CategorySection>
     {category.map((categoryElement:ICategory)=>{
+      const SVGElement:any = categoryElement.svg;
       return <CategoryElement onClick={()=>{
         router.push(`/category/${categoryElement.engName}`)
       }}>
         <CategoryElementWrapper>
           <div className='svgWrapper'>
-            <RecipeSVG/>                
+            <SVGElement/>                
           </div>
           <CategoryText>{categoryElement.name}</CategoryText>
         </CategoryElementWrapper>
