@@ -69,22 +69,22 @@ const chartOptions: ChartOptions<'radar'> & ChartOptions = {
       {
         data: [2,4,2,2,4],
         fill: true,
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgb(255, 99, 132)',
-        pointBackgroundColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(3, 101, 36, 1)',
+        borderColor: 'rgba(3, 101, 36, 1)',
+        pointBackgroundColor: 'rgba(3, 101, 36, 1)',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgb(255, 99, 132)'
+        pointHoverBorderColor: 'rgba(3, 101, 36, 1)'
       },
       {
         data: [2,3,2,1,2],
         fill: true,
-        backgroundColor: 'rgba(132, 99, 255, 0.2)',
-        borderColor: 'rgb(132, 99, 255)',
-        pointBackgroundColor: 'rgb(132, 99, 255)',
+        backgroundColor: 'rgba(255, 212, 162, 1)',
+        borderColor: 'rgba(255, 212, 162, 1)',
+        pointBackgroundColor: 'rgba(255, 212, 162, 1)',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgb(132, 99, 255)'
+        pointHoverBorderColor: 'rgba(255, 212, 162, 1)'
       },
     ],
   };
@@ -96,8 +96,8 @@ const chartOptions: ChartOptions<'radar'> & ChartOptions = {
   th{background:rgba(10,10,10,.1);font-weight:bold;}
   th,td{border-bottom:1px solid #ccc; border-right:1px solid #ccc}
   th:last-child,td:last-child{border-right:0px;}
-  td:nth-child(2){background:rgba(132, 99, 255, 0.2);}
-  td:nth-child(3){background:rgba(255, 99, 132, 0.2);}
+  td:nth-child(2){background:rgba(255, 212, 162, .3);}
+  td:nth-child(3){background:rgba(3, 101, 36, .3);}
 `
 export default function Product(){
     const router = useRouter();
