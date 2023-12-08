@@ -33,10 +33,10 @@ import { RecipeSVG } from '@/component/SVG/recipe'
 const TextHero = styled.h2`font-size:18px; padding-bottom:10px; padding-left:10px;`
 const CategorySection = styled.div`display:flex; width:100%; 
 overflow:hidden; overflow-x:scroll; padding:0px 0px;
-margin: 30px auto; margin-top:0px;
+margin: 30px auto; margin-top:0px; align-items:center; justify-contents:center;
 
 `
-const CategoryElement = styled.div`margin-right:20px; display:inline-flex; flex-direction:column; 
+const CategoryElement = styled.div`margin-right:20px; display:inline-flex; flex-direction:column;
 &:last-child{margin-right:0px;}
 >div:nth-child(1){width:60px; height:80px;background-size:cover; }
 `
