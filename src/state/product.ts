@@ -192,7 +192,7 @@ export const productListState = atom<IProductType[]>({
 
     saleRate:0.4,
 
-    description:"",
+    description:"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
     //"끓이기만 되는 비비고 육개장에 야채 1인분 세트(파, 양파, 버섯, 고추)를 넣어 푸짐한 한 끼를 해결할 수 있습니다.",
     descriptionImage:"/img_1107/detail/HMR_detail_sixdog.webp",
     ingredients:[{
