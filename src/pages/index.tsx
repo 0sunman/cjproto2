@@ -30,13 +30,13 @@ import { Product } from '@/component/product'
 import { MainBanner } from '@/component/Main/MainBanner'
 import { RecipeSVG } from '@/component/SVG/recipe'
 
-const TextHero = styled.h2`font-size:18px; padding-bottom:10px; padding-left:10px;`
-const CategorySection = styled.div`display:flex; width:100%; 
+const TextHero = styled.h2`font-size:18px; padding-bottom:10px; padding-left:20px;`
+const CategorySection = styled.div`display:flex; width:calc(100% - 40px); 
 overflow:hidden; overflow-x:scroll; padding:0px 0px;
-margin: 30px auto; margin-top:0px; align-items:center; justify-contents:center;
+margin: 30px auto; margin-top:0px;
 
 `
-const CategoryElement = styled.div`margin-right:20px; display:inline-flex; flex-direction:column;
+const CategoryElement = styled.div`width:20%; display:inline-flex; flex-direction:column; align-items:center; justify-contents:center;
 &:last-child{margin-right:0px;}
 >div:nth-child(1){width:60px; height:80px;background-size:cover; }
 `

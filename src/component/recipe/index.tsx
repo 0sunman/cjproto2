@@ -18,11 +18,11 @@ const RecipeMainImage = styled.img`
 `
 const RecipeTag = styled.div`
     display:flex; justify-content:start; align-items:center; width:100%; padding:10px 0px; margin-bottom:5px;
-    > div:nth-child(1) { width: 20%; padding-left:10px; text-align:center; font-size:13px;}
-    > div:nth-child(2) { width: 80%; text-align:right; padding-right:10px}
+    > div:nth-child(1) { width: 20%; padding-left:20px; text-align:center; font-size:13px;}
+    > div:nth-child(2) { width: 80%; text-align:right; padding-right:20px}
     > div:nth-child(2) > img { width:45px; height:45px; margin-right:5px;}
 `
-const RecipeTagTitle = styled.div`text-align:left !important; padding-left:15px !important;`
+const RecipeTagTitle = styled.div`text-align:left !important; `
 const RecipeTagImages = styled.div``
 const RecipeTagImage = styled.img``
 const RecipeTagVideo = styled.video`width:100%;`
