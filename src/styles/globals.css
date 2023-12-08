@@ -40,8 +40,11 @@
   --swiper-navigation-sides-offset: 10px;
   --swiper-navigation-color: rgba(255,255,255,.8);
 
-  --TRYEAT-Common:#f57979;
-  --TRYEAT-Icon: #000000;
+/*  --TRYEAT-Common:#f57979;*/
+
+--TRYEAT-Common:#FFE7B8;
+--TRYEAT-Icon: #000000;
+--TRYEAT-Brown:#815033;
   --TRYEAT-Blown: #815033;
   --TRYEAT-Green : #00643b; 
   --TRYEAT-Orange : #ff6600;
@@ -247,7 +250,7 @@ body{background-color: #fff; margin:0 auto}
 
 .ct2 {
   color: #fff;
-  fill:var(--TRYEAT-Common);
+  fill:#6F452B
 }
 
 

@@ -13,7 +13,7 @@ const LongButton = styled.div`display:flex; align-items:center;
 width:100%;height:55px; background-color:#fff; 
 >span:nth-child(1){margin-right:auto;padding-left:20px;font-size:14px}
 >span:nth-child(2){margin-left:auto;padding-right:10px;}
-&:active{color:white;background:var(--TRYEAT-Common)}box-shadow: 0px 2px 5px 0px #00000014;
+&:active{color:#000;background:var(--TRYEAT-Common)}box-shadow: 0px 2px 5px 0px #00000014;
 
 `
 const RecipeButton = styled.div`

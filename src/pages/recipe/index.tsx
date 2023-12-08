@@ -44,7 +44,7 @@ export default function Recipe(){
                             }
         
                         </div>
-                        <RecipeTag>
+                        <RecipeTag style={{backgroundColor:"#fff"}}>
                             <RecipeTagTitle>
                                 <span>#태그상품</span>
                             </RecipeTagTitle>
